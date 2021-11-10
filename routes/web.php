@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/instituciones', function () {
-    return view('view_SCA');
+    return view('SCA.view_SCA');
 });
