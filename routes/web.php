@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('plantilla');
+});
+
+Route::get('/instituciones', function () {
     return view('view_SCA');
 });
