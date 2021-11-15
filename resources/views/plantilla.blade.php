@@ -127,6 +127,41 @@
           
             <!-- Divider -->
             <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Gestión
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGestion"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span class="text-white">Administrar</span>
+                </a>
+                <div id="collapseGestion" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#collapseGestion">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">apartados:</h6>
+                    {{--  --}}  
+                    <ul class="nav-item list-inline" style="padding: 0">
+                    <a class="collapse-item menuAhorros" href="#"  data-toggle="collapse" data-target="#collapseAhorros"
+                    aria-expanded="true" aria-controls="collapseUtilities" >
+                    Ahorros<i class="fas fa-chevron-right iconoMenuAhorros"style="padding-left: 10px"></i></a>
+                    <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#collapseAhorros">
+                    <a class="collapse-item" href="utilities-border.html">De tipos</a>
+                    <a class="collapse-item" href="utilities-animation.html">De falta 1</a>
+                    <a class="collapse-item" href="utilities-animation.html">De falta 2</a>
+                
+                </div>
+                </ul>
+                        {{--  --}}
+                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
+                        <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
+                        <a class="collapse-item" href="utilities-animation.html">De asociados</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider">
 
             <div class="sidebar-heading">
                 Reportes
@@ -141,7 +176,7 @@
                     data-parent="#collapseReportes">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes:</h6>
-                        <a class="collapse-item" href="utilities-color.html">De ahorros</a>
+                        <a class="collapse-item" href="utilities-color.html"> De ahorros</a>
                         <a class="collapse-item" href="utilities-border.html">De prestamos</a>
                         <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
                         <a class="collapse-item" href="utilities-animation.html">De asociados</a>
@@ -394,6 +429,22 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
 
+    <script>
+        var activoAhorros=true;
+$(document).on('click','.menuAhorros',function(){
+
+    if(activoAhorros){
+    $('.iconoMenuAhorros').removeClass('fa-chevron-right');
+    $('.iconoMenuAhorros').addClass('fa-chevron-down');
+    activoAhorros=false;
+    }else{
+    $('.iconoMenuAhorros').removeClass('fa-chevron-down');
+    $('.iconoMenuAhorros').addClass('fa-chevron-right');
+    activoAhorros=true;
+}
+});
+
+    </script>
     @yield('js')
 </body>
 
