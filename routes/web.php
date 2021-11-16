@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('plantilla');
 });
+
+Route::get('/SAS', function () {
+    return view('SAS.indexSAS');
+});
+/*
+Route::get('/SAS/registrar', function () {
+    return view('SAS.registroSAS');
+});
+*/
