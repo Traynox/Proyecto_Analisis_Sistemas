@@ -20,8 +20,9 @@ Route::get('/', function () {
 Route::get('/SAS', function () {
     return view('SAS.indexSAS');
 });
-/*
-Route::get('/SAS/registrar', function () {
-    return view('SAS.registroSAS');
+
+
+Route::get('/registrar', function () {
+    return view('SAS.registrarSAS');
 });
-*/
+
