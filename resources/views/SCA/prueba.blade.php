@@ -6,5 +6,5 @@
     
 @endsection
 @section('js')
-    
+
 @endsection

@@ -26,3 +26,23 @@ Route::get('/registrar', function () {
     return view('SAS.registrarSAS');
 });
 
+Route::get('/nacionalidades', function () {
+    return view('SAS.nacionalidades.gestionNac');
+});
+
+Route::get('/actualizarNac', function () {
+    return view('SAS.nacionalidades.editNac');
+});
+
+Route::get('/identificaciones', function () {
+    return view('SAS.tipos_id.gestionIDs');
+});
+
+Route::get('/actualizarTID', function () {
+    return view('SAS.tipos_id.editTipoID');
+});
+
+Route::get('/estadoCivil', function () {
+    return view('SAS.estado_civil.gestionECivil');
+});
+
