@@ -9,17 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Proyecto</title>
+    <title>@yield('titulo')</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/cssPersonal.css">
+    <link rel="stylesheet" href="css/sasStyle.css">
+    
 @yield('css')
 
 </head>
@@ -349,6 +352,12 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
+                    <div class="row">
+                        @yield('titulo-contenido')
+                    </div>                
+                    <hr>
+
                     @yield('contenido')
                     {{-- <!-- Content Row -->
                     <div class="row">
@@ -429,22 +438,9 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
 
-    <script>
-        var activoAhorros=true;
-$(document).on('click','.menuAhorros',function(){
+    <!-- SAS js Functions -->
+    <script src="js/paginationNac.js"></script>
 
-    if(activoAhorros){
-    $('.iconoMenuAhorros').removeClass('fa-chevron-right');
-    $('.iconoMenuAhorros').addClass('fa-chevron-down');
-    activoAhorros=false;
-    }else{
-    $('.iconoMenuAhorros').removeClass('fa-chevron-down');
-    $('.iconoMenuAhorros').addClass('fa-chevron-right');
-    activoAhorros=true;
-}
-});
-
-    </script>
     @yield('js')
 </body>
 

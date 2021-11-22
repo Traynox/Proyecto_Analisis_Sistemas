@@ -1,0 +1,28 @@
+#perfil-img{
+    font-size: 300%;
+    float: left;
+    padding-right: 20px;
+  }
+  
+  #box-cuentas{
+      color: black;
+      max-width: 700px;
+      margin: auto;
+      font-family: sans-serif;
+  }
+  
+  #box-registros{
+    color: black;
+    max-width: 700px;
+    margin: auto;
+    font-family: sans-serif;
+    padding: 15px;
+  }
+
+  .avatar-pic {
+    width: 100px;
+    }
+  
+  .d-firma {
+    width: 100px;
+  }
