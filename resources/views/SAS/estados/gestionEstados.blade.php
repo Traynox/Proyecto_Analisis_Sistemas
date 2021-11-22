@@ -4,15 +4,15 @@
 @endsection
 
 @section('titulo')
-    {{'Estado Civil'}}
+    {{'Estados'}}
 @endsection
 
 @section('contenido')
 
     @section('titulo-contenido')
         <div class="col-7">
-            <div id="perfil-img"><i class="fas fa-people-arrows"></i></div>
-            <h1 class="mx-5 my-3">Gestion de Estado Civil</h1>
+            <div id="perfil-img"><i class="fas fa-shapes"></i></div>
+            <h1 class="mx-5 my-3">Gestion de Estados</h1>
         </div>
     @endsection
 
@@ -25,11 +25,11 @@
                 <div class="card-body">
 
                     <form action="" method="post" class="pt-3 pb-1">
-                        <h3>Registrar un Estado Civil</h3>
+                        <h3>Registrar Estados</h3>
 
                         <div class="mb-3">
-                            <label for="e-civil" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Estado Civil">
+                            <label for="estado" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Estado">
                         </div>
     
                         <div class="row justify-content-center mt-4">
@@ -60,7 +60,7 @@
                         
                         <tr>
                             <td>1</td>
-                            <td>Casado(a)</td>
+                            <td>Activo</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -76,7 +76,7 @@
 
                         <tr>
                             <td>2</td>
-                            <td>Soltero(a)</td>
+                            <td>Inactivo</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -92,7 +92,7 @@
 
                         <tr>
                             <td>3</td>
-                            <td>Union Libre</td>
+                            <td>Pendiente</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -108,7 +108,7 @@
 
                         <tr>
                             <td>4</td>
-                            <td>Divorciado(a)</td>
+                            <td>Aprobado</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -124,7 +124,7 @@
 
                         <tr>
                             <td>6</td>
-                            <td>Viudo(a)</td>
+                            <td>No Aprobado</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>

@@ -3,52 +3,26 @@
     
 @endsection
 
-@section('titulo')
-    {{'Estado Civil'}}
+@section('titutlo')
+    {{'Profesiones'}}
 @endsection
 
 @section('contenido')
 
     @section('titulo-contenido')
-        <div class="col-7">
-            <div id="perfil-img"><i class="fas fa-people-arrows"></i></div>
-            <h1 class="mx-5 my-3">Gestion de Estado Civil</h1>
-        </div>
+    <div class="col-7">
+        <div id="perfil-img"><i class="fas fa-toolbox"></i></div>
+        <h1 class="mx-5 my-3">Gestion de Profesiones</h1>
+    </div>
     @endsection
 
     <div class="container-fluid">
 
-        <div class="col-6 mx-auto mb-4 py-5">
+        <div class="row">
 
-            <div class="mx-auto card" id="reg-paises">
-
-                <div class="card-body">
-
-                    <form action="" method="post" class="pt-3 pb-1">
-                        <h3>Registrar un Estado Civil</h3>
-
-                        <div class="mb-3">
-                            <label for="e-civil" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Estado Civil">
-                        </div>
+            <div class="col-6 mx-auto body-card" id="lista-paises">
     
-                        <div class="row justify-content-center mt-4">
-                            <button type="submit" class="btn btn-success">Guardar</button>
-                        </div>
-    
-                    </form>
-
-                </div>
-    
-            </div>
-            
-        </div>
-
-        <div class="col-6 mx-auto">
-            
-            <div class="mx-auto body-card" id="lista-paises">
-    
-                <table id="example" class="table table-striped table-light table-bordered" style="width:100%">
+                <table id="example" class="table table-striped table-light" style="width:100%">
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
@@ -60,7 +34,7 @@
                         
                         <tr>
                             <td>1</td>
-                            <td>Casado(a)</td>
+                            <td>Auditor(a)</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -76,7 +50,7 @@
 
                         <tr>
                             <td>2</td>
-                            <td>Soltero(a)</td>
+                            <td>Desarrollador(a)</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -92,7 +66,7 @@
 
                         <tr>
                             <td>3</td>
-                            <td>Union Libre</td>
+                            <td>Tecnico en Redes</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -108,7 +82,7 @@
 
                         <tr>
                             <td>4</td>
-                            <td>Divorciado(a)</td>
+                            <td>Profesor(a)</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -124,7 +98,7 @@
 
                         <tr>
                             <td>6</td>
-                            <td>Viudo(a)</td>
+                            <td>Medico</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -144,12 +118,32 @@
                 
             </div>
 
+            <div class="col-4 mx-auto card" id="reg-paises">
+
+                <div class="card-body">
+
+                    <form action="" method="post" class="pt-3 pb-1">
+                        <h3>Registrar Profesion</h3>
+
+                        <div class="mb-3">
+                            <label for="tipo-id" class="form-label">Tipo</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre de la Profesion">
+                        </div>
+    
+                        <div class="row justify-content-center mt-4">
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+    
+                    </form>
+
+                </div>
+    
+            </div>
+
         </div>
 
     </div>
-
-
-
+    
 @endsection
 @section('js')
 <script src="{{ asset('https://code.jquery.com/jquery-3.5.1.js') }}"></script>

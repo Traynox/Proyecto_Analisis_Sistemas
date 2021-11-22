@@ -46,3 +46,30 @@ Route::get('/estadoCivil', function () {
     return view('SAS.estado_civil.gestionECivil');
 });
 
+Route::get('/actualizarECivil', function () {
+    return view('SAS.estado_civil.editECivil');
+});
+
+Route::get('/estados', function () {
+    return view('SAS.estados.gestionEstados');
+});
+
+Route::get('/actualizarEstado', function () {
+    return view('SAS.estados.editEstados');
+});
+
+Route::get('/profesiones', function () {
+    return view('SAS.profesiones.gestionProfesiones');
+});
+
+Route::get('/actualizarProfesion', function () {
+    return view('SAS.profesiones.editProfesion');
+});
+
+Route::get('/parentescos', function () {
+    return view('SAS.parentescos.gestionParentescos');
+});
+
+Route::get('/actualizarParentesco', function () {
+    return view('SAS.parentescos.editParentesco');
+});
