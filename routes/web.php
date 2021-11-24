@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* --------------------------------SAS--------------------------------*/
+
 Route::get('/', function () {
     return view('plantilla');
 });
@@ -47,7 +49,12 @@ Route::get('/estadoCivil', function () {
     return view('SAS.estado_civil.gestionECivil');
 });
 
+/* --------------------------------SPR--------------------------------*/
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/nuevaLineaCredito', function () {
+    return view('SPR.LineaCredito.crearLineaCredito');
+});
