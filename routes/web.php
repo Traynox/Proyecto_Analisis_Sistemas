@@ -58,3 +58,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/nuevaLineaCredito', function () {
     return view('SPR.LineaCredito.crearLineaCredito');
 });
+
+Route::get('/desembolso', function () {
+    return view('SPR.LineaCredito.vistaDesembolso');
+});
+
+Route::get('/editarLineaCredito', function () {
+    return view('SPR.LineaCredito.editarLineaCredito');
+});
