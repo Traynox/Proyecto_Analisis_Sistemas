@@ -4,7 +4,7 @@
 @endsection
 
 @section('titulo')
-    {{'Actualizar Profesion'}}
+    {{'Actualizar Parentesco'}}
 @endsection
 
 @section('contenido')

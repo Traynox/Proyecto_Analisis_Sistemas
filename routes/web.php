@@ -73,3 +73,16 @@ Route::get('/parentescos', function () {
 Route::get('/actualizarParentesco', function () {
     return view('SAS.parentescos.editParentesco');
 });
+
+Route::get('/familiares', function () {
+    return view('SAS.familiares.registrarFamiliar');
+});
+
+Route::get('/consultarFamiliares', function () {
+    return view('SAS.familiares.consultarFamiliares');
+});
+
+Route::get('/actualizarFamiliares', function () {
+    return view('SAS.familiares.editFamiliar');
+});
+
