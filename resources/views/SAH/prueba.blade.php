@@ -3,7 +3,7 @@
     
 @endsection
 @section('contenido')
-    
+    asldasldkjl
 @endsection
 @section('js')
     

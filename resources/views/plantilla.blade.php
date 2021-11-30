@@ -147,12 +147,12 @@
                     <ul class="nav-item list-inline" style="padding: 0">
                     <a class="collapse-item menuAhorros" href="#"  data-toggle="collapse" data-target="#collapseAhorros"
                     aria-expanded="true" aria-controls="collapseUtilities" >
-                    Ahorros<i class="fas fa-chevron-right iconoMenuAhorros"style="padding-left: 10px"></i></a>
+                    Ahorros</a>
                     <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#collapseAhorros">
-                    <a class="collapse-item" href="utilities-border.html">De tipos</a>
-                    <a class="collapse-item" href="utilities-animation.html">De falta 1</a>
-                    <a class="collapse-item" href="utilities-animation.html">De falta 2</a>
+                    <a class="collapse-item" href="utilities-border.html">Tipos</a>
+                    <a class="collapse-item" href="utilities-animation.html">Ahorros</a>
+                    <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
                 
                 </div>
                 </ul>

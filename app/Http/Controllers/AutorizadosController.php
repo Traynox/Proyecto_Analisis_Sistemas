@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Autorizado;
+// use App\Models\Autorizado;
+use App\Models\Autorizados;
+
 class AutorizadosController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class AutorizadosController extends Controller
      */
     public function index()
     {
-        $autorizados=Autorizado::all();
+        $autorizados=Autorizados::all();
             return view('autorizados',compact('autorizados'));
     }
 
@@ -35,7 +37,7 @@ class AutorizadosController extends Controller
      */
     public function store(Request $request)
     {
-        $autorizado=new Autorizado();
+        $autorizado=new Autorizados();
         $autorizado->nombre=$request->cedula;
         $autorizado->primer_apellido=$request->nombre;
         $autorizado->segundo_apellido=$request->fecha;
@@ -46,7 +48,7 @@ class AutorizadosController extends Controller
         $autorizado->id_parentesco=$request->fecha;
 
         
-        $empleado->save();
+        $autorizado->save();
         return  redirect()->route('autorizados.index');
     }
 
@@ -69,8 +71,8 @@ class AutorizadosController extends Controller
      */
     public function edit($id)
     {
-        $autorizados=Autorizado::all();
-        $autorizado=Autorizado::find($id);
+        $autorizados=Autorizados::all();
+        $autorizado=Autorizados::find($id);
         return view('autorizados_editar',compact('autorizados','autorizado'));
     }
 
@@ -83,7 +85,7 @@ class AutorizadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $autorizado=Autorizado::find($id);
+        $autorizado=Autorizados::find($id);
         $autorizado->nombre=$request->cedula;
         $autorizado->primer_apellido=$request->nombre;
         $autorizado->segundo_apellido=$request->fecha;
@@ -104,7 +106,7 @@ class AutorizadosController extends Controller
      */
     public function destroy($id)
     {
-        Autorizado::destroy($id); 
+        Autorizados::destroy($id); 
         return back();
     }
 }

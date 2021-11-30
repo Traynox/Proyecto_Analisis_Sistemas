@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Autorizados;
+use App\Models\Beneficiario;
 use Illuminate\Http\Request;
 
 class BeneficiariosController extends Controller
@@ -13,7 +15,7 @@ class BeneficiariosController extends Controller
      */
     public function index()
     {
-        $beneficiarios=Autorizado::all();
+            $beneficiarios=Beneficiario::all();
             return view('beneficiarios',compact('beneficiarios'));
     }
 
@@ -35,7 +37,7 @@ class BeneficiariosController extends Controller
      */
     public function store(Request $request)
     {
-        $beneficiario=new Autorizado();
+        $beneficiario=new Beneficiario();
         $beneficiario->nombre=$request->cedula;
         $beneficiario->primer_apellido=$request->nombre;
         $beneficiario->segundo_apellido=$request->fecha;
@@ -73,8 +75,8 @@ class BeneficiariosController extends Controller
      */
     public function edit($id)
     {
-        $beneficiarios=Autorizado::all();
-        $beneficiario=Autorizado::find($id);
+        $beneficiarios=Beneficiario::all();
+        $beneficiario=Beneficiario::find($id);
         return view('autorizados_editar',compact('autorizados','autorizado'));
     }
 
@@ -87,7 +89,7 @@ class BeneficiariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $beneficiario=Autorizado::find($id);
+        $beneficiario=Beneficiario::find($id);
         $beneficiario->nombre=$request->cedula;
         $beneficiario->primer_apellido=$request->nombre;
         $beneficiario->segundo_apellido=$request->fecha;
@@ -108,7 +110,7 @@ class BeneficiariosController extends Controller
      */
     public function destroy($id)
     {
-        Autorizado::destroy($id); 
+        Beneficiario::destroy($id); 
         return back();
     }
 }
