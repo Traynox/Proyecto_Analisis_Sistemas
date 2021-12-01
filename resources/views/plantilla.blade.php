@@ -80,8 +80,8 @@
                             Ahorros</a>
                             <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
                             data-parent="#collapseAhorros">
-                            <a class="collapse-item" href="utilities-border.html">Tipos ahorros</a>
-                            <a class="collapse-item" href="utilities-animation.html">Ahorros</a>
+                            <a class="collapse-item" href="{{route('tipos_ahorros.index')}}">Tipos ahorros</a>
+                            <a class="collapse-item" href="{{route('ahorros.index')}}">Ahorros</a>
                             <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
                         
                         </div>
@@ -370,7 +370,7 @@
     <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+    {{-- <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script> --}}
 
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
