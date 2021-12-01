@@ -20,6 +20,5 @@ Route::get('/', function () {
     return view('plantilla');
 });
 
-
 Route::resource('/tipos_ahorros',TipoAhorroController::class);
 
