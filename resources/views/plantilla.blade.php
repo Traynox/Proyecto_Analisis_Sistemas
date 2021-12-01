@@ -9,17 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Proyecto</title>
+    <title>@yield('titulo')</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/cssPersonal.css">
+    <link rel="stylesheet" href="css/sasStyle.css">
+    
 @yield('css')
 
 </head>
@@ -37,7 +40,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                      {{-- <i class="fas fa-laugh-wink"></i> --}}
                 </div>
-                <div class="sidebar-brand-text mx-3">Proyecto Final </div>
+                <div class="sidebar-brand-text mx-3">Proyecto Final</div>
             </a>
 
             <!-- Divider -->
@@ -127,6 +130,41 @@
           
             <!-- Divider -->
             <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Gestión
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGestion"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span class="text-white">Administrar</span>
+                </a>
+                <div id="collapseGestion" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#collapseGestion">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">apartados:</h6>
+                    {{--  --}}  
+                    <ul class="nav-item list-inline" style="padding: 0">
+                    <a class="collapse-item menuAhorros" href="#"  data-toggle="collapse" data-target="#collapseAhorros"
+                    aria-expanded="true" aria-controls="collapseUtilities" >
+                    Ahorros<i class="fas fa-chevron-right iconoMenuAhorros"style="padding-left: 10px"></i></a>
+                    <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#collapseAhorros">
+                    <a class="collapse-item" href="utilities-border.html">De tipos</a>
+                    <a class="collapse-item" href="utilities-animation.html">De falta 1</a>
+                    <a class="collapse-item" href="utilities-animation.html">De falta 2</a>
+                
+                </div>
+                </ul>
+                        {{--  --}}
+                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
+                        <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
+                        <a class="collapse-item" href="utilities-animation.html">De asociados</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider">
 
             <div class="sidebar-heading">
                 Reportes
@@ -141,7 +179,7 @@
                     data-parent="#collapseReportes">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes:</h6>
-                        <a class="collapse-item" href="utilities-color.html">De ahorros</a>
+                        <a class="collapse-item" href="utilities-color.html"> De ahorros</a>
                         <a class="collapse-item" href="utilities-border.html">De prestamos</a>
                         <a class="collapse-item" href="{{route('reportes-extra')}}">De Cajas *</a>
                         <a class="collapse-item" href="utilities-animation.html">De asociados</a>
@@ -314,6 +352,12 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
+                    <div class="row">
+                        @yield('titulo-contenido')
+                    </div>                
+                    <hr>
+
                     @yield('contenido')
                     {{-- <!-- Content Row -->
                     <div class="row">
@@ -393,6 +437,9 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- SAS js Functions -->
+    <script src="js/paginationNac.js"></script>
 
     @yield('js')
 </body>
