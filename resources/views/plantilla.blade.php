@@ -67,99 +67,37 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMovimientos"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span class="text-white">Tipificación de movimientos</span>
+                    <span class="text-white">Movimientos</span>
                 </a>
                 <div id="collapseMovimientos" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#collapseMovimientos">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Movimientos:</h6>
-                        <a class="collapse-item" href="utilities-color.html">De ahorros</a>
-                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
-                        <a class="collapse-item" href="utilities-animation.html">De capital</a>
-                        <a class="collapse-item" href="utilities-other.html">Excendentes</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span class="text-white">Instituciones</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAsociados"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-user"></i>
-                    <span class="text-white">Asociados</span>
-                </a>
-                <div id="collapseAsociados" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
-            </li>
-            <!-- Nav Item - Utilities Collapse Menu -->
-            {{-- <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li> --}}
-          
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Gestión
-            </div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGestion"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span class="text-white">Administrar</span>
-                </a>
-                <div id="collapseGestion" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#collapseGestion">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">apartados:</h6>
-                    {{--  --}}  
-                    <ul class="nav-item list-inline" style="padding: 0">
-                    <a class="collapse-item menuAhorros" href="#"  data-toggle="collapse" data-target="#collapseAhorros"
-                    aria-expanded="true" aria-controls="collapseUtilities" >
-                    Ahorros<i class="fas fa-chevron-right iconoMenuAhorros"style="padding-left: 10px"></i></a>
-                    <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#collapseAhorros">
-                    <a class="collapse-item" href="utilities-border.html">De tipos</a>
-                    <a class="collapse-item" href="utilities-animation.html">De falta 1</a>
-                    <a class="collapse-item" href="utilities-animation.html">De falta 2</a>
-                
-                </div>
-                </ul>
-                        {{--  --}}
-                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
-                        <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
-                        <a class="collapse-item" href="utilities-animation.html">De asociados</a>
+                        {{-- <a class="collapse-item" href="utilities-color.html">Ahorros</a> --}}
+                        <ul class="nav-item list-inline" style="padding: 0">
+                            <a class="collapse-item" data-toggle="collapse" data-target="#collapseAhorros"
+                            aria-expanded="true" aria-controls="collapseUtilities" >
+                            Ahorros</a>
+                            <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#collapseAhorros">
+                            <a class="collapse-item" href="utilities-border.html">Tipos ahorros</a>
+                            <a class="collapse-item" href="utilities-animation.html">Ahorros</a>
+                            <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
+                        
+                        </div>
+                        </ul>
+                        <a class="collapse-item" href="utilities-border.html">Prestamos</a>
+                        <a class="collapse-item" href="utilities-animation.html">Asociados</a>
+                        <ul class="nav-item list-inline" style="padding: 0">
+                            <a class="collapse-item" data-toggle="collapse" data-target="#collapseCajas"
+                            aria-expanded="true" aria-controls="collapseUtilities" >
+                            Cajas</a>
+                            <div id="collapseCajas" class="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#collapseCajas">
+                            <a class="collapse-item" href="utilities-border.html">Instituciones</a>
+                            <a class="collapse-item" href="utilities-animation.html">Notificaciones</a>     
+                        </div>
+                        </ul>
                     </div>
                 </div>
             </li>
