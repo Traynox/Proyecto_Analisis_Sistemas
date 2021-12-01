@@ -11,37 +11,31 @@
                 <div class="form-items">
                     <h3>Linea de credito nueva</h3>
                     <p>Llene los datos correspondientes</p>
-                    <form class="requires-validation" novalidate>
-                  
-                        <div class="col-md-12">
-                           <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
-                           <div class="valid-feedback">Username field is valid!</div>
-                           <div class="invalid-feedback">Username field cannot be blank!</div>
-                        </div>
-
+                    <form action="{{route('crearLinea')}}" method="POST" class="requires-validation">
+                        @csrf
                         <div class="col-md-12"> 
-                            <select class="form-select mt-3" required> {{-- falta name --}}
-                                  <option selected disabled value="">Tipo</option>
-                                  <option value="jweb">Junior Web Developer</option>
-                                  <option value="sweb">Senior Web Developer</option>
-                                  <option value="pmanager">Project Manager</option>
-                           </select>
+                            <select class="form-select mt-3" name="asociado" required> 
+                                  <option selected disabled value="">Asociado</option>
+                                  @foreach ($asociados as $item)
+                                    <option value="{{$item->id_asociado}}">{{$item->nombre_completo}}</option>                                      
+                                  @endforeach
+                            </select>
 
                             <div class="valid-feedback">You selected a position!</div>
                             <div class="invalid-feedback">Please select a position!</div>
                        </div>
 
-                       <div class="col-md-12">
-                        <input class="form-control" type="text" name="cedula" placeholder="Cedula" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
+                        <div class="col-md-12"> 
+                            <select class="form-select mt-3" name="tipo" required> 
+                                  <option selected disabled value="">Tipo</option>
+                                  @foreach ($tipos as $item)
+                                    <option value="{{$item->id_tipo_credito}}">{{$item->nombre}}</option>                                      
+                                  @endforeach
+                            </select>
 
-                     <div class="col-md-12">
-                        <input class="form-control" type="text" name="numCuenta" placeholder="Numero de cuenta" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
+                            <div class="valid-feedback">You selected a position!</div>
+                            <div class="invalid-feedback">Please select a position!</div>
+                       </div>
 
                      <div class="col-md-12 mt-3">
                         <input class="form-control" type="number" name="monto" placeholder="Monto" required>
@@ -55,23 +49,8 @@
                         <div class="invalid-feedback">Username field cannot be blank!</div>
                      </div>
 
-                     <hr>
-                    <p>Datos del fiador</p>
-
                      <div class="col-md-12">
-                        <input class="form-control" type="text" name="nombreFiador" placeholder="Nombre" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
-
-                     <div class="col-md-12">
-                        <input class="form-control" type="text" name="cedulaFiador" placeholder="Cedula" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
-
-                     <div class="col-md-12">
-                        <input class="form-control" type="text" name="telefonoFiador" placeholder="Telefono" required>
+                        <input class="form-control" type="text" name="nombreFiador" placeholder="Nombre de fiador" required>
                         <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div>
                      </div>

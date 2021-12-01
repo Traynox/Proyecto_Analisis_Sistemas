@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LineaCreditoController;
+use App\Models\LineaCredito;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -55,9 +57,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/nuevaLineaCredito', function () {
-    return view('SPR.LineaCredito.crearLineaCredito');
-});
+Route::get('/lineaCredito', [LineaCreditoController::class, 'index'])->name('Lineascreditos');
+Route::get('/nuevaLineaCredito', [LineaCreditoController::class, 'create'])->name('nuevaLineascreditos');
+Route::post('/crearLineaC', [LineaCreditoController::class, 'store'])->name('crearLinea');
+Route::delete('/eliminarLineaC/{id_linea_credito}', [LineaCreditoController::class, 'delete'])->name('eliminarLinea');
+
 
 Route::get('/desembolso', function () {
     return view('SPR.LineaCredito.vistaDesembolso');
