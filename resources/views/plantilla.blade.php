@@ -87,7 +87,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
+                        <a class="collapse-item" href="{{route('instituciones')}}">Buttons *</a>
                         <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                         <h6 class="collapse-header">Reportes:</h6>
                         <a class="collapse-item" href="utilities-color.html">De ahorros</a>
                         <a class="collapse-item" href="utilities-border.html">De prestamos</a>
-                        <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
+                        <a class="collapse-item" href="{{route('reportes-extra')}}">De Cajas *</a>
                         <a class="collapse-item" href="utilities-animation.html">De asociados</a>
                     </div>
                 </div>
@@ -264,7 +264,7 @@
                                     </div>
                                     <div>
                                         <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
+                                        Spending Alert: noticed unusually high spending for your account.
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
