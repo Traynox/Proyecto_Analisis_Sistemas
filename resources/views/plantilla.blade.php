@@ -150,8 +150,9 @@
                     Ahorros</a>
                     <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#collapseAhorros">
-                    <a class="collapse-item" href="utilities-border.html">Tipos</a>
                     <a class="collapse-item" href="{{route('ahorros.index')}}">Ahorros</a>
+                    <a class="collapse-item" href="{{ route('tipos_ahorros.index') }}">Tipos</a>
+                    <a class="collapse-item" href="utilities-animation.html">Ahorros</a>
                     <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
                 
                 </div>
