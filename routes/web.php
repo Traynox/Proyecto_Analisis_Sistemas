@@ -66,3 +66,27 @@ Route::get('/desembolso', function () {
 Route::get('/editarLineaCredito', function () {
     return view('SPR.LineaCredito.editarLineaCredito');
 });
+
+Route::get('/reportes', function () {
+    return view('SPR.Reportes.reportesSPR');
+});
+
+Route::get('/arregloPago', function () {
+    return view('SPR.Arreglos.arregloPago');
+});
+
+Route::get('/cobroJudicial', function () {
+    return view('SPR.Arreglos.cobroJudicial');
+});
+
+Route::get('/historialPago', function () {
+    return view('SPR.Arreglos.historialDePago');
+});
+
+Route::get('/tabladePago', function () {
+    return view('SPR.Arreglos.tablaDePago');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

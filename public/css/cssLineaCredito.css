@@ -47,6 +47,15 @@
     transition: all 0.4s ease;
 }
 
+.form-body-tablas{
+    margin-left: 10%;
+    margin-top: -4%;
+}
+
+
+
+
+
 .form-content h3 {
     color: black;
     text-align: left;
@@ -140,4 +149,8 @@
 
 .valid-feedback{
    color: #2acc80;
+}
+tr{
+    font-size:small;
+
 }
