@@ -12,7 +12,7 @@
             
                 <div class="form-content ">
             
-                    <div class="form-itemsHistorial">--}}
+                    <div class="form-items">--}}
                 
                     
                         <form class="" >

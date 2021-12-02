@@ -6,7 +6,7 @@
 
 .form-body-Desem{
     margin-left: 20%;
-    margin-top: -10%;
+    margin-top: -5%;
 }
 
 .form-holder {
@@ -52,7 +52,42 @@
     margin-top: -4%;
 }
 
+.form-body-prestamos{
+    margin-left: 20%;
+    margin-top: -10%;
+}
+.form-body-tasas{
+    margin-left: 5%;
+    margin-top: -8%;
+}
 
+.form-contentTasas .form-itemsTasas {
+    border: 3px solid black;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 900px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.form-holder .form-contentTasas {
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 60px;
+}
 
 
 
@@ -98,6 +133,21 @@
     margin-top: 16px;
 }
 
+.form-contentTasas .form-select {
+    width: 100%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
 
 .btn-primary{
     background-color: #6C757D;

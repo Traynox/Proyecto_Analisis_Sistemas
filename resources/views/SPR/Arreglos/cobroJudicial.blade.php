@@ -4,7 +4,7 @@
 @endsection
 @section('contenido')
     
-<div class="form-body-Desem">
+<div class="form-body-prestamos">
     <div class="row">
         <div class="form-holder">
             <div class="form-content">

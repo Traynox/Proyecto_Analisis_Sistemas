@@ -91,6 +91,18 @@ Route::get('/tabladePago', function () {
     return view('SPR.Arreglos.tablaDePago');
 });
 
+Route::get('/solicitud', function () {
+    return view('SPR.CreditosYGarantias.solicitudCredito');
+});
+
+Route::get('/prestamosDoc', function () {
+    return view('SPR.CreditosYGarantias.prestamosSobreDoc');
+});
+
+Route::get('/garantiasTasas', function () {
+    return view('SPR.CreditosYGarantias.gestionGarantiasTasas');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
