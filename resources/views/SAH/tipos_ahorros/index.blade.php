@@ -2,7 +2,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/tipo_ahorro/alertas.css') }}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css"> --}}
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -156,23 +156,23 @@
 
         $(document).ready(function() {
             var table = $('#tabla').DataTable({
-                // dom: 'Bfrtip',
-                // buttons: [{
-                //     extend: 'pdf',
-                //     text: '<i class="fas fa-file-pdf text-danger"></i> PDF',
-                //     titleAttr: 'Exportar a excel',
-                //     className: 'btn btn-success',
-                //     customize: function(doc) {
+                dom: 'Bfrtip',
+                buttons: [{
+                    extend: 'pdf',
+                    text: '<i class="fas fa-file-pdf text-danger"></i> PDF',
+                    titleAttr: 'Exportar a excel',
+                    className: 'btn btn-success',
+                    customize: function(doc) {
 
-                //         doc.styles.title = {
+                        doc.styles.title = {
 
-                //             color: '#41ADE7',
-                //             fontSize: '20',
-                //             alignment: 'center'
-                //         }
-                //     }
+                            color: '#41ADE7',
+                            fontSize: '20',
+                            alignment: 'center'
+                        }
+                    }
 
-                // }, ],
+                }, ],
 
 
                 responsive: true,
