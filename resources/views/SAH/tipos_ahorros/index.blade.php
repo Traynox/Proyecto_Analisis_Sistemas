@@ -7,8 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('js/tipo_ahorro/mostrar.js') }}"></script>
-
 @endsection
+
 @section('contenido')
 
     <div class="container">
@@ -148,36 +148,31 @@
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script>
 
-
-
     <script>
         var nombre;
-
-
-
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
 
         $(document).ready(function() {
             var table = $('#tabla').DataTable({
-                // dom: 'Bfrtip',
-                // buttons: [{
-                //     extend: 'pdf',
-                //     text: '<i class="fas fa-file-pdf text-danger"></i> PDF',
-                //     titleAttr: 'Exportar a excel',
-                //     className: 'btn btn-success',
-                //     customize: function(doc) {
+                dom: 'Bfrtip',
+                buttons: [{
+                    extend: 'pdf',
+                    text: '<i class="fas fa-file-pdf text-danger"></i> PDF',
+                    titleAttr: 'Exportar a excel',
+                    className: 'btn btn-success',
+                    customize: function(doc) {
 
-                //         doc.styles.title = {
+                        doc.styles.title = {
 
-                //             color: '#41ADE7',
-                //             fontSize: '20',
-                //             alignment: 'center'
-                //         }
-                //     }
+                            color: '#41ADE7',
+                            fontSize: '20',
+                            alignment: 'center'
+                        }
+                    }
 
-                // }, ],
+                }, ],
 
 
                 responsive: true,
