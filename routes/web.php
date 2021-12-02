@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TipoAhorroController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AhorrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('ahorros', AhorrosController::class); //Controlador de SAH
 
 Route::get('/', function () {
     return view('plantilla');
 });
 
-
-Route::resource('/tipos_ahorros',TipoAhorroController::class);
+Route::resource('tipos_ahorros',TipoAhorroController::class);
 

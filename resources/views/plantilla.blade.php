@@ -12,16 +12,16 @@
     <title>@yield('titulo')</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     
     <!-- JQUERY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/cssPersonal.css">
-    <link rel="stylesheet" href="css/sasStyle.css">
+    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/cssPersonal.css')}}">
+    <link rel="stylesheet" href="{{asset('css/sasStyle.css')}}">
     
 @yield('css')
 
@@ -67,99 +67,37 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMovimientos"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span class="text-white">Tipificación de movimientos</span>
+                    <span class="text-white">Movimientos</span>
                 </a>
                 <div id="collapseMovimientos" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#collapseMovimientos">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Movimientos:</h6>
-                        <a class="collapse-item" href="utilities-color.html">De ahorros</a>
-                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
-                        <a class="collapse-item" href="utilities-animation.html">De capital</a>
-                        <a class="collapse-item" href="utilities-other.html">Excendentes</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span class="text-white">Instituciones</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAsociados"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-user"></i>
-                    <span class="text-white">Asociados</span>
-                </a>
-                <div id="collapseAsociados" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
-            </li>
-            <!-- Nav Item - Utilities Collapse Menu -->
-            {{-- <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li> --}}
-          
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Gestión
-            </div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGestion"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span class="text-white">Administrar</span>
-                </a>
-                <div id="collapseGestion" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#collapseGestion">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">apartados:</h6>
-                    {{--  --}}  
-                    <ul class="nav-item list-inline" style="padding: 0">
-                    <a class="collapse-item menuAhorros" href="#"  data-toggle="collapse" data-target="#collapseAhorros"
-                    aria-expanded="true" aria-controls="collapseUtilities" >
-                    Ahorros</a>
-                    <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#collapseAhorros">
-                    <a class="collapse-item" href="{{ route('tipos_ahorros.index') }}">Tipos</a>
-                    <a class="collapse-item" href="utilities-animation.html">Ahorros</a>
-                    <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
-                
-                </div>
-                </ul>
-                        {{--  --}}
-                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
-                        <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
-                        <a class="collapse-item" href="utilities-animation.html">De asociados</a>
+                        {{-- <a class="collapse-item" href="utilities-color.html">Ahorros</a> --}}
+                        <ul class="nav-item list-inline" style="padding: 0">
+                            <a class="collapse-item" data-toggle="collapse" data-target="#collapseAhorros"
+                            aria-expanded="true" aria-controls="collapseUtilities" >
+                            Ahorros</a>
+                            <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#collapseAhorros">
+                            <a class="collapse-item" href="{{route('tipos_ahorros.index')}}">Tipos ahorros</a>
+                            <a class="collapse-item" href="{{route('ahorros.index')}}">Ahorros</a>
+                            <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
+                        
+                        </div>
+                        </ul>
+                        <a class="collapse-item" href="utilities-border.html">Prestamos</a>
+                        <a class="collapse-item" href="utilities-animation.html">Asociados</a>
+                        <ul class="nav-item list-inline" style="padding: 0">
+                            <a class="collapse-item" data-toggle="collapse" data-target="#collapseCajas"
+                            aria-expanded="true" aria-controls="collapseUtilities" >
+                            Cajas</a>
+                            <div id="collapseCajas" class="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#collapseCajas">
+                            <a class="collapse-item" href="utilities-border.html">Instituciones</a>
+                            <a class="collapse-item" href="utilities-animation.html">Notificaciones</a>     
+                        </div>
+                        </ul>
                     </div>
                 </div>
             </li>
@@ -320,7 +258,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="{{asset('img/undraw_profile.svg')}}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -422,25 +360,25 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    {{-- <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script> --}}
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
 
     <!-- SAS js Functions -->
-    <script src="js/paginationNac.js"></script>
-
+    <script src="{{asset('js/paginationNac.js')}}"></script>
+    
     @yield('js')
 </body>
 
