@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 /* --------------------------------SAS--------------------------------*/
 
-Route::get('/', function () {
+/* Route::get('/inicio', function () {
     return view('plantilla');
-});
+}); */
 
 Route::get('/SAS', function () {
     return view('SAS.indexSAS');
@@ -55,7 +55,7 @@ Route::get('/estadoCivil', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/lineaCredito', [LineaCreditoController::class, 'index'])->name('Lineascreditos');
 Route::get('/nuevaLineaCredito', [LineaCreditoController::class, 'create'])->name('nuevaLineascreditos');
@@ -103,6 +103,3 @@ Route::get('/garantiasTasas', function () {
     return view('SPR.CreditosYGarantias.gestionGarantiasTasas');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
