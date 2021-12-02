@@ -1,129 +1,209 @@
 @extends('plantilla')
 @section('css')
-    
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
 @endsection
 @section('contenido')
 <div class="container py-5 mb-5">
     {{-- @include('clientes.new_cliente') --}}
+    <div class="container">
+      <a class="btn btn-primary btn-md " href="{{route('ahorros.create')}}">
+          <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
+          NUEVO AHORRO
+      </a>
+      <hr>
       <div class="row">
-        <div class="col">
-          <div class="card bg-default shadow ">
-            <!-- Card header -->
-            <div class="card-header border-0 bg-transparent">
-              <h3 class="text-dark mb-0">Lista de Ahorros Activos</h3>
-              <div class="d-flex justify-content-end">
-                <a href="{{route('ahorros.create')}}" class="btn btn-md btn-primary" >
-                  <i class="fas fa-piggy-bank" style="color:white; font-size:20px;"></i>
-                  Nuevo Ahorro
-                </a>
+          <div class="card" style="width: 100%;">
+              <div class="card-header">
+
+                  <i class="fas fa-table me-1"></i>
+                  LISTA DE AHORROS
+
               </div>
-            </div>
-          
-            <!--  table -->
-            <div class="table-responsive" >
-              <table id="tablaContactos" class="table align-items-center table-flush table-dark">
-                <thead class="thead-dark">
-                  <tr class=" text-center">
-                   
-                    <th >Cedula</th>
-                    <th >Nombre</th>
-                    <th >Apellido</th>
-                    <th >Contacto</th>
-                    <th >Acción</th>
-                  </tr>
-                </thead>
-                {{-- <tbody >
-                  @foreach($user_clientes as $item)
-                      
-                 <tr class="text-center">
-                 
-                  <td>
-                    {{$item->cedula}}
-                        <span class="name mb-0 text-sm">{{$item->cedula}}</span>
-                    </td>
-                    <td>
-                      {{$item->nombre}}
-                      <span class="name mb-0 text-sm">{{$item->nombre}}</span>
-                  </td>
-                  <td>
-                    {{$item->apellido}}
-                    <span class="name mb-0 text-sm">{{$item->apellido}}</span>
-                </td>
-                  <td class="budget">
-                    {{$item->telefono}}
-                    <span class="name mb-0 text-sm">{{$item->telefono}}</span>
-                    <i class="fab fa-whatsapp-square ver" ></i>
-                    </td>
-                <td>
-                  
-                  <form 
-                      action="{{ route('clientes.destroy', $item->id) }}"
-                      method="POST" class="form-eliminar">
-                      @csrf
-                          
-                      <div class="btn-group dropup">
-  
-                        <a class="btn btn-md" href="{{route('cuenta', $item->id)}}" style="padding: 3px 10px;border: PowderBlue 1px solid;border-radius: 20px;">
-                          <i class="far fa-eye" style="color:white; font-size:20px;"></i>
-                          <span class="nav-link-text" style="color: white;">Ver Cuenta</span>
-                        </a>
-  
-                        <button type="button" class="btn btn-md" data-toggle="modal" data-target="#exampleModalCenter{{$item->id}}">
-                          <i class="fas fa-edit"  style="color:white; font-size:20px;"></i>
-                        </button>
-                              <button type="button" data-toggle="modal"
-                                      data-target="#exampleModalCenter{{ $item->id_cliente}}"
-                                      class="btn btn-md text-decorated-none "><i
-                                          class="fas fa-edit"  style="font-size:20px;"></i></button>
-                      </div>
-  
-                      @method('DELETE')
-                      <button type="submit" class="btn btn-md" >
-                        <i class="fas fa-trash-alt" style=" color:white; font-size:20px;"></i></button>
-                  </form>
-                </td>
-              @include('clientes.edit_cliente')
-                </tr>
-                @endforeach
-                </tbody> --}}
-              </table>
-            </div>
-            <!-- Card footer -->
-           {{-- <div class="card-footer py-4 bg-default shadow">
-               <nav aria-label="...">
-                <ul class="pagination justify-content-end mb-0">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">
-                      <i class="fas fa-angle-left"></i>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
-                      <i class="fas fa-angle-right"></i>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div> --}}
+
+              <div class="card-body">
+                  <style>
+                      #tabla th {
+                          text-align: center;
+                          color: white;
+                      }
+
+                      #tabla thead {
+                          background-color: rgb(128, 128, 128);
+                      }
+
+                      #tabla {
+                          width: 100%;
+                      }
+
+                  </style>
+
+                  <table class="table table-hover display" id="tabla" style=" width:100%;">
+                      <thead>
+                          <tr>
+                              <th>Nombre</th>
+                              <th>Duracion</th>
+                              <th>Fec.Inicio</th>
+                              <th>Fec.Final</th>
+                              <th>Moneda</th>
+                              <th>Cuota</th>
+                              <th>Monto.Ahorro</th>
+                              <th>Estado</th>
+                              <th>Tipo.Ahorro</th>
+                              <th>Asociado</th>
+
+
+                          </tr>
+                      </thead>
+                      <tbody>
+
+                          {{-- @if (isset($tipos_ahorros))
+                              @foreach ($tipos_ahorros as $item)
+
+                                  <tr class="text-center">
+
+                                      <td>{{ $item->nombre }}</td>
+                                      <td>{{ $item->descripcion }}</td>
+
+
+                                      <td>
+                                          <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
+                                              method="POST" class="form-eliminar">
+                                              @csrf
+
+                                              <div class="btn-group dropup">
+
+                                                  <button type="button" class="btn btn-sm" data-toggle="modal"
+                                                      data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
+                                                      <i class="fas fa-edit"
+                                                          style="color:rgb(245, 178, 133); font-size:15px;"></i>
+                                                  </button>
+                                              </div>
+
+                                              @method('DELETE')
+                                              <button type="submit" class="btn btn-sm">
+                                                  <i class="fas fa-trash-alt"
+                                                      style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
+                                          </form>
+                                      </td>
+                                      @include('SAH.tipos_ahorros.tipos_edit')
+
+                                  </tr>
+
+                              @endforeach
+                          @endif --}}
+
+                      </tbody>
+                  </table>
+              </div>
           </div>
-        </div>
       </div>
+
+      {{-- @if (session()->has('mensaje'))
+          <div class="alert hide" style="z-index: 2;">
+              <span class="fas fa-check-circle"></span>
+              <span class="msg">{{ session('mensaje') }}</span>
+              <div class="close-btn">
+                  <span class="fas fa-times"></span>
+              </div>
+          </div>
+          <script>
+              $(document).ready(setTimeout(() => {
+                  mostrar_alerta();
+              }, 100));
+              $('.close-btn').click(function() {
+                  $('.alert').removeClass("show");
+                  $('.alert').addClass("hide");
+                  setTimeout(function() {
+                      //reacomoda el size de la pagina
+                      $('.alert').removeClass("showAlert");
+                      $('.alert').removeClass("hide");
+
+                  }, 900);
+              });
+          </script>
+      @endif --}}
+
+
+  </div>
     
 </div>
 @endsection
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.js"></script>
 {{-- <script src="assets/js/dataTable.js"></script> --}}
 {{-- <script >iniciarTablaContactos();</script> --}}
 {{-- <script src="assets/js/alertas.js"></script>     --}}
+{{-- tabla --}}
+
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script>
+<script>
+  var nombre;
+
+
+
+  $(function() {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+
+  $(document).ready(function() {
+      var table = $('#tabla').DataTable({
+          // dom: 'Bfrtip',
+          // buttons: [{
+          //     extend: 'pdf',
+          //     text: '<i class="fas fa-file-pdf text-danger"></i> PDF',
+          //     titleAttr: 'Exportar a excel',
+          //     className: 'btn btn-success',
+          //     customize: function(doc) {
+
+          //         doc.styles.title = {
+
+          //             color: '#41ADE7',
+          //             fontSize: '20',
+          //             alignment: 'center'
+          //         }
+          //     }
+
+          // }, ],
+
+
+          responsive: true,
+          "language": {
+              "lengthMenu": "Mostrar _MENU_ registros",
+              "zeroRecords": "No hay datos para mostrar - lo siento",
+              "info": "Mostrando pagina _PAGE_ de _PAGES_",
+              "infoEmpty": "No records available",
+              "infoFiltered": "(filtrado de _MAX_ registros totales)",
+              "search": "Buscar:",
+              "paginate": {
+                  "next": "Siguiente",
+                  "previous": "Anterior"
+              }
+          },
+
+      });
+
+
+  });
+
+
+  $('#tabla tr').on('click', function() {
+      nombre = $(this).find('td:nth-child(1)').html();
+
+  });
+</script>
 @endsection

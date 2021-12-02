@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ahorro;
 use Illuminate\Http\Request;
-
 class AhorrosController extends Controller
 {
     /**
@@ -13,6 +13,8 @@ class AhorrosController extends Controller
      */
     public function index()
     {
+        $ahorros=Ahorro::all();
+
         return view('SAH.ahorros.index_ahorro');
     }
 
