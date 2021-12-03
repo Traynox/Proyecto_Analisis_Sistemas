@@ -6,6 +6,7 @@
   {{-- <div class=""  > --}}
     {{-- <div class="container"> --}}
       <div class="card">
+        @include('SAH.ahorros.agregar_autorizado')
         <div class="card-header">
           <h5 class="card-title" >CREAR AHORRO</h5>
          
@@ -78,10 +79,10 @@
           
                             <i class="fas fa-table me-1"></i>
                             LISTA DE AUTORIZADOS
-                            <a class="btn btn-primary btn-sm ml-5" href="">
+                            <button type="button" class="btn btn-primary btn-sm ml-5" data-toggle="modal"style="color:white;" data-target="#exampleModalCenternewCliente">
                               <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
                               Agregar Autorizado
-                          </a>
+                            </button>
                         </div>
           
                         <div class="card-body">
