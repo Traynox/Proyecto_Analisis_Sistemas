@@ -37,7 +37,22 @@ class AhorrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
+        $nuevo_ahorro=new Credito();
+        $nuevo_ahorro->nombre="";
+        $nuevo_ahorro->duracion=$request->duracion;
+        $nuevo_ahorro->fecha_inicio=$request->fecha_inicio;
+        $nuevo_ahorro->fecha_final=$request->fecha_final;
+        $nuevo_ahorro->moneda=$request->moneda;
+        $nuevo_ahorro->monto_cuota=$request->monto_cuota;
+        $nuevo_ahorro->monto_ahorrado=0;
+        $nuevo_ahorro->estado=1;
+        $nuevo_ahorro->tipo_pago=" ";
+        $nuevo_ahorro->tipo_ahorro=$request->id_tipo_ahorro;
+        $nuevo_ahorro->asociado=$request->id_asociado;
+        $nuevo_ahorro->id_penalizacion=null;
+
+        // $nuevo_ahorro->save();
     }
 
     /**
