@@ -1,0 +1,12 @@
+.card {
+    border-radius: 0;
+    -webkit-box-shadow: 0 1px 25px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 25px 0 rgba(62, 73, 79, 0.08);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.card:hover {
+    transform: scale(1.03)!important;
+    cursor: pointer !important;
+}

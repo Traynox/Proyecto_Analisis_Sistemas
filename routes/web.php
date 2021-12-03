@@ -3,6 +3,7 @@
 use App\Http\Controllers\TipoAhorroController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AhorrosController;
+use App\Http\Controllers\ReportesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,5 @@ Route::get('/', function () {
 });
 
 Route::resource('tipos_ahorros',TipoAhorroController::class);
+Route::get('reportes', [ReportesController::class,'index'])->name('reportes.index');
 
