@@ -2,6 +2,11 @@
 @section('css')
     <link rel="stylesheet" href="css/cssLineaCredito.css">
 @endsection
+
+@section('titulo-contenido')
+        @include('SPR.barranavegacion')
+    @endsection
+
 @section('contenido')
     
 <div class="form-body-prestamos">

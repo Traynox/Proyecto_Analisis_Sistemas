@@ -70,35 +70,39 @@ Route::get('/editarLineaCredito', function () {
     return view('SPR.LineaCredito.editarLineaCredito');
 });
 
-Route::get('/reportes', function () {
+Route::get('/reportesSPR', function () {
     return view('SPR.Reportes.reportesSPR');
-});
+})->name('reportes_prestamos');
 
 Route::get('/arregloPago', function () {
     return view('SPR.Arreglos.arregloPago');
-});
+})->name('arreglos');
 
 Route::get('/cobroJudicial', function () {
     return view('SPR.Arreglos.cobroJudicial');
-});
+})->name('cobros');
 
 Route::get('/historialPago', function () {
     return view('SPR.Arreglos.historialDePago');
-});
+})->name('historial');
 
 Route::get('/tabladePago', function () {
     return view('SPR.Arreglos.tablaDePago');
-});
+})->name('tablasPagos');
 
 Route::get('/solicitud', function () {
     return view('SPR.CreditosYGarantias.solicitudCredito');
-});
+})->name('solicitudes');
 
 Route::get('/prestamosDoc', function () {
     return view('SPR.CreditosYGarantias.prestamosSobreDoc');
-});
+})->name('documentos');
 
 Route::get('/garantiasTasas', function () {
     return view('SPR.CreditosYGarantias.gestionGarantiasTasas');
-});
+})->name('garantias');
 
+
+Route::get('/SPR', function () {
+    return view('SPR.inicio');
+})->name('prestamos');

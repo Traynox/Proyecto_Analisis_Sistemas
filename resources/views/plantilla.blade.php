@@ -87,7 +87,7 @@
                         
                         </div>
                         </ul>
-                        <a class="collapse-item" href="utilities-border.html">Prestamos</a>
+                        <a class="collapse-item" href="{{route('prestamos')}}">Prestamos</a>
                         <a class="collapse-item" href="utilities-animation.html">Asociados</a>
                         <ul class="nav-item list-inline" style="padding: 0">
                             <a class="collapse-item" data-toggle="collapse" data-target="#collapseCajas"
@@ -119,7 +119,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes:</h6>
                         <a class="collapse-item" href="utilities-color.html"> De ahorros</a>
-                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
+                        <a class="collapse-item" href="{{route('reportes_prestamos')}}">De prestamos</a>
                         <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
                         <a class="collapse-item" href="utilities-animation.html">De asociados</a>
                     </div>

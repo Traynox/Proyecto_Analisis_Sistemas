@@ -1,11 +1,13 @@
-@extends('pantilla')
+@extends('plantilla')
 @section('css')
     
 @endsection
+@section('titulo-contenido')
+    @include('SPR.barranavegacion')
+@endsection
 @section('contenido')
     
-    <h1>pruebaSPR </h1>
-    
+
 @endsection
 @section('js')
     

@@ -3,6 +3,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
 @endsection
+@section('titulo-contenido')
+    @include('SPR.barranavegacion')
+@endsection
 @section('contenido')
 <div class="container">
     <a class=" btn btn-sm btn-primary" href="{{route('nuevaLineascreditos')}}"><i class="fas fa-plus"></i></a>
