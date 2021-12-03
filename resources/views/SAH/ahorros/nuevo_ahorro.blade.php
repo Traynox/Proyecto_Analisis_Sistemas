@@ -46,7 +46,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Moneda</label>
-                            <select class="custom-select mr-sm-2 " name="tipo_ahorro" id="tipo_ahorro">
+                            <select class="custom-select mr-sm-2 " name="moneda" id="moneda">
                               <option value="colon">Colon</option>
                               <option value="dolar">Dolar</option>  
                               </select>                        
@@ -56,7 +56,7 @@
                     <div class="col-md-6 col-sm-12">
                       <div class="mb-3">
                         <label class="form-label">Duracion</label>
-                        <select class="custom-select mr-sm-2 " name="tipo_ahorro" id="tipo_ahorro">
+                        <select class="custom-select mr-sm-2 " name="duracion" id="duracion">
                           <option value="colon">Colon</option>
                           <option value="dolar">Dolar</option>  
                           </select>                        
@@ -70,175 +70,6 @@
                         <input type="date" value="" class="form-control mb-2" name="fech_final"  required>         
                       </div>
                     </div>
-                    
-                    <div class="col-md-6 col-sm-12">
-                      
-                      <div class="card" style="width: 100%;">
-                        <div class="card-header">
-          
-                            <i class="fas fa-table me-1"></i>
-                            LISTA DE AUTORIZADOS
-                            <a class="btn btn-primary btn-sm ml-5" href="">
-                              <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
-                              Agregar Autorizado
-                          </a>
-                        </div>
-          
-                        <div class="card-body">
-                            <style>
-                                #tablaAutorizados th {
-                                    text-align: center;
-                                    color: white;
-                                }
-          
-                                #tablaAutorizados thead {
-                                    background-color: rgb(128, 128, 128);
-                                }
-          
-                                #tablaAutorizados {
-                                    width: 100%;
-                                }
-          
-                            </style>
-          
-                            <table class="table table-hover display" id="tablaAutorizados" >
-                                <thead>
-                                    <tr>
-                                        <th>Cedula</th>
-                                        <th>Nombre</th>
-                                        <th>Telefono</th>
-                                        
-          
-          
-                                    </tr>
-                                </thead>
-                                <tbody>
-          
-                                    {{-- @if (isset($tipos_ahorros))
-                                        @foreach ($tipos_ahorros as $item)
-          
-                                            <tr class="text-center">
-          
-                                                <td>{{ $item->nombre }}</td>
-                                                <td>{{ $item->descripcion }}</td>
-          
-          
-                                                <td>
-                                                    <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
-                                                        method="POST" class="form-eliminar">
-                                                        @csrf
-          
-                                                        <div class="btn-group dropup">
-          
-                                                            <button type="button" class="btn btn-sm" data-toggle="modal"
-                                                                data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
-                                                                <i class="fas fa-edit"
-                                                                    style="color:rgb(245, 178, 133); font-size:15px;"></i>
-                                                            </button>
-                                                        </div>
-          
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm">
-                                                            <i class="fas fa-trash-alt"
-                                                                style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
-                                                    </form>
-                                                </td>
-                                                @include('SAH.tipos_ahorros.tipos_edit')
-          
-                                            </tr>
-          
-                                        @endforeach
-                                    @endif --}}
-          
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 ">
-                     
-                      <div class="card" style="width: 100%;">
-                        <div class="card-header">
-          
-                            <i class="fas fa-table me-1"></i>
-                            LISTA DE BENEFICIARIOS  
-                            <a class="btn btn-primary btn-sm ml-5" href="">
-                              <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
-                              Agregar Beneficiario
-                          </a>
-                        </div>
-          
-                        <div class="card-body">
-                            <style>
-                                #tablaBeneficiarios th {
-                                    text-align: center;
-                                    color: white;
-                                }
-          
-                                #tablaBeneficiarios thead {
-                                    background-color: rgb(128, 128, 128);
-                                }
-          
-                                #tablaBeneficiarios {
-                                    width: 100%;
-                                }
-          
-                            </style>
-          
-                            <table class="table table-hover display" id="tablaBeneficiarios" >
-                                <thead>
-                                    <tr>
-                                        <th>Cedula</th>
-                                        <th>Nombre</th>
-                                        <th>Telefono</th>
-                                        
-          
-          
-                                    </tr>
-                                </thead>
-                                <tbody>
-          
-                                    {{-- @if (isset($tipos_ahorros))
-                                        @foreach ($tipos_ahorros as $item)
-          
-                                            <tr class="text-center">
-          
-                                                <td>{{ $item->nombre }}</td>
-                                                <td>{{ $item->descripcion }}</td>
-          
-          
-                                                <td>
-                                                    <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
-                                                        method="POST" class="form-eliminar">
-                                                        @csrf
-          
-                                                        <div class="btn-group dropup">
-          
-                                                            <button type="button" class="btn btn-sm" data-toggle="modal"
-                                                                data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
-                                                                <i class="fas fa-edit"
-                                                                    style="color:rgb(245, 178, 133); font-size:15px;"></i>
-                                                            </button>
-                                                        </div>
-          
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm">
-                                                            <i class="fas fa-trash-alt"
-                                                                style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
-                                                    </form>
-                                                </td>
-                                                @include('SAH.tipos_ahorros.tipos_edit')
-          
-                                            </tr>
-          
-                                        @endforeach
-                                    @endif --}}
-          
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    </div>
             
         </div>
         {{-- <button type="submit" class="btn btn-primary">Guardar</button> --}}
@@ -247,7 +78,7 @@
         </div>
 
         <div class="card-footer text-center">
-          <button type="submit" class="btn btn-lg btn-success">Guardar</button>
+          <button type="submit" class="btn btn-lg btn-success">Siguiente</button>
         </div>
         </form>
       </div>
