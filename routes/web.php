@@ -24,3 +24,9 @@ Route::get('/', function () {
 Route::resource('tipos_ahorros',TipoAhorroController::class);
 Route::get('reportes', [ReportesController::class,'index'])->name('reportes.index');
 
+Route::post('reportes/reporte-9-1',[ReportesController::class,'reporte_9_1'])->name('pdf.reporte_9_1');
+Route::post('reportes/reporte-9-8',[ReportesController::class,'reporte_9_8'])->name('pdf.reporte_9_8');
+
+Route::get('reportes/reporte-9-1',[ReportesController::class,'vistaReporte_9_1'])->name('show.reporte_9_1');
+Route::get('reportes/reporte-9-8',[ReportesController::class,'vistaReporte_9_8'])->name('show.reporte_9_8');
+

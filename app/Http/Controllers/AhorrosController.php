@@ -38,7 +38,7 @@ class AhorrosController extends Controller
     public function store(Request $request)
     {
         return $request;
-        $nuevo_ahorro=new Credito();
+        $nuevo_ahorro=new Ahorro();
         $nuevo_ahorro->nombre="";
         $nuevo_ahorro->duracion=$request->duracion;
         $nuevo_ahorro->fecha_inicio=$request->fecha_inicio;
@@ -51,8 +51,9 @@ class AhorrosController extends Controller
         $nuevo_ahorro->tipo_ahorro=$request->id_tipo_ahorro;
         $nuevo_ahorro->asociado=$request->id_asociado;
         $nuevo_ahorro->id_penalizacion=null;
-
-        // $nuevo_ahorro->save();
+    // $nuevo_ahorro->save();
+        return view('autorizados');
+    
     }
 
     /**

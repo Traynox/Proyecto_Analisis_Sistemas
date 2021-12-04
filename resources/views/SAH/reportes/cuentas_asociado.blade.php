@@ -1,6 +1,6 @@
 @extends('plantilla')
 @section('titulo')
-    reportes autorizados y beneficiarios
+    reportes cuentas de asociado
 @endsection
 @section('css')
     
@@ -11,11 +11,11 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Cuenta de asociado</h5>
+                <h5 class="card-title">Cédula del asociado</h5>
               
-                    <form action="{{route('pdf.reporte_9_1')}}" class="form-group" method="POST">
+                    <form action="{{route('pdf.reporte_9_8')}}" class="form-group" method="POST">
                         @csrf
-                    <input type="text" name="nombre" class="form-control" placeholder="Cuenta ahorro" required>
+                    <input type="text" name="cedula" class="form-control" placeholder="Cédula" required>
                     <div class="d-flex justify-content-center">
                         <a href="{{route('reportes.index')}}" class="btn btn-danger my-2 mr-4">Volver</a>
                         <button type="submit" class="btn btn-primary my-2">Generar reporte</button>

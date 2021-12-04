@@ -38,64 +38,66 @@
                       }
 
                   </style>
-
-                  <table class="table table-hover display" id="tabla" style=" width:100%;">
-                      <thead>
-                          <tr>
-                              <th>Nombre</th>
-                              <th>Duracion</th>
-                              <th>Fec.Inicio</th>
-                              <th>Fec.Final</th>
-                              <th>Moneda</th>
-                              <th>Cuota</th>
-                              <th>Monto.Ahorro</th>
-                              <th>Estado</th>
-                              <th>Tipo.Ahorro</th>
-                              <th>Asociado</th>
-
-
-                          </tr>
-                      </thead>
-                      <tbody>
-
-                          {{-- @if (isset($tipos_ahorros))
-                              @foreach ($tipos_ahorros as $item)
-
-                                  <tr class="text-center">
-
-                                      <td>{{ $item->nombre }}</td>
-                                      <td>{{ $item->descripcion }}</td>
+<div class="table-responsive">
+    
+    <table class="table table-hover display" id="tabla" style=" width:100%;">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Duracion</th>
+                <th>Fec.Inicio</th>
+                <th>Fec.Final</th>
+                <th>Moneda</th>
+                <th>Cuota</th>
+                <th>Monto.Ahorro</th>
+                <th>Estado</th>
+                <th>Tipo.Ahorro</th>
+                <th>Asociado</th>
 
 
-                                      <td>
-                                          <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
-                                              method="POST" class="form-eliminar">
-                                              @csrf
+            </tr>
+        </thead>
+        <tbody>
 
-                                              <div class="btn-group dropup">
+            {{-- @if (isset($tipos_ahorros))
+                @foreach ($tipos_ahorros as $item)
 
-                                                  <button type="button" class="btn btn-sm" data-toggle="modal"
-                                                      data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
-                                                      <i class="fas fa-edit"
-                                                          style="color:rgb(245, 178, 133); font-size:15px;"></i>
-                                                  </button>
-                                              </div>
+                    <tr class="text-center">
 
-                                              @method('DELETE')
-                                              <button type="submit" class="btn btn-sm">
-                                                  <i class="fas fa-trash-alt"
-                                                      style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
-                                          </form>
-                                      </td>
-                                      @include('SAH.tipos_ahorros.tipos_edit')
+                        <td>{{ $item->nombre }}</td>
+                        <td>{{ $item->descripcion }}</td>
 
-                                  </tr>
 
-                              @endforeach
-                          @endif --}}
+                        <td>
+                            <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
+                                method="POST" class="form-eliminar">
+                                @csrf
 
-                      </tbody>
-                  </table>
+                                <div class="btn-group dropup">
+
+                                    <button type="button" class="btn btn-sm" data-toggle="modal"
+                                        data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
+                                        <i class="fas fa-edit"
+                                            style="color:rgb(245, 178, 133); font-size:15px;"></i>
+                                    </button>
+                                </div>
+
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm">
+                                    <i class="fas fa-trash-alt"
+                                        style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
+                            </form>
+                        </td>
+                        @include('SAH.tipos_ahorros.tipos_edit')
+
+                    </tr>
+
+                @endforeach
+            @endif --}}
+
+        </tbody>
+    </table>
+</div>
               </div>
           </div>
       </div>

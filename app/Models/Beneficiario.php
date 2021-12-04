@@ -12,6 +12,15 @@ class Beneficiario extends Model
     public $timestamps=false;
 
     public function ahorros(){
-        return $this->hasMany(Ahorro::class);
+        return $this->hasMany(Ahorro::class,'id_ahorro');
+    }
+    public function ahorro(){
+        return $this->belongsTo(Ahorro::class,'id_ahorro');
+    }
+    public function nacionalidad(){
+        return $this->belongsTo(Nacionalidad::class,'id_nacionalidad');
+    }
+    public function parentesco(){
+        return $this->belongsTo(Parentesco::class,'id_parentesco');
     }
 }

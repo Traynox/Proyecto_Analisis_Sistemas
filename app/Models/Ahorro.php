@@ -17,6 +17,12 @@ class Ahorro extends Model
     }
     public function beneficiarios()
     {
-        return $this->belongsToMany(Beneficiario::class,'ahorros_beneficiarios','id_ahorro','id_beneficiario');
+        return $this->belongsToMany(Beneficiario::class,'ahorros_benefeciarios','id_ahorro','id_beneficiario')
+        ->withPivot('id_ahorro','id_beneficiario','porcentaje');
+    }
+
+    public function asociado()
+    {
+        return $this->belongsTo(Asociado::class,'id_asociado');
     }
 }
