@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Asociado;
 use App\Models\LineaCredito;
 use App\Models\tipoCredito;
-use finfo;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class LineaCreditoController extends Controller
 {
@@ -45,5 +46,11 @@ class LineaCreditoController extends Controller
         $lineaCredito->delete();
 
         return back();
+    }
+
+    public function pdf()
+    {
+        $pdf = PDF::loadView('pdf');
+        return $pdf->download('Reporte.pdf');    
     }
 }

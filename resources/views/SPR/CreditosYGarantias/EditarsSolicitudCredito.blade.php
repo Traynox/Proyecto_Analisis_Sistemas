@@ -14,11 +14,12 @@
                 <div class="form-items">
                     <h3>Solicitud de Credito</h3>
                     <p>Llene los datos correspondientes</p>
-                    <form action="{{route('crearSolicitud')}}" method="POST" class="requires-validation" enctype="multipart/form-data">
+                    <form action="{{route('updateSolicitud', $solicitud)}}" method="POST" class="requires-validation" enctype="multipart/form-data">
+                        @method('PUT')
                         @csrf
                         <div class="col-md-12"> 
                             <select class="form-select" name="asociado" required> 
-                                  <option selected disabled value="">Asociado</option>
+                                  <option selected value="{{$solicitud->asociado->id_asociado}}">{{$solicitud->asociado->nombre_completo}}</option>
                                   @foreach ($asociados as $item)
                                     <option value="{{$item->id_asociado}}">{{$item->nombre_completo}}</option>                                      
                                   @endforeach
@@ -27,12 +28,39 @@
 
                         <div class="col-md-12"> 
                             <select class="form-select" name="tipo" required> 
-                                  <option selected disabled value="">Tipo</option>
+                                  <option selected value="{{$solicitud->tipo->id_tipo_credito}}">{{$solicitud->tipo->nombre}}</option>
                                   @foreach ($tipos as $item)
                                     <option value="{{$item->id_tipo_credito}}">{{$item->nombre}}</option>                                      
                                   @endforeach
                             </select>
                        </div>
+
+                       @php
+                           switch ($solicitud->estado) {
+                               case 0:
+                                   $est = 'Rechazada';
+                                   break;
+                               
+                                   case 1:
+                                   $est = 'En revision';
+                                   break;
+
+                                   case 2:
+                                   $est = 'Aprovada';
+                                   break;
+                           }
+                       @endphp
+
+                       <div class="col-md-12"> 
+                        <select class="form-select" name="estado" required> 
+                              <option selected value="{{$solicitud->estado}}">@php
+                                  echo $est;
+                              @endphp</option>
+                                <option value="0">Rechazada</option>                                      
+                                <option value="1">En revision</option>                                      
+                                <option value="2">Aprovada</option>                                      
+                        </select>
+                   </div>
 
                     <div class="col-md-12 mt-2">
                     <div class="input-group ">
@@ -51,9 +79,6 @@
                    
                     </div>
 
-
-
-
                     <div class="col-md-12 mt-2">
                         <div class="input-group ">
                             <div class="input-group-prepend">
@@ -67,11 +92,8 @@
                                    <button id="" class="btn btn-outline-danger ml-2" href="" >
                                         <i class="far fa-trash-alt"></i>
                                     </button>
-                        </div>
-                            
+                        </div>                          
                     </div>
-
-
 
                     <div class="col-md-12 mt-2">
                     <div class="input-group ">
@@ -86,15 +108,9 @@
                                    <button id="" class="btn btn-outline-danger ml-2" href="" >
                                         <i class="far fa-trash-alt"></i>
                                     </button>
-                        </div>
-
-                            
+                        </div>                          
                     </div>
-
-
-
-
-                     <div class="col-md-12 mt-2">
+                    <div class="col-md-12 mt-2">
                      <div class="input-group ">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupFileAddon01"> <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i></span>
@@ -144,12 +160,8 @@
                         </div>
 
                      </div>
-
-                      
-              
-
                         <div class="form-button mt-3 text-center">
-                            <button id="submit" type="submit" class="btn btn-warning">Guardar</button>
+                            <button id="submit" type="submit" class="btn btn-warning">Actualizar</button>
                         </div>
                     </form>
                 </div>

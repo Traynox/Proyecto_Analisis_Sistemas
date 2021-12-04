@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LineaCreditoController;
+use App\Http\Controllers\SolicitudController;
 use App\Models\LineaCredito;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -90,9 +91,14 @@ Route::get('/tabladePago', function () {
     return view('SPR.Arreglos.tablaDePago');
 })->name('tablasPagos');
 
-Route::get('/solicitud', function () {
-    return view('SPR.CreditosYGarantias.solicitudCredito');
-})->name('solicitudes');
+Route::get('/solicitudes', [SolicitudController::class, 'index'])->name('vistaSolicitudes');
+Route::get('/solicitud', [SolicitudController::class, 'create'])->name('solicitudes');
+Route::post('/crearSolicitud', [SolicitudController::class, 'store'])->name('crearSolicitud');
+Route::delete('/eliminarSolicitud/{id_solicitud}', [SolicitudController::class, 'delete'])->name('eliminarSolicitud');
+Route::get('/editSolicitud_{id_solicitud}', [SolicitudController::class, 'edit'])->name('editSolicitud');
+Route::put('/updateSolicitud/{id_solicitud}', [SolicitudController::class, 'update'])->name('updateSolicitud');
+
+
 
 Route::get('/prestamosDoc', function () {
     return view('SPR.CreditosYGarantias.prestamosSobreDoc');
@@ -102,7 +108,6 @@ Route::get('/garantiasTasas', function () {
     return view('SPR.CreditosYGarantias.gestionGarantiasTasas');
 })->name('garantias');
 
+Route::get('/SPR', [SolicitudController::class, 'indexPrestamos'])->name('prestamos');
 
-Route::get('/SPR', function () {
-    return view('SPR.inicio');
-})->name('prestamos');
+Route::get('/reportePDF', [LineaCreditoController::class, 'pdf'])->name('generarPDF');
