@@ -12,8 +12,9 @@
 @section('contenido')
     
 <div class="container p-5 text-center">
-<a href="{{route('li_caj')}}" class="btn btn-primary btn-lg">Lista de cajeros</a>
-<a href="{{route('estado_cajas')}}" class="btn btn-primary btn-lg">Estado de cajas</a>
+<a href="{{route('li_caj')}}" class="btn btn-primary btn-lg">PDF Lista de cajeros</a>
+<a href="{{route('estado_cajas')}}" class="btn btn-primary btn-lg">PDF Estado de cajas</a>
+<a href="{{route('lis_noti')}}" class="btn btn-primary btn-lg">PDF Notificaciones</a>
 </div>
 
 <div class="container mt-3">

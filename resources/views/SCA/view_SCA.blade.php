@@ -13,8 +13,8 @@
 @endsection
 
 @section('contenido')
-    <div class="container-fluid bg-dark text-light">
-        <h5 class="text-center p-2"><i class="fas fa-building"></i> Instituciones</h5>
+    <div class="container-fluid">
+        <h5 class="text-center p-2"><i class="fas fa-building"></i> INSTITUCIONES</h5>
     </div>
 
     <div class="container-fluid mt-3">

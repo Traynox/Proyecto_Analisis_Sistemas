@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('plantilla');
 });
 
+Route::get('/notificaciones', function () {
+    return view('SCA.notificaciones.gestionar_notificaciones');
+})->name('notificaciones');
 
 Route::get('/instituciones', function () {
     return view('SCA.view_SCA');
@@ -27,6 +30,9 @@ Route::get('/planillas', function () {
     return view('SCA.instituciones.registrar_planilla');
 })->name('PLANILLAS');
 
+Route::get('/pagos-pendientes', function () {
+    return view('SCA.instituciones.aplicar_pago');
+})->name('PAGOS_PLANILLAS');
 
 Route::get('/asociados-por-institucion', function () {
     return view('SCA.instituciones.view_asociados');
@@ -38,6 +44,7 @@ Route::get('/reportes-otros', function () {
 })->name('reportes-extra');
 
 
+/* PARA PDF */
 /* PARA OBTENER LISTA DE INSTITUCIONES */
 Route::get('PDF-INSTITUCIONES', 'App\Http\controllers\PDFController@lista_instituciones')->name('li_ins');
 
@@ -49,3 +56,6 @@ Route::get('/PDF-CAJEROS', 'App\Http\controllers\PDFController@lista_cajeros')->
 
 /* PARA OBTENER LISTA DE CAJAS DE LA INSTITUCION */
 Route::get('/PDF-ESTADO-CAJAS', 'App\Http\controllers\PDFController@estado_cajas')->name('estado_cajas');
+
+/* PARA OBTENER LISTA DE NOTIFICACIONES QUE SE ENVÍAN EN LA COMPAÑIA*/
+Route::get('/PDF-LISTA-NOTIFICACIONES', 'App\Http\controllers\PDFController@lista_notificaciones')->name('lis_noti');

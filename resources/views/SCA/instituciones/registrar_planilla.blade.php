@@ -46,8 +46,9 @@
             </div>
             <div class="card-body">
 
-                <form class="row g-3" {{-- method="POST" action="{{url('planillas')}}" --}}>
-                    {{-- @csrf --}}
+                <form class="row g-3" method="POST" action="{{route('asociados_por_institucion')}}">
+                    @csrf
+                    @method('GET')
                     <div class="col-md-6">
                       <label for="inputEmail4" class="form-label">Cuenta Asociado</label>
                       <input class="form-control" type="text" name="" id="" placeholder="# Cuenta">

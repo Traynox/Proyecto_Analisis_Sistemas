@@ -189,5 +189,21 @@ class PDFController extends Controller
       return $pdf->stream('');
     }
 
+    public function lista_notificaciones(){
+      $data="Lista de Notificaciones de la compañia";
+      $notificaciones=array(
+        [
+          "nombre"=>'mensaje 1',
+          "tipo"=>'Leyenda'
+        ],
+        [
+          "nombre"=>'mensaje 2',
+          "tipo"=>'Mensaje Emergente'
+        ],
+
+      );
+      $pdf = PDF::loadView('SCA.PDF.view_lista_notificaciones',compact(['data','notificaciones']));
+      return $pdf->stream('');
+    }
 
 }

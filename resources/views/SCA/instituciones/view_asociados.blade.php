@@ -22,6 +22,7 @@
         'fecha_ingreso'=>'19/11/2021',
         'profesion'=>'Analista',
         'contacto'=>'77777777 | angie@gmail.com',
+        'estado_pago'=>'false',
       ],
       [
         'codigo'=>'456',
@@ -29,6 +30,7 @@
         'fecha_ingreso'=>'19/11/2021',
         'profesion'=>'Diseñadora',
         'contacto'=>'88888888 | wendy@gmail.com',
+        'estado_pago'=>'true',
       ],
       [
         'codigo'=>'789',
@@ -36,6 +38,7 @@
         'fecha_ingreso'=>'19/11/2021',
         'profesion'=>'Desarrollador',
         'contacto'=>'99999999 | emanuel@gmail.com',
+        'estado_pago'=>'false',
       ],
 
       [
@@ -44,6 +47,7 @@
         'fecha_ingreso'=>'19/11/2021',
         'profesion'=>'Gerente',
         'contacto'=>'89898987 | delia@gmail.com',
+        'estado_pago'=>'true',
       ],
 
       [
@@ -52,6 +56,7 @@
         'fecha_ingreso'=>'19/11/2021',
         'profesion'=>'Secretario',
         'contacto'=>'78767876 | pedrito@gmail.com',
+        'estado_pago'=>'false',
       ],
 
     );
@@ -73,28 +78,38 @@
          <table class="table table-bordered" id="tabla_asoc">
            <thead class="bg-dark text-light">
              <tr>
-                <th>Código</th>
+                <th style="width: 1%">Código</th>
                 <th>Nombre Completo</th>
-                <th>Fecha Ingreso</th>
+               {{--   <th>Fecha Ingreso</th>  --}}
                 <th>Profesión</th>
                 <th>Contacto</th> {{--  TELEFONO | CORREO  --}}
-                <th>Generar Planilla</th>
+                <th style="width: 12%">Generar Planilla</th>
+                <th>Estado</th>
              </tr>
            </thead>
            <tbody>
              @foreach ($arrayAsoc as $item)
              <tr>
-               <td>{{$item['codigo']}}</td>
+               <td class="text-center">{{$item['codigo']}}</td>
                <td>{{$item['nombre_completo']}}</td>
-               <td>{{$item['fecha_ingreso']}}</td>
+               {{--  <td>{{$item['fecha_ingreso']}}</td>  --}}
                <td>{{$item['profesion']}}</td>
                <td>{{$item['contacto']}}</td>
                <td class="text-center">
+                @if ($item['estado_pago']=="false")
                  <form method="POST" action="{{route('PLANILLAS')}}">
                    @csrf
                    @method('GET')
-                   <button class="btn btn-sm btn-success"><i class="fas fa-clipboard-list"></i></button>
+                   <button class="btn btn-sm btn-primary text-light"><i class="fas fa-clipboard-list"></i></button>
                  </form>
+                 @endif
+               </td>
+               <td>
+                 @if ($item['estado_pago']=="false")
+                     <button onclick="return confirm ('Aplicar pago asociado (se envia correo con pdf)')" class="btn btn-sm btn-danger">PAGAR</button>
+                     @else
+                     <h6><span class="badge badge-success text-uppercase">pagado</span></h6>
+                 @endif
                </td>
              </tr>
              @endforeach

@@ -94,8 +94,8 @@
                             Cajas</a>
                             <div id="collapseCajas" class="collapse" aria-labelledby="headingUtilities"
                             data-parent="#collapseCajas">
-                            <a class="collapse-item" href="utilities-border.html">Instituciones</a>
-                            <a class="collapse-item" href="utilities-animation.html">Notificaciones</a>     
+                            <a class="collapse-item" href="{{route('instituciones')}}">Instituciones</a>
+                            <a class="collapse-item" href="{{route('notificaciones')}}">Notificaciones</a>     
                         </div>
                         </ul>
                     </div>
@@ -119,7 +119,7 @@
                         <h6 class="collapse-header">Reportes:</h6>
                         <a class="collapse-item" href="utilities-color.html"> De ahorros</a>
                         <a class="collapse-item" href="utilities-border.html">De prestamos</a>
-                        <a class="collapse-item" href="{{route('reportes-extra')}}">De Cajas *</a>
+                        <a class="collapse-item" href="{{route('reportes-extra')}}">De Cajas</a>
                         <a class="collapse-item" href="utilities-animation.html">De asociados</a>
                     </div>
                 </div>
