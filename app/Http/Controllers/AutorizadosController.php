@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ahorro;
 use App\Models\Autorizado;
+use App\Models\Nacionalidad;
+use App\Models\Identificacion;
+use App\Models\Parentesco;
+
 
 class AutorizadosController extends Controller
 {
@@ -38,17 +42,17 @@ class AutorizadosController extends Controller
     {
         $autorizado=new Autorizado();
         $autorizado->nombre=$request->nombre;
-        $autorizado->primer_apellido=$request->nombre;
-        $autorizado->segundo_apellido=$request->fecha;
+        $autorizado->primer_apellido=$request->primer_apellido;
+        $autorizado->segundo_apellido=$request->segundo_apellido;
         $autorizado->cedula=$request->cedula;
-        $autorizado->telefono=$request->nombre;
-        $autorizado->id_nacionalidad=$request->fecha;
-        $autorizado->id_identificacion=$request->fecha;
-        $autorizado->id_parentesco=$request->fecha;
+        $autorizado->telefono=$request->telefono;
+        $autorizado->id_nacionalidad=$request->nacionalidad;
+        $autorizado->id_identificacion=$request->identificacion;
+        $autorizado->id_parentesco=$request->parentesco;
 
         
-        $autorizado->save();
-        return  redirect()->route('autorizados.index');
+        $ahorro->autorizados()->attach($arrayId);
+        return  back();
     }
 
     /**
@@ -60,7 +64,11 @@ class AutorizadosController extends Controller
     public function show($id)
     {
         $ahorro=Ahorro::find($id);
-        return view('SAH.ahorros.index_autorizados_beneficiarios',compact('ahorro'));
+        $nacionalidades=Nacionalidad::all();
+        $identificaciones=Identificacion::all();
+        $parentescos=Parentesco::all();
+
+        return view('SAH.ahorros.index_autorizados_beneficiarios',compact('ahorro','nacionalidades','identificaciones','parentescos'));
     }
 
     /**

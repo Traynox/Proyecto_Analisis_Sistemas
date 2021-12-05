@@ -13,7 +13,8 @@ class Ahorro extends Model
 
     public function autorizados()
     {
-        return $this->belongsToMany(Autorizado::class,'ahorros_autorizados','id_ahorro','id_autorizado');
+        return $this->belongsToMany(Autorizado::class,'ahorros_autorizados','id_ahorro','id_autorizado')
+        ->withPivot('id_ahorro','id_autorizado');
     }
     public function beneficiarios()
     {
@@ -24,5 +25,9 @@ class Ahorro extends Model
     public function asociado()
     {
         return $this->belongsTo(Asociado::class,'id_asociado');
+    }
+    public function tipo_ahorro()
+    {
+        return $this->belongsTo(Tipo_ahorro::class,'id_tipo_ahorro');
     }
 }
