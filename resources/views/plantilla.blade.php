@@ -82,7 +82,7 @@
                             data-parent="#collapseAhorros">
                             <a class="collapse-item" href="{{route('tipos_ahorros.index')}}">Tipos ahorros</a>
                             <a class="collapse-item" href="{{route('ahorros.index')}}">Ahorros</a>
-                            <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
+                            <a class="collapse-item" href="{{route('tasa_interes.index')}}">Tasas de interes</a>
                         
                         </div>
                         </ul>
