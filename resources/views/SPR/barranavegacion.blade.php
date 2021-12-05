@@ -12,7 +12,7 @@
           <a class="nav-link text-center" href="{{route('historial')}}">Historial de pagos</a>
           <a class="nav-link text-center" href="{{route('tablasPagos')}}">Tablas de pago</a>
           <a class="nav-link text-center" href="{{route('vistaSolicitudes')}}">Solicitudes de credito</a>
-          <a class="nav-link text-center" href="{{route('garantias')}}">Garantias de tasas</a>
+          <a class="nav-link text-center" href="{{route('vistaGarantias')}}">Garantias y Tasas</a>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GarantiaController;
 use App\Http\Controllers\LineaCreditoController;
 use App\Http\Controllers\SolicitudController;
 use App\Models\LineaCredito;
@@ -104,9 +105,10 @@ Route::get('/prestamosDoc', function () {
     return view('SPR.CreditosYGarantias.prestamosSobreDoc');
 })->name('documentos');
 
-Route::get('/garantiasTasas', function () {
-    return view('SPR.CreditosYGarantias.gestionGarantiasTasas');
-})->name('garantias');
+Route::get('/crearGarantiasTasas', [GarantiaController::class, 'create'])->name('garantias');
+Route::get('/garantiasTasas', [GarantiaController::class, 'index'])->name('vistaGarantias');
+Route::post('/crearGarantiasTasas', [GarantiaController::class, 'store'])->name('crearGarantiasTasas');
+
 
 Route::get('/SPR', [SolicitudController::class, 'indexPrestamos'])->name('prestamos');
 
