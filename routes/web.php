@@ -11,6 +11,16 @@ use App\Http\Controllers\AutorizadosController;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\TasaInteresController;
 
+use App\Http\Controllers\PaisesController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\IdentificacionesController;
+use App\Http\Controllers\ProfesionesController;
+use App\Http\Controllers\EstadosController;
+use App\Http\Controllers\EstadoCivilController;
+use App\Http\Controllers\FamiliaresController;
+use App\Http\Controllers\ParentescoController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -131,6 +141,43 @@ Route::get('/asociados-por-institucion', function () {
     return view('SCA.instituciones.view_asociados');
 })->name('asociados_por_institucion');
 
+Route::get('/menuSAS', [MenuController::class, 'cargar_menu'])->name('menu_sas');
+
+Route::get('/nacionalidades', [MenuController::class, 'vista_nacionalidades'])->name('vNacionalidades');
+Route::post('/nacionalidades/registrar', [PaisesController::class, 'registrar_pais'])->name('rPais');
+Route::get('/nacionalidades/editNac/{id}', [PaisesController::class, 'editar_pais'])->name('editPais');
+Route::put('/nacionalidades/editNac/{id}', [PaisesController::class, 'actualizar_pais'])->name('actPais');
+
+
+
+Route::get('/identificaciones', [MenuController::class, 'vista_identificaciones'])->name('vIdentificaciones');
+Route::post('/identificaciones/registrar', [IdentificacionesController::class, 'registrar_tipo_id'])->name('rTipoId');
+
+
+Route::get('/profesiones', [MenuController::class, 'vista_profesiones'])->name('vProfesiones');
+Route::post('profesiones/registrar', [ProfesionesController::class, 'registrar_profesion'])->name('rProfesion');
+
+
+Route::get('/estados', [MenuController::class, 'vista_estados'])->name('vEstados');
+Route::post('/estados/registrar', [EstadosController::class, 'registrar_estado'])->name('rEstado');
+
+
+Route::get('/estadoCivil', [MenuController::class, 'vista_estado_Civiles'])->name('vECiviles');
+Route::post('estadoCivil/registrar', [EstadoCivilController::class, 'registrar_estado_civil'])->name('rECivil');
+
+
+Route::get('/parentescos', [MenuController::class, 'vista_parentescos'])->name('vParentescos');
+Route::post('/parentescos/registrar', [ParentescoController::class, 'registrar_parentesco'])->name('rParentesco');
+
+
+Route::get('/familiares', [MenuController::class, 'vista_familiares'])->name('vFamiliares');
+Route::post('/familiares/registrar', [FamiliaresController::class, 'registrar_familiar'])->name('rFamiliar');
+
+Route::get('/beneficiarios', [MenuController::class, 'vista_beneficiarios'])->name('vBeneficiarios');
+
+Route::get('/SAS', function () {
+    return view('SAS.indexSAS');
+});
 
 Route::get('/reportes-otros', function () {
     return view('SCA.otros_reportes');
@@ -143,6 +190,12 @@ Route::get('PDF-INSTITUCIONES', 'App\Http\controllers\PDFController@lista_instit
 
 /* PARA OBTENER LISTA DE EMPLEADOS DE X INSTITUCION */
 Route::get('/PDF-EMPLEADOS', 'App\Http\controllers\PDFController@empleados_por_institucion')->name('emp_ins');
+/*
+Route::get('/actualizarNac', function () {
+    return view('SAS.nacionalidades.editNac');
+});
+*/
+
 
 /* PARA OBTENER LISTA DE CAJAS DE LA INSTITUCION */
 Route::get('/PDF-CAJEROS', 'App\Http\controllers\PDFController@lista_cajeros')->name('li_caj');
@@ -152,3 +205,44 @@ Route::get('/PDF-ESTADO-CAJAS', 'App\Http\controllers\PDFController@estado_cajas
 
 /* PARA OBTENER LISTA DE NOTIFICACIONES QUE SE ENVÍAN EN LA COMPAÑIA*/
 Route::get('/PDF-LISTA-NOTIFICACIONES', 'App\Http\controllers\PDFController@lista_notificaciones')->name('lis_noti');
+Route::get('/actualizarECivil', function () {
+    return view('SAS.estado_civil.editECivil');
+});
+
+Route::get('/actualizarEstado', function () {
+    return view('SAS.estados.editEstados');
+});
+
+Route::get('/actualizarProfesion', function () {
+    return view('SAS.profesiones.editProfesion');
+});
+
+Route::get('/actualizarParentesco', function () {
+    return view('SAS.parentescos.editParentesco');
+});
+
+Route::get('/consultarFamiliares', function () {
+    return view('SAS.familiares.consultarFamiliares');
+});
+
+Route::get('/actualizarFamiliares', function () {
+    return view('SAS.familiares.editFamiliar');
+});
+
+Route::get('/aportes', function () {
+    return view('SAS.aportes_capital_social.aportes');
+});
+
+Route::get('/actualizarAportes', function () {
+    return view('SAS.aportes_capital_social.editAporte');
+});
+
+Route::get('/consultarBnfrs', function () {
+    return view('SAS.beneficiarios.consultarbnfrs');
+});
+
+Route::get('/actualizarBnfrs', function () {
+    return view('SAS.beneficiarios.editBeneficiarios');
+});
+
+

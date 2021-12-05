@@ -4,15 +4,15 @@
 @endsection
 
 @section('titutlo')
-    {{'Tipos de Identificacion'}}
+    {{'Parentescos'}}
 @endsection
 
 @section('contenido')
 
     @section('titulo-contenido')
     <div class="col-7">
-        <div id="perfil-img"><i class="far fa-id-card"></i></div>
-        <h1 class="mx-5 my-3">Tipos de Identificacion</h1>
+        <div id="perfil-img"><i class="fas fa-users"></i></div>
+        <h1 class="mx-5 my-3">Gestion de Parentescos</h1>
     </div>
     @endsection
 
@@ -26,16 +26,16 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
-                            <th>tipo</th>
+                            <th>Nombre</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         
-                        @foreach ($identificaciones as $item)
+                        @foreach ($parentescos as $item)
                         <tr>
-                            <td>{{$item->id_identificacion}}</td>
-                            <td>{{$item->tipo}}</td>
+                            <td>{{$item->id_parentesco}}</td>
+                            <td>{{$item->nombre}}</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -47,8 +47,8 @@
                                     </button>
                                   </form> 
                             </td>
-                        </tr>  
-                        @endforeach                      
+                        </tr>
+                        @endforeach
 
                     </tbody>
               
@@ -60,13 +60,13 @@
 
                 <div class="card-body">
 
-                    <form action="{{ route('rTipoId') }}" method="POST" class="pt-3 pb-1">
+                    <form action="{{ route('rParentesco') }}" method="post" class="pt-3 pb-1">
                         @csrf
-                        <h3>Registrar Tipo Indentificacion</h3>
+                        <h3>Registrar Parentesco</h3>
 
                         <div class="mb-3">
                             <label for="tipo-id" class="form-label">Tipo</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tipo de ID" name="tipoId">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Parentesco" name="nParentesco">
                         </div>
     
                         <div class="row justify-content-center mt-4">
@@ -81,10 +81,7 @@
 
         </div>
 
-
     </div>
-
-
     
 @endsection
 @section('js')

@@ -11,4 +11,7 @@ class Identificacion extends Model
     protected $primaryKey='id_identificacion';
     protected $table='identificaciones';
     public $timestamps=false;
+    protected $fillable = [
+        'tipo'
+    ];
 }

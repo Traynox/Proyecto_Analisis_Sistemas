@@ -19,7 +19,7 @@
         <div class="container" id="box-registros">
 
            <form action="" method="post">
-
+            @csrf
                 <div class="mx-5 my-4" id="carta-registros">
           
                   <div class="mb-3">

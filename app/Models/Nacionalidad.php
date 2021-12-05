@@ -11,7 +11,11 @@ class Nacionalidad extends Model
     protected $primaryKey='id_nacionalidad';
     protected $table='nacionalidades';
     public $timestamps=false;
-
+    protected $fillable = [
+        'abreviatura',        
+        'pais'
+    ];
+    
     public function beneciarios()
     {
         return $this->hasMany(Beneficiario::class,'id_nacionalidad');
@@ -24,4 +28,8 @@ class Nacionalidad extends Model
     {
         return $this->hasMany(Asociado::class,'id_nacionalidad');
     }
+
+  
+
+    
 }

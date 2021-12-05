@@ -11,4 +11,7 @@ class Parentesco extends Model
     protected $primaryKey='id_parentesco';
     protected $table='parentescos';
     public $timestamps=false;
+    protected $fillable = [
+        'nombre'
+    ];
 }

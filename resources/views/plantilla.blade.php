@@ -88,7 +88,7 @@
                         </div>
                         </ul>
                         <a class="collapse-item" href="{{route('prestamos')}}">Prestamos</a>
-                        <a class="collapse-item" href="utilities-animation.html">Asociados</a>
+                        <a class="collapse-item" href="{{ route('menu_sas') }}">Asociados</a>
                         <ul class="nav-item list-inline" style="padding: 0">
                             <a class="collapse-item" data-toggle="collapse" data-target="#collapseCajas"
                             aria-expanded="true" aria-controls="collapseUtilities" >
@@ -381,7 +381,9 @@
 
     <!-- SAS js Functions -->
     <script src="{{asset('js/paginationNac.js')}}"></script>
-    
+    {{-- <script src="js/paginationNac.js"></script> --}}
+    <script src="js/elementos.js"></script>
+
     @yield('js')
 </body>
 
