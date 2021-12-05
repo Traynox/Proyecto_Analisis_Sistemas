@@ -27,9 +27,11 @@ Route::resource('ahorros/autorizados', AutorizadosController::class); //Controla
 /* --------------------------------SAS--------------------------------*/
 
 /* Route::get('/inicio', function () {
+/* NO TOCAR ESTA RUTA 
+Route::get('/', function () {
     return view('plantilla');
-}); */
-
+}); 
+*/
 Route::resource('tipos_ahorros',TipoAhorroController::class);
 Route::resource('tasas_interes', TasaInteresController::class);
 
@@ -95,7 +97,6 @@ Route::get('/descargarCartaP/{id_solicitud}', [SolicitudController::class, 'desc
 Route::get('/descargarHC/{id_solicitud}', [SolicitudController::class, 'descargarHC'])->name('descargarHC');
 
 
-
 Route::get('/prestamosDoc', function () {
     return view('SPR.CreditosYGarantias.prestamosSobreDoc');
 })->name('documentos');
@@ -109,5 +110,45 @@ Route::get('/SPR', [SolicitudController::class, 'indexPrestamos'])->name('presta
 Route::get('/reportePDF', [LineaCreditoController::class, 'pdf'])->name('generarPDF');
 Route::get('/ArregloPDF', [LineaCreditoController::class, 'pdfArreglo'])->name('pdf_Arreglo');
 Route::get('/CobroPDF', [LineaCreditoController::class, 'pdfCobro'])->name('pdf_Cobro');
+Route::get('/notificaciones', function () {
+    return view('SCA.notificaciones.gestionar_notificaciones');
+})->name('notificaciones');
+
+Route::get('/instituciones', function () {
+    return view('SCA.view_SCA');
+})->name('instituciones');
 
 
+Route::get('/planillas', function () {
+    return view('SCA.instituciones.registrar_planilla');
+})->name('PLANILLAS');
+
+Route::get('/pagos-pendientes', function () {
+    return view('SCA.instituciones.aplicar_pago');
+})->name('PAGOS_PLANILLAS');
+
+Route::get('/asociados-por-institucion', function () {
+    return view('SCA.instituciones.view_asociados');
+})->name('asociados_por_institucion');
+
+
+Route::get('/reportes-otros', function () {
+    return view('SCA.otros_reportes');
+})->name('reportes-extra');
+
+
+/* PARA PDF */
+/* PARA OBTENER LISTA DE INSTITUCIONES */
+Route::get('PDF-INSTITUCIONES', 'App\Http\controllers\PDFController@lista_instituciones')->name('li_ins');
+
+/* PARA OBTENER LISTA DE EMPLEADOS DE X INSTITUCION */
+Route::get('/PDF-EMPLEADOS', 'App\Http\controllers\PDFController@empleados_por_institucion')->name('emp_ins');
+
+/* PARA OBTENER LISTA DE CAJAS DE LA INSTITUCION */
+Route::get('/PDF-CAJEROS', 'App\Http\controllers\PDFController@lista_cajeros')->name('li_caj');
+
+/* PARA OBTENER LISTA DE CAJAS DE LA INSTITUCION */
+Route::get('/PDF-ESTADO-CAJAS', 'App\Http\controllers\PDFController@estado_cajas')->name('estado_cajas');
+
+/* PARA OBTENER LISTA DE NOTIFICACIONES QUE SE ENVÍAN EN LA COMPAÑIA*/
+Route::get('/PDF-LISTA-NOTIFICACIONES', 'App\Http\controllers\PDFController@lista_notificaciones')->name('lis_noti');
