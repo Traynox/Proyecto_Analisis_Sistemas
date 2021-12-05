@@ -12,7 +12,7 @@
     <title>@yield('titulo')</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     
     <!-- JQUERY -->
@@ -20,9 +20,9 @@
 
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/cssPersonal.css">
-    <link rel="stylesheet" href="css/sasStyle.css">
+    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/cssPersonal.css')}}">
+    <link rel="stylesheet" href="{{asset('css/sasStyle.css')}}">
     
 @yield('css')
 
@@ -81,9 +81,9 @@
                             Ahorros</a>
                             <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
                             data-parent="#collapseAhorros">
-                            <a class="collapse-item" href="utilities-border.html">Tipos ahorros</a>
-                            <a class="collapse-item" href="utilities-animation.html">Ahorros</a>
-                            <a class="collapse-item" href="utilities-animation.html">Tasas de interes</a>
+                            <a class="collapse-item" href="{{route('tipos_ahorros.index')}}">Tipos ahorros</a>
+                            <a class="collapse-item" href="{{route('ahorros.index')}}">Ahorros</a>
+                            <a class="collapse-item" href="{{route('tasas_interes.index')}}">Tasas de interes</a>
                         
                         </div>
                         </ul>
@@ -118,8 +118,9 @@
                     data-parent="#collapseReportes">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Reportes:</h6>
-                        <a class="collapse-item" href="utilities-color.html"> De ahorros</a>
                         <a class="collapse-item" href="{{route('reportes_prestamos')}}">De prestamos</a>
+                        <a class="collapse-item" href="{{route('reportes.index')}}"> De ahorros</a>
+                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
                         <a class="collapse-item" href="utilities-animation.html">De Cajas</a>
                         <a class="collapse-item" href="utilities-animation.html">De asociados</a>
                     </div>
@@ -264,7 +265,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="{{asset('img/undraw_profile.svg')}}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -362,25 +363,25 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    {{-- <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script> --}}
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
 
     <!-- SAS js Functions -->
-    <script src="js/paginationNac.js"></script>
-
+    <script src="{{asset('js/paginationNac.js')}}"></script>
+    
     @yield('js')
 </body>
 
