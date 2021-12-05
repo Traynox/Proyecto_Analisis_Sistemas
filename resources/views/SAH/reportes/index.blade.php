@@ -15,7 +15,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{route('show.reporte_9-1')}}">Asociados y beneficiarios</a></h5>
+                        <h5 class="card-title"><a href="{{route('show.reporte_9_1')}}">Asociados y beneficiarios</a></h5>
                         <p class="card-text">Reporte de ahorro con beneficiarios y asociados</p>
                     </div>
                 </div>
@@ -25,8 +25,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bloqueos de por cuenta</h5>
-                        <p class="card-text">Content</p>
+                        <h5 class="card-title"><a href="{{route('show.reporte_9_2')}}">Bloqueos por cuenta</a></h5>
+                        <p class="card-text">Reporte de penalizaciones por cuenta de ahorro</p>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{route('show.reporte_9_8')}}">Cuentas de asociado</a></h5>
+                        <h5 class="card-title"><a href="{{route('show.reporte_9_4')}}">Cuentas de asociado</a></h5>
                         <p class="card-text">Reporte de cuentas del asociado</p>
                     </div>
                 </div>

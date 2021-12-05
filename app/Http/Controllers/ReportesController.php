@@ -26,17 +26,36 @@ class ReportesController extends Controller
         $pdf=PDF::loadview('SAH.reportes.pdf_9_1',compact('ahorro'))->setPaper('a4','portrait');
         return $pdf->stream();
     }
+    public function vistaReporte_9_2(){
 
-    public function vistaReporte_9_8(){
+        return view('SAH.reportes.bloqueos_por_cuenta');
+    }
+
+    public function reporte_9_2(Request $request){
+
+        $ahorro=null;
+        if($request->estado==1){
+            $ahorro=Ahorro::with('penalizaciones')->where('nombre','=',$request->cuenta,'and','estado','=',$request->estado)->first();
+           
+        }else{
+            $ahorro=Ahorro::with('penalizaciones')->where('nombre','=',$request->cuenta,'and','estado','=',$request->estado)->first();
+          }
+   
+        $pdf=PDF::loadview('SAH.reportes.pdf_9_2',compact('ahorro'))->setPaper('a4','portrait');
+        return $pdf->stream();
+    }
+    public function vistaReporte_9_4(){
 
         return view('SAH.reportes.cuentas_asociado');
     }
 
-    public function reporte_9_8(Request $request){
+    public function reporte_9_4(Request $request){
 
-        $asociado=Asociado::with('ahorros')->where('cedula','=',$request->cedula,'and','estado','=',1)->first();
-     
-        $pdf=PDF::loadview('SAH.reportes.pdf_9_8',compact('asociado'))->setPaper('a4','portrait');
+        // $asociado=Asociado::with('penalizaciones')->where('cedula','=',$request->cedula,'and','estado','=',1)->first();
+        $asociado=Asociado::with('ahorrosActivos')->where('cedula',$request->cuenta)->first();
+        $pdf=PDF::loadview('SAH.reportes.pdf_9_4',compact('asociado'))->setPaper('a4','portrait');
         return $pdf->stream();
     }
+
+    
 }

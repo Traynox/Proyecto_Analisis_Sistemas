@@ -12,10 +12,12 @@ class Asociado extends Model
     protected $table='asociados';
     public $timestamps=false;
 
-    public function ahorros(){
-        return $this->hasMany(Ahorro::class,'id_asociado');
+    public function ahorrosActivos(){
+        return $this->hasMany(Ahorro::class,'id_asociado')->where('estado',1);
     }
-
+    public function ahorrosInactivos(){
+        return $this->hasMany(Ahorro::class,'id_asociado')->where('estado',0);
+    }
     public function estadoCivil()
     {
         return $this->belongsTo(Estado_civil::class,'id_estado_civil');  

@@ -21,8 +21,21 @@ class Ahorro extends Model
         ->withPivot('id_ahorro','id_beneficiario','porcentaje');
     }
 
+    public function tipo_ahorro()
+    {
+        return $this->belongsTo(Tipo_ahorro::class,'id_tipo_ahorro');
+    }
+
     public function asociado()
     {
         return $this->belongsTo(Asociado::class,'id_asociado');
     }
+    public function penalizaciones()
+    {
+        $fecha=request('fecha');//obtiene el valor de cualquier valor que se mando del ultimo form mediante el nombre
+       
+        return $this->hasMany(Penalizacion::class,'id_penalizacion')->where('fecha','<',$fecha);
+    }
+  
+  
 }
