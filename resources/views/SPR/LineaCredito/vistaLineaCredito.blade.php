@@ -29,14 +29,14 @@
             <td>{{$item->tasa_interes}}</td>
             <td>{{$item->monto}}</td>
             <td>
-                <a class=" btn btn-sm btn-warning" href=""><i class="fas fa-pencil-alt"></i></a>
+                <a class=" btn btn-sm btn-warning" href="{{route('editarLineaC', $item)}}"><i class="fas fa-pencil-alt"></i></a>
 
                 <form action="{{route('eliminarLinea', $item)}}" method="POST" class="d-inline">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-danger btn-sm remove_contacto"><i class="fas fa-minus-circle"></i></button> 
                 </form>
-                <a class=" btn btn-sm btn-secondary" href=""><i class="fas fa-money-bill-wave"></i></a>
+                <a class=" btn btn-sm btn-secondary" href="{{route('desembolso', $item)}}"><i class="fas fa-money-bill-wave"></i></a>
                 </td>
         </tr>
         @endforeach

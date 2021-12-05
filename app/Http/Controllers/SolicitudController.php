@@ -103,4 +103,44 @@ class SolicitudController extends Controller
         return view('SPR.inicio', compact('prestamos'));
         
     }
+
+    public function descargarCD($id)
+    {
+        $prestamo = Prestamo::find($id);
+
+        $file= public_path(). '/storage/' .$prestamo->comprobante_domicilio;
+
+        return response()->download($file);
+
+    }
+
+    public function descargarCI($id)
+    {
+        $prestamo = Prestamo::find($id);
+
+        $file= public_path(). '/storage/' .$prestamo->comprobante_ingresos;
+
+        return response()->download($file);
+
+    }
+
+    public function descargarCartaP($id)
+    {
+        $prestamo = Prestamo::find($id);
+
+        $file= public_path(). '/storage/' .$prestamo->carta_patronal;
+
+        return response()->download($file);
+
+    }
+
+    public function descargarHC($id)
+    {
+        $prestamo = Prestamo::find($id);
+
+        $file= public_path(). '/storage/' .$prestamo->historial_crediticio;
+
+        return response()->download($file);
+
+    }
 }

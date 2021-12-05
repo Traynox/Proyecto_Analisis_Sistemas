@@ -16,11 +16,10 @@
                                    <th>Nombre</th>
                                    <th>Cedula</th>
                                    <th>Tipo</th>
-                                   <th>Comp. domicio</th>
-                                   <th>Comp. ingresos</th>
-                                   <th>Carta patronal</th>
-                                   <th>Historial crediticio</th>
-                                   <th>Acciones</th>
+                                   <th class="text-center">Comp. domicio</th>
+                                   <th class="text-center">Comp. ingresos</th>
+                                   <th class="text-center">Carta patronal</th>
+                                   <th class="text-center">Historial crediticio</th>
                                </tr>
                            </thead>
                            <tbody>
@@ -30,17 +29,10 @@
                            <td>{{$item->solicitud->asociado->nombre_completo}}</td>
                            <td>{{$item->solicitud->asociado->cedula}}</td>
                            <td>{{$item->solicitud->tipo->nombre}}</td>
-                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('generarPDF')}}"><i class="fas fa-file-pdf"></i></a> </td>
-                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('generarPDF')}}"><i class="far fa-file-pdf"></i></a> </td>
-                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('generarPDF')}}"><i class="fas fa-file-pdf"></i></a> </td>
-                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('generarPDF')}}"><i class="far fa-file-pdf"></i></a> </td>
-                           <td class="text-center">            
-                            <form action="" method="POST" class="d-inline">
-                                @method('DELETE')
-                                @csrf
-                                <button type="submit" class="btn btn-danger btn-sm remove_contacto"><i class="fas fa-minus-circle"></i></button> 
-                            </form>
-                            </td>
+                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('descargarCD', $item)}}"><i class="fas fa-file-pdf"></i></a> </td>
+                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('descargarCI', $item)}}"><i class="far fa-file-pdf"></i></a> </td>
+                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('descargarCartaP', $item)}}"><i class="fas fa-file-pdf"></i></a> </td>
+                           <td class="text-center"> <a class=" btn btn-sm btn-secondary" href="{{route('descargarHC', $item)}}"><i class="far fa-file-pdf"></i></a> </td>
                         
                        </tr>
                        @endif 
@@ -52,11 +44,10 @@
                         <th>Nombre</th>
                         <th>Cedula</th>
                         <th>Tipo</th>
-                        <th>Comp. domicio</th>
-                        <th>Comp. ingresos</th>
-                        <th>Carta patronal</th>
-                        <th>Historial crediticio</th>
-                        <th>Acciones</th>
+                        <th class="text-center">Comp. domicio</th>
+                        <th class="text-center">Comp. ingresos</th>
+                        <th class="text-center">Carta patronal</th>
+                        <th class="text-center">Historial crediticio</th>
                     </tr>
                 </tfoot>
                </table>   

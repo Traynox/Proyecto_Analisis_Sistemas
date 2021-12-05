@@ -6,13 +6,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" aria-current="page" href="{{route('Lineascreditos')}}">Lineas de credito</a>
-          <a class="nav-link" href="{{route('arreglos')}}">Arreglos de pago</a>
-          <a class="nav-link" href="{{route('cobros')}}">Cobros judiciales</a>
-          <a class="nav-link" href="{{route('historial')}}">Historial de pagos</a>
-          <a class="nav-link" href="{{route('tablasPagos')}}">Tablas de pago</a>
-          <a class="nav-link" href="{{route('vistaSolicitudes')}}">Solicitudes de credito</a>
-          <a class="nav-link" href="{{route('garantias')}}">Garantias de tasas</a>
+          <a class="nav-link text-center" aria-current="page" href="{{route('Lineascreditos')}}">Lineas de credito</a>
+          <a class="nav-link text-center" href="{{route('arreglos')}}">Arreglos de pago</a>
+          <a class="nav-link text-center" href="{{route('cobros')}}">Cobros judiciales</a>
+          <a class="nav-link text-center" href="{{route('historial')}}">Historial de pagos</a>
+          <a class="nav-link text-center" href="{{route('tablasPagos')}}">Tablas de pago</a>
+          <a class="nav-link text-center" href="{{route('vistaSolicitudes')}}">Solicitudes de credito</a>
+          <a class="nav-link text-center" href="{{route('garantias')}}">Garantias de tasas</a>
         </div>
       </div>
     </div>

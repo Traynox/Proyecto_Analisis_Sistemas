@@ -9,69 +9,43 @@
         <div class="form-holder">
             <div class="form-content">
                 <div class="form-items">
-                    <h3>Actualizar Linea de credito</h3>
-                    <p>Edite los datos que sean necesarios</p>
-                    <form class="requires-validation" novalidate>
-                  
-                        <div class="col-md-12">
-                           <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
-                           <div class="valid-feedback">Username field is valid!</div>
-                           <div class="invalid-feedback">Username field cannot be blank!</div>
-                        </div>
-
+                    <h3>Linea de credito nueva</h3>
+                    <p>Llene los datos correspondientes</p>
+                    <form action="{{route('updateLinea', $lineaCredito)}}" method="POST" class="requires-validation">
+                        @method('PUT')
+                        @csrf
                         <div class="col-md-12"> 
-                            <select class="form-select mt-3" required> {{-- falta name --}}
-                                  <option selected disabled value="">Tipo</option>
-                                  <option value="jweb">Junior Web Developer</option>
-                                  <option value="sweb">Senior Web Developer</option>
-                                  <option value="pmanager">Project Manager</option>
-                           </select>
-
-                            <div class="valid-feedback">You selected a position!</div>
-                            <div class="invalid-feedback">Please select a position!</div>
+                            <select class="form-select mt-3" name="asociado" required> 
+                                  <option selected value="{{$lineaCredito->asociado->id_asociado}}">{{$lineaCredito->asociado->nombre_completo}}</option>
+                                  @foreach ($asociados as $item)
+                                    <option value="{{$item->id_asociado}}">{{$item->nombre_completo}}</option>                                      
+                                  @endforeach
+                            </select>
                        </div>
 
-                       <div class="col-md-12">
-                        <input class="form-control" type="text" name="cedula" placeholder="Cedula" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
-
-                     <div class="col-md-12">
-                        <input class="form-control" type="text" name="numCuenta" placeholder="Numero de cuenta" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
+                        <div class="col-md-12"> 
+                            <select class="form-select mt-3" name="tipo" required> 
+                                  <option selected value="{{$lineaCredito->tipo->id_tipo_credito}}">{{$lineaCredito->tipo->nombre}}</option>
+                                  @foreach ($tipos as $item)
+                                    <option value="{{$item->id_tipo_credito}}">{{$item->nombre}}</option>                                      
+                                  @endforeach
+                            </select>
+                       </div>
 
                      <div class="col-md-12 mt-3">
-                        <input class="form-control" type="number" name="monto" placeholder="Monto" required>
+                        <input class="form-control" type="number" name="monto" placeholder="Monto" value="{{$lineaCredito->monto}}" required>
                         <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div>
                      </div>
 
                      <div class="col-md-12">
-                        <input class="form-control" type="text" name="tasaInteres" placeholder="Tasa de Interes" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
-
-                     <hr>
-                    <p>Datos del fiador</p>
-
-                     <div class="col-md-12">
-                        <input class="form-control" type="text" name="nombreFiador" placeholder="Nombre" required>
+                        <input class="form-control" type="text" name="tasaInteres" placeholder="Tasa de Interes" value="{{$lineaCredito->tasa_interes}}" required>
                         <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div>
                      </div>
 
                      <div class="col-md-12">
-                        <input class="form-control" type="text" name="cedulaFiador" placeholder="Cedula" required>
-                        <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div>
-                     </div>
-
-                     <div class="col-md-12">
-                        <input class="form-control" type="text" name="telefonoFiador" placeholder="Telefono" required>
+                        <input class="form-control" type="text" name="nombreFiador" placeholder="Nombre de fiador" value="{{$lineaCredito->fiador}}" required>
                         <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div>
                      </div>
@@ -124,7 +98,7 @@
               
 
                         <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-warning">Guardar</button>
+                            <button id="submit" type="submit" class="btn btn-warning">Actualizar</button>
                         </div>
                     </form>
                 </div>

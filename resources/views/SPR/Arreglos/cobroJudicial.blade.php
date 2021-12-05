@@ -94,7 +94,7 @@
               
 
                         <div class="form-button mt-3 text-center">
-                            <button id="submit" type="submit" class="btn btn-danger">Generar PDF</button>
+                            <a class="btn btn-danger" href="{{route('pdf_Cobro')}}">Generar PDF</a>
                         </div>
                     </form>
                 </div>

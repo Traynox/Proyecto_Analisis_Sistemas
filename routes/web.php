@@ -61,15 +61,11 @@ Route::get('/lineaCredito', [LineaCreditoController::class, 'index'])->name('Lin
 Route::get('/nuevaLineaCredito', [LineaCreditoController::class, 'create'])->name('nuevaLineascreditos');
 Route::post('/crearLineaC', [LineaCreditoController::class, 'store'])->name('crearLinea');
 Route::delete('/eliminarLineaC/{id_linea_credito}', [LineaCreditoController::class, 'delete'])->name('eliminarLinea');
+Route::get('/editarLineaCredito_{id_linea_credito}', [LineaCreditoController::class, 'edit'])->name('editarLineaC');
+Route::put('/updateLinea/{id_linea_credito}', [LineaCreditoController::class, 'update'])->name('updateLinea');
+Route::get('/desembolso_{id_linea_credito}', [LineaCreditoController::class, 'indexDesembol'])->name('desembolso');
+Route::put('/desembolsar/{id_linea_credito}', [LineaCreditoController::class, 'desembolsar'])->name('desembolsar');
 
-
-Route::get('/desembolso', function () {
-    return view('SPR.LineaCredito.vistaDesembolso');
-});
-
-Route::get('/editarLineaCredito', function () {
-    return view('SPR.LineaCredito.editarLineaCredito');
-});
 
 Route::get('/reportesSPR', function () {
     return view('SPR.Reportes.reportesSPR');
@@ -97,6 +93,10 @@ Route::post('/crearSolicitud', [SolicitudController::class, 'store'])->name('cre
 Route::delete('/eliminarSolicitud/{id_solicitud}', [SolicitudController::class, 'delete'])->name('eliminarSolicitud');
 Route::get('/editSolicitud_{id_solicitud}', [SolicitudController::class, 'edit'])->name('editSolicitud');
 Route::put('/updateSolicitud/{id_solicitud}', [SolicitudController::class, 'update'])->name('updateSolicitud');
+Route::get('/descargarCD/{id_solicitud}', [SolicitudController::class, 'descargarCD'])->name('descargarCD');
+Route::get('/descargarCI/{id_solicitud}', [SolicitudController::class, 'descargarCI'])->name('descargarCI');
+Route::get('/descargarCartaP/{id_solicitud}', [SolicitudController::class, 'descargarCartaP'])->name('descargarCartaP');
+Route::get('/descargarHC/{id_solicitud}', [SolicitudController::class, 'descargarHC'])->name('descargarHC');
 
 
 
@@ -111,3 +111,7 @@ Route::get('/garantiasTasas', function () {
 Route::get('/SPR', [SolicitudController::class, 'indexPrestamos'])->name('prestamos');
 
 Route::get('/reportePDF', [LineaCreditoController::class, 'pdf'])->name('generarPDF');
+Route::get('/ArregloPDF', [LineaCreditoController::class, 'pdfArreglo'])->name('pdf_Arreglo');
+Route::get('/CobroPDF', [LineaCreditoController::class, 'pdfCobro'])->name('pdf_Cobro');
+
+

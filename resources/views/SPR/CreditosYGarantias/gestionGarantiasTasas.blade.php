@@ -114,7 +114,7 @@
 
                     
             <div class="form-button mt-3 text-center">
-            <button id="submit" type="submit" class="btn btn-warning">Guardar</button>
+            <a href="" class="btn btn-warning">Guardar</a>
             </div>
      </form>
 
