@@ -13,7 +13,8 @@ class Ahorro extends Model
 
     public function autorizados()
     {
-        return $this->belongsToMany(Autorizado::class,'ahorros_autorizados','id_ahorro','id_autorizado');
+        return $this->belongsToMany(Autorizado::class,'ahorros_autorizados','id_ahorro','id_autorizado')
+        ->withPivot('id_ahorro','id_autorizado');
     }
     public function beneficiarios()
     {
@@ -36,6 +37,5 @@ class Ahorro extends Model
        
         return $this->hasMany(Penalizacion::class,'id_penalizacion')->where('fecha','<',$fecha);
     }
-  
   
 }

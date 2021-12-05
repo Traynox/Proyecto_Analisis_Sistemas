@@ -11,4 +11,7 @@ class Tipo_ahorro extends Model
     protected $table='tipos_ahorros';
     public $timestamps=false;
     use HasFactory;
+    public function ahorros(){
+        return $this->hasMany(Ahorro::class,'id_tipo_ahorro');
+    }
 }

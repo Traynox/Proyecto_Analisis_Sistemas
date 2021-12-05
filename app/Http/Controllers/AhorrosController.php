@@ -16,8 +16,9 @@ class AhorrosController extends Controller
     public function index()
     {
         $ahorros=Ahorro::all();
+        // $estados=Estado:all();
 
-        return view('SAH.ahorros.index_ahorro');
+        return view('SAH.ahorros.index_ahorro',compact('ahorros'));
     }
 
     /**
