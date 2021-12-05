@@ -32,9 +32,10 @@
                     </thead>
                     <tbody>
                         
+                        @foreach ($identificaciones as $item)
                         <tr>
-                            <td>1</td>
-                            <td>Persona Fisica Nacional</td>
+                            <td>{{$item->id_identificacion}}</td>
+                            <td>{{$item->tipo}}</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -46,71 +47,8 @@
                                     </button>
                                   </form> 
                             </td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Persona Fisica Residente</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Persona Juridica</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td>Gobierno Central</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td>Institucion Autonoma</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
+                        </tr>  
+                        @endforeach                      
 
                     </tbody>
               
@@ -122,13 +60,13 @@
 
                 <div class="card-body">
 
-                    <form action="" method="post" class="pt-3 pb-1">
+                    <form action="{{ route('rTipoId') }}" method="POST" class="pt-3 pb-1">
                         @csrf
                         <h3>Registrar Tipo Indentificacion</h3>
 
                         <div class="mb-3">
                             <label for="tipo-id" class="form-label">Tipo</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tipo de ID">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tipo de ID" name="tipoId">
                         </div>
     
                         <div class="row justify-content-center mt-4">

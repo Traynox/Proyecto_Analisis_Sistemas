@@ -32,9 +32,10 @@
                     </thead>
                     <tbody>
                         
+                        @foreach ($parentescos as $item)
                         <tr>
-                            <td>1</td>
-                            <td>Conyugue</td>
+                            <td>{{$item->id_parentesco}}</td>
+                            <td>{{$item->nombre}}</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -47,70 +48,7 @@
                                   </form> 
                             </td>
                         </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Madre</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Padre</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td>Hijo(a)</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td>Nieto(a)</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
+                        @endforeach
 
                     </tbody>
               
@@ -122,13 +60,13 @@
 
                 <div class="card-body">
 
-                    <form action="" method="post" class="pt-3 pb-1">
+                    <form action="{{ route('rParentesco') }}" method="post" class="pt-3 pb-1">
                         @csrf
                         <h3>Registrar Parentesco</h3>
 
                         <div class="mb-3">
                             <label for="tipo-id" class="form-label">Tipo</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Parentesco">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Parentesco" name="nParentesco">
                         </div>
     
                         <div class="row justify-content-center mt-4">

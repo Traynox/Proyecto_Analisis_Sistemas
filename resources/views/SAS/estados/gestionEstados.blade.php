@@ -24,13 +24,13 @@
 
                 <div class="card-body">
 
-                    <form action="" method="post" class="pt-3 pb-1">
+                    <form action="{{ route('rEstado') }}" method="POST" class="pt-3 pb-1">
                         @csrf
                         <h3>Registrar Estados</h3>
 
                         <div class="mb-3">
                             <label for="estado" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Estado">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Estado" name="estadosSAS">
                         </div>
     
                         <div class="row justify-content-center mt-4">
@@ -59,9 +59,10 @@
                     </thead>
                     <tbody>
                         
+                        @foreach ($estados as $item)
                         <tr>
-                            <td>1</td>
-                            <td>Activo</td>
+                            <td>{{$item->id_estado}}</td>
+                            <td>{{$item->nombre}}</td>
                             
                             <td>
                                 <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
@@ -74,70 +75,7 @@
                                   </form> 
                             </td>
                         </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Inactivo</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Pendiente</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td>Aprobado</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td>No Aprobado</td>
-                            
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-                        </tr>
+                        @endforeach
 
                     </tbody>
               
