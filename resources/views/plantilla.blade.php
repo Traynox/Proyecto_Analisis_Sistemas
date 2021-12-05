@@ -87,7 +87,7 @@
                         </div>
                         </ul>
                         <a class="collapse-item" href="utilities-border.html">Prestamos</a>
-                        <a class="collapse-item" href="utilities-animation.html">Asociados</a>
+                        <a class="collapse-item" href="{{ route('menu_sas') }}">Asociados</a>
                         <ul class="nav-item list-inline" style="padding: 0">
                             <a class="collapse-item" data-toggle="collapse" data-target="#collapseCajas"
                             aria-expanded="true" aria-controls="collapseUtilities" >
