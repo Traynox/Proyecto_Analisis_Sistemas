@@ -93,7 +93,7 @@ class AutorizadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $autorizado=Autorizados::find($id);
+        $autorizado=Autorizado::find($id);
         $autorizado->nombre=$request->cedula;
         $autorizado->primer_apellido=$request->nombre;
         $autorizado->segundo_apellido=$request->fecha;
@@ -114,7 +114,7 @@ class AutorizadosController extends Controller
      */
     public function destroy($id)
     {
-        Autorizados::destroy($id); 
+        Autorizado::destroy($id); 
         return back();
     }
 }

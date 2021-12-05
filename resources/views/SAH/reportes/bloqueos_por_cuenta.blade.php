@@ -1,6 +1,6 @@
 @extends('plantilla')
 @section('titulo')
-    reportes cuentas de asociado
+    reportes bloqueos de cuenta
 @endsection
 @section('css')
     

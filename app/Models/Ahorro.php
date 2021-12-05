@@ -37,5 +37,9 @@ class Ahorro extends Model
        
         return $this->hasMany(Penalizacion::class,'id_penalizacion')->where('fecha','<',$fecha);
     }
-  
+    public function transacciones()
+    {
+        return $this->hasMany(Transaccion::class,'id_transaccion');
+    }
+
 }

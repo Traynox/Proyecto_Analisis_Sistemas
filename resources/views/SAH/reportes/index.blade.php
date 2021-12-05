@@ -35,8 +35,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">certificados Cancelados</h5>
-                        <p class="card-text">Content</p>
+                            <h5 class="card-title"><a href="{{route('show.reporte_9_14')}}">Transacciones de cuentas</a></h5>
+                            <p class="card-text">Reporte de transacciones de cuentas ahorro</p>
                     </div>
                 </div>
             </div>
