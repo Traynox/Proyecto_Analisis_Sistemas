@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ahorro;
+use App\Models\Asociado;
+use App\Models\Tipo_ahorro;
 use Illuminate\Http\Request;
 class AhorrosController extends Controller
 {
@@ -14,8 +16,9 @@ class AhorrosController extends Controller
     public function index()
     {
         $ahorros=Ahorro::all();
+        // $estados=Estado:all();
 
-        return view('SAH.ahorros.index_ahorro');
+        return view('SAH.ahorros.index_ahorro',compact('ahorros'));
     }
 
     /**
@@ -25,7 +28,9 @@ class AhorrosController extends Controller
      */
     public function create()
     {
-            return view('SAH.ahorros.nuevo_ahorro'); 
+        $asociados=Asociado::all();
+        $tipos_ahorros=Tipo_ahorro::all();
+            return view('SAH.ahorros.nuevo_ahorro',compact('asociados','tipos_ahorros')); 
         
     }
 
@@ -37,22 +42,18 @@ class AhorrosController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
         $nuevo_ahorro=new Ahorro();
-        $nuevo_ahorro->nombre="";
-        $nuevo_ahorro->duracion=$request->duracion;
-        $nuevo_ahorro->fecha_inicio=$request->fecha_inicio;
-        $nuevo_ahorro->fecha_final=$request->fecha_final;
+        $nuevo_ahorro->fecha_inicio=$request->fech_inicio;
+        $nuevo_ahorro->fecha_final=$request->fech_final;
         $nuevo_ahorro->moneda=$request->moneda;
         $nuevo_ahorro->monto_cuota=$request->monto_cuota;
         $nuevo_ahorro->monto_ahorrado=0;
         $nuevo_ahorro->estado=1;
-        $nuevo_ahorro->tipo_pago=" ";
-        $nuevo_ahorro->tipo_ahorro=$request->id_tipo_ahorro;
-        $nuevo_ahorro->asociado=$request->id_asociado;
-        $nuevo_ahorro->id_penalizacion=null;
-    // $nuevo_ahorro->save();
-        return view('autorizados');
+        $nuevo_ahorro->id_tipo_ahorro=$request->tipo_ahorro;
+        $nuevo_ahorro->id_asociado=$request->asociado;
+        $nuevo_ahorro->save();
+        $id=$nuevo_ahorro->id_ahorro;
+        return redirect()->route('autorizados.show',$id);
     
     }
 

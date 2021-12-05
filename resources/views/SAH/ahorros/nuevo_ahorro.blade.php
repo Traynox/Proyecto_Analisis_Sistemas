@@ -21,22 +21,22 @@
                       <div class="mb-3">
                         <label class="form-label">Asociado</label>
                         <select class="custom-select mr-sm-2 " name="asociado" id="asociado">
-                          {{-- @forelse ($user->productos as $item)
-                          <option value="{{$item->id_producto}}">{{$item->nombre}}</option>
+                          @forelse ($asociados as $item)
+                          <option value="{{$item->id_asociado}}">{{$item->nombre_completo}}</option>
                           @empty
-                          <option value="No hay productos">...</option>    
-                          @endforelse --}}
+                          <option value="No hay Asociados">...</option>    
+                          @endforelse
                           </select>                    
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Tipo de Ahorro</label>
                             <select class="custom-select mr-sm-2 " name="tipo_ahorro" id="tipo_ahorro">
-                              {{-- @forelse ($user->productos as $item)
-                              <option value="{{$item->id_producto}}">{{$item->nombre}}</option>
+                              @forelse ($tipos_ahorros as $item)
+                              <option value="{{$item->id_tipo_ahorro}}">{{$item->nombre}}</option>
                               @empty
                               <option value="No hay productos">...</option>    
-                              @endforelse --}}
+                              @endforelse
                               </select>                         
                         </div>
 
@@ -44,23 +44,24 @@
                             <label class="form-label">Monto por cuota</label>
                             <input type="number" value="" class="form-control mb-2" name="monto_cuota" min="10000" required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Moneda</label>
-                            <select class="custom-select mr-sm-2 " name="moneda" id="moneda">
-                              <option value="colon">Colon</option>
-                              <option value="dolar">Dolar</option>  
-                              </select>                        
-                        </div>
+                        
                         
                     </div>
                     <div class="col-md-6 col-sm-12">
-                      <div class="mb-3">
+                      {{-- <div class="mb-3">
                         <label class="form-label">Duracion</label>
                         <select class="custom-select mr-sm-2 " name="duracion" id="duracion">
                           <option value="colon">Colon</option>
                           <option value="dolar">Dolar</option>  
                           </select>                        
-                      </div>
+                      </div> --}}
+                      <div class="mb-3">
+                        <label class="form-label">Moneda</label>
+                        <select class="custom-select mr-sm-2 " name="moneda" id="moneda">
+                          <option value="colon">Colon</option>
+                          <option value="dolar">Dolar</option>  
+                          </select>                        
+                    </div>
                       <div class="mb-3">
                         <label class="form-label">Fecha Inicio</label>
                         <input type="date" value="" class="form-control mb-2" name="fech_inicio"  required>         
@@ -69,6 +70,7 @@
                         <label class="form-label">Fecha Final</label>
                         <input type="date" value="" class="form-control mb-2" name="fech_final"  required>         
                       </div>
+                      <p></p>
                     </div>
             
         </div>

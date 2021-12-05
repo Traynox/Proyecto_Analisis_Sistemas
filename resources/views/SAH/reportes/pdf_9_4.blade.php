@@ -49,7 +49,7 @@
           </tr>
         </thead>
         <tbody>
-       @forelse ($asociado->ahorros as $ahorro)
+       @forelse ($asociado->ahorrosActivos as $ahorro)
        <tr class="text-center">
         <td class="service">{{$ahorro->nombre}}</td>
         <td class="desc">{{$ahorro->duracion}} meses</td>

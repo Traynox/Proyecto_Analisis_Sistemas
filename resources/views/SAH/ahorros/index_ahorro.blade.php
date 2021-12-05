@@ -43,8 +43,6 @@
     <table class="table table-hover display" id="tabla" style=" width:100%;">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Duracion</th>
                 <th>Fec.Inicio</th>
                 <th>Fec.Final</th>
                 <th>Moneda</th>
@@ -59,16 +57,23 @@
         </thead>
         <tbody>
 
-            {{-- @if (isset($tipos_ahorros))
-                @foreach ($tipos_ahorros as $item)
+            @if (isset($ahorros))
+                @foreach ($ahorros as $item)
 
                     <tr class="text-center">
 
-                        <td>{{ $item->nombre }}</td>
-                        <td>{{ $item->descripcion }}</td>
+                        <td>{{ $item->fecha_inicio }}</td>
+                        <td>{{ $item->fecha_final }}</td>
+                        <td>{{ $item->moneda }}</td>
+                        <td>{{ $item->monto_cuota }}</td>
+                        <td>{{ $item->monto_ahorrado }}</td>
+                        <td>{{ $item->estado }}</td>
+                        <td>{{ $item->tipo_ahorro->nombre }}</td>
+
+                        <td>{{ $item->asociado->nombre_completo }}</td>
 
 
-                        <td>
+                        {{-- <td>
                             <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
                                 method="POST" class="form-eliminar">
                                 @csrf
@@ -88,12 +93,12 @@
                                         style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
                             </form>
                         </td>
-                        @include('SAH.tipos_ahorros.tipos_edit')
+                        @include('SAH.tipos_ahorros.tipos_edit') --}}
 
                     </tr>
 
                 @endforeach
-            @endif --}}
+            @endif
 
         </tbody>
     </table>
