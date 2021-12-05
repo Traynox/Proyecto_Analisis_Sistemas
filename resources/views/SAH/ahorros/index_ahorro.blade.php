@@ -43,8 +43,6 @@
     <table class="table table-hover display" id="tabla" style=" width:100%;">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Duracion</th>
                 <th>Fec.Inicio</th>
                 <th>Fec.Final</th>
                 <th>Moneda</th>

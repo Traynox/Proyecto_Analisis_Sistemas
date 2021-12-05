@@ -8,7 +8,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="" enctype="multipart/form-data"
+        <form action="{{route('autorizados.store')}}" enctype="multipart/form-data"
             class="form-group form-grid" method="POST">
             @csrf
          
@@ -27,17 +27,29 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Apellidos</label>
-                            <input type="text" value="" class="form-control mb-2" name="apellido" required>
+                            <label class="form-label">Primer Apellido</label>
+                            <input type="text" value="" class="form-control mb-2" name="primer_apellido" required>
                         </div>
+                        <div class="mb-3">
+                          <label class="form-label">Segundo Apellido</label>
+                          <input type="text" value="" class="form-control mb-2" name="segundo_apellido" required>
+                      </div>
                         <div class="mb-3">
                             <label class="form-label">Telefono</label>
                             <input type="text" value="" class="form-control mb-2" name="telefono" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Direccion de Residencia</label>
-                            <input type="text" value="" class="form-control mb-2" name="telefono" required>
+                            <label class="form-label">Nacionalidad</label>
+                            <input type="text" value="" class="form-control mb-2" name="nacionalidad" required>
                         </div>
+                        <div class="mb-3">
+                          <label class="form-label">Parentesco</label>
+                          <input type="text" value="" class="form-control mb-2" name="telefono" required>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Tipo de Identificacion</label>
+                        <input type="text" value="" class="form-control mb-2" name="telefono" required>
+                    </div>
                     </div>
                  
             

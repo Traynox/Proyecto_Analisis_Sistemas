@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Models\Autorizado;
-use App\Models\Autorizados;
+use App\Models\Ahorro;
+use App\Models\Autorizado;
 
 class AutorizadosController extends Controller
 {
@@ -15,8 +15,7 @@ class AutorizadosController extends Controller
      */
     public function index()
     {
-        $autorizados=Autorizados::all();
-            return view('autorizados',compact('autorizados'));
+       
     }
 
     /**
@@ -37,8 +36,8 @@ class AutorizadosController extends Controller
      */
     public function store(Request $request)
     {
-        $autorizado=new Autorizados();
-        $autorizado->nombre=$request->cedula;
+        $autorizado=new Autorizado();
+        $autorizado->nombre=$request->nombre;
         $autorizado->primer_apellido=$request->nombre;
         $autorizado->segundo_apellido=$request->fecha;
         $autorizado->cedula=$request->cedula;
@@ -60,7 +59,8 @@ class AutorizadosController extends Controller
      */
     public function show($id)
     {
-        //
+        $ahorro=Ahorro::find($id);
+        return view('SAH.ahorros.index_autorizados_beneficiarios',compact('ahorro'));
     }
 
     /**
@@ -71,8 +71,8 @@ class AutorizadosController extends Controller
      */
     public function edit($id)
     {
-        $autorizados=Autorizados::all();
-        $autorizado=Autorizados::find($id);
+        $autorizados=Autorizado::all();
+        $autorizado=Autorizado::find($id);
         return view('autorizados_editar',compact('autorizados','autorizado'));
     }
 
