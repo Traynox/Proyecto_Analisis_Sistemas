@@ -86,3 +86,25 @@ Route::get('/actualizarFamiliares', function () {
     return view('SAS.familiares.editFamiliar');
 });
 
+Route::get('/aportes', function () {
+    return view('SAS.aportes_capital_social.aportes');
+});
+
+Route::get('/actualizarAportes', function () {
+    return view('SAS.aportes_capital_social.editAporte');
+});
+
+Route::get('/beneficiarios', function () {
+    return view('SAS.beneficiarios.beneficiarios');
+});
+
+Route::get('/consultarBnfrs', function () {
+    return view('SAS.beneficiarios.consultarbnfrs');
+});
+
+Route::get('/actualizarBnfrs', function () {
+    return view('SAS.beneficiarios.editBeneficiarios');
+});
+
+
+

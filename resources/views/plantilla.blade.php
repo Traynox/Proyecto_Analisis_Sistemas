@@ -405,6 +405,7 @@
 
     <!-- SAS js Functions -->
     <script src="js/paginationNac.js"></script>
+    <script src="js/elementos.js"></script>
 
     @yield('js')
 </body>

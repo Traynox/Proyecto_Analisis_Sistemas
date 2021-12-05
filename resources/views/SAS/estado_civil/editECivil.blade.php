@@ -21,6 +21,7 @@
             <div class="col-4 mx-auto" id="reg-paises">
 
                 <form action="" method="post" class="pt-3 pb-1">
+                    @csrf
                     <h3>Actualizar Estado Civil</h3>
 
                     <div class="mb-3">

@@ -22,6 +22,7 @@
             <div class="col-6 mx-auto" id="reg-paises">
 
                 <form action="" method="post">
+                  @csrf
                       <h3 class="pb-4">Actualizar Familiar</h3>
                     
                                                                       

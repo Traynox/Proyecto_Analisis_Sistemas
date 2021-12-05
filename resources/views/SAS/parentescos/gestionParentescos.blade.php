@@ -123,6 +123,7 @@
                 <div class="card-body">
 
                     <form action="" method="post" class="pt-3 pb-1">
+                        @csrf
                         <h3>Registrar Parentesco</h3>
 
                         <div class="mb-3">
