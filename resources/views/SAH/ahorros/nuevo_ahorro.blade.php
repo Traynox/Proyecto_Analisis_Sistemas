@@ -69,6 +69,7 @@
                         <label class="form-label">Fecha Final</label>
                         <input type="date" value="" class="form-control mb-2" name="fech_final"  required>         
                       </div>
+                      <p></p>
                     </div>
             
         </div>
