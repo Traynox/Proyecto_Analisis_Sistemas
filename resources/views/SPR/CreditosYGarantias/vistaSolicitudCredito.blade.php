@@ -43,7 +43,7 @@
                                         @break
                                     @case(2)
                                     <td><div class="badge bg-success text-wrap" style="width: 6rem;">
-                                        Aprovada
+                                        Aprobada
                                       </div></td>                                       
                                         @break
                                     @default

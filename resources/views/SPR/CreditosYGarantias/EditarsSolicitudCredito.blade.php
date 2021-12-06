@@ -49,7 +49,7 @@
                                    break;
 
                                    case 2:
-                                   $est = 'Aprovada';
+                                   $est = 'Aprobada';
                                    break;
                            }
                        @endphp
