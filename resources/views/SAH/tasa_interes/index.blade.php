@@ -46,13 +46,13 @@
 
                     </style>
 
-                    <table class="table table-hover display" id="tabla" style=" width:100%;">
+                    <table class="table table-hover" id="tabla" style=" width:100%;">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                               
                                 <th>Descripcion</th>
                                 <th>Valor</th>
-
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,20 +62,20 @@
 
                                     <tr class="text-center">
 
-                                        <td>{{ $item->id_tasa }}</td>
+                                      
                                         <td>{{ $item->descripcion }}</td>
-                                        <td>{{ $item->valor_tasa }}</td>
+                                        <td>{{ $item->tasa }}%</td>
 
 
                                         <td>
-                                            <form action="{{ route('tasa_interes.destroy', $item->id_tasa) }}"
+                                            <form action="{{ route('tasa_interes.destroy', $item->id_tasa_interes) }}"
                                                 method="POST" class="form-eliminar">
                                                 @csrf
 
                                                 <div class="btn-group dropup">
 
                                                     <button type="button" class="btn btn-sm" data-toggle="modal"
-                                                        data-target="#exampleModalEdit{{ $item->id_tasa }}">
+                                                        data-target="#exampleModalEdit{{ $item->id_tasa_interes }}">
                                                         <i class="fas fa-edit"
                                                             style="color:rgb(245, 178, 133); font-size:15px;"></i>
                                                     </button>

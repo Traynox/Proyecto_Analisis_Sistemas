@@ -19,13 +19,6 @@
 
                             <div class="col-12">
 
-
-                                <div class="mb-2">
-                                    <label class="form-label">ID</label>
-                                    <input type="text" class="form-control mb-2"
-                                        name="id_tasa" required>
-                                </div>
-
                                 <div class="mb-2">
                                     <label class="form-label">Descripcion</label>
                                     <input type="text" class="form-control mb-2"
@@ -35,7 +28,7 @@
                                 <div class="mb-2">
                                     <label class="form-label">Valor</label>
                                     <input type="text" class="form-control mb-2"
-                                        name="valor_tasa" required>
+                                        name="tasa" required>
                                 </div>
 
 

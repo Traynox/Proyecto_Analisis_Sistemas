@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tasa_interes;
 use Illuminate\Http\Request;
 
 class TasaInteresController extends Controller
@@ -13,7 +14,7 @@ class TasaInteresController extends Controller
      */
     public function index()
     {
-        $tasa_interes=Tasa_valor::all();//revisar
+        $tasa_interes=Tasa_interes::all();//revisar
         return view('SAH.tasa_interes.index', compact('tasa_interes'));
     }
 
@@ -35,12 +36,12 @@ class TasaInteresController extends Controller
      */
     public function store(Request $request)
     {
-        $tasa_valor= new Tasa_valor();
-        $id_tasa->id_tasa=$request->id_tasa;
-        $descripcion->nombre=$request->descripcion;
-        $valor_tasa->descripcion=$request->valor_tasa;
+        $tasa_interes= new Tasa_interes();
+     
+        $tasa_interes->tasa=$request->tasa;
+        $tasa_interes->descripcion=$request->descripcion;
        
-        $tasa_valor->save();
+        $tasa_interes->save();
         return back();
     }
 
@@ -75,12 +76,12 @@ class TasaInteresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tasa_valor=Tasa_valor::find($id);
-        $id_tasa->id_tasa=$request->id_tasa;
-        $descripcion->descripcion=$request->descripcion;
-        $valor_tasa->valor_tasa=$request->valor_tasa;
+        $tasa_interes=Tasa_interes::find($id);
+  
+        $tasa_interes->descripcion=$request->descripcion;
+        $tasa_interes->tasa=$request->tasa;
        
-        $tasa_valor->save();
+        $tasa_interes->save();
         return back();
     }
 
