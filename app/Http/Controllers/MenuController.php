@@ -57,6 +57,9 @@ class MenuController extends Controller
         return view('SAS.familiares.registrarFamiliar', compact('familiares', 'nacionalidades', 'identificaciones', 'profesiones', 'parentescos', 'estados'));
     }
 
+    
+    
+
     public function vista_beneficiarios(){
         return view('SAS.beneficiarios.beneficiarios');
     }

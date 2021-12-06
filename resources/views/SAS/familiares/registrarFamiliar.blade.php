@@ -23,6 +23,10 @@
                 <div class="mx-5 my-4" id="carta-registros">
           
                   <div class="mb-3">
+                    
+                  </div>
+
+                  <div class="mb-3">
                     <label for="cedula-SAS" class="form-label">Cedula</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cedula del Familiar" name="fcedula">
                   </div>

@@ -44,22 +44,23 @@
                     </thead>
                     <tbody>
                         
+                        @foreach ($familiares as $item)
                         <tr>
-                            <td>1</td>
-                            <td>305550111</td>
-                            <td>Simone simons</td>
-                            <td>17/01/1985</td>
-                            <td>direccion provicional para pruebas</td>
-                            <td>Holanda</td>
-                            <td>Persona Fisica Residente</td>
-                            <td>25318517</td>
-                            <td>83196588</td>
-                            <td>sjms85@gmail.com</td>
-                            <td>Cantante</td>
-                            <td>Conyugue</td>
-                            <td>Activo</td>
+                            <td>{{$item->id_familiar}}</td>
+                            <td>{{$item->cedula}}</td>
+                            <td>{{$item->nombre_completo}}</td>
+                            <td>{{$item->fecha_nacimiento}}</td>
+                            <td>{{$item->direccion}}</td>
+                            <td>{{$item->telefono}}</td>
+                            <td>{{$item->celular}}</td>
+                            <td>{{$item->correo}}</td>
+                            <td>{{$item->id_nacionalidad}}</td>
+                            <td>{{$item->id_identificacion}}</td>
+                            <td>{{$item->id_profesion}}</td>
+                            <td>{{$item->id_parentesco}}</td>
+                            <td>{{$item->id_estado}}</td>
                             <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
+                                <a href="{{ route('editFamiliar', $item) }}" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
                                   <form action="" class="d-inline" method="POST">
                                     @method('DELETE')
                                     @csrf
@@ -69,60 +70,8 @@
                                   </form> 
                             </td>
                         </tr>
+                        @endforeach
 
-                        <tr>
-                            <td>2</td>
-                            <td>405950222</td>
-                            <td>Mark Jensen</td>
-                            <td>27/04/1995</td>
-                            <td>direccion provicional para pruebas</td>
-                            <td>Costa Rica</td>
-                            <td>Persona Fisica Nacional</td>
-                            <td>25617513</td>
-                            <td>89151598</td>
-                            <td>mrkj@gmail.com</td>
-                            <td>Musico</td>
-                            <td>Conyugue</td>
-                            <td>Activo</td>
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>703130282</td>
-                            <td>Anastasia Knight</td>
-                            <td>12/08/1993</td>
-                            <td>direccion provicional para pruebas</td>
-                            <td>Costa Rica</td>
-                            <td>Persona Fisica Nacional</td>
-                            <td>25717213</td>
-                            <td>88171593</td>
-                            <td>anak@gmail.com</td>
-                            <td>Medico</td>
-                            <td>Nieto(a)</td>
-                            <td>Activo</td>
-                            <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                  </form> 
-                            </td>
-
-                        </tr>
 
                     </tbody>
               
