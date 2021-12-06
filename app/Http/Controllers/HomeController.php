@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('plantilla');
+        return redirect()->route('asociados_por_institucion');
+        // return view('plantilla');
     }
 }

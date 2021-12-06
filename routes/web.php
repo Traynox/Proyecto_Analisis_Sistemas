@@ -18,6 +18,7 @@ use App\Http\Controllers\ProfesionesController;
 use App\Http\Controllers\EstadosController;
 use App\Http\Controllers\EstadoCivilController;
 use App\Http\Controllers\FamiliaresController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ParentescoController;
 
 
@@ -31,6 +32,13 @@ use App\Http\Controllers\ParentescoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/* --------------------------------SPR--------------------------------*/
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::resource('ahorros', AhorrosController::class); //Controlador de SAH
 Route::resource('ahorros/autorizados', AutorizadosController::class); //Controlador de SAH
 
@@ -59,11 +67,7 @@ Route::get('reportes/reporte-9-2',[ReportesController::class,'vistaReporte_9_2']
 Route::get('reportes/reporte-9-4',[ReportesController::class,'vistaReporte_9_4'])->name('show.reporte_9_4');
 Route::get('reportes/reporte-9-14',[ReportesController::class,'vistaReporte_9_14'])->name('show.reporte_9_14');
 
-/* --------------------------------SPR--------------------------------*/
 
-Auth::routes();
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/lineaCredito', [LineaCreditoController::class, 'index'])->name('Lineascreditos');
 Route::get('/nuevaLineaCredito', [LineaCreditoController::class, 'create'])->name('nuevaLineascreditos');

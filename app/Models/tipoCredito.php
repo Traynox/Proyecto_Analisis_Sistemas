@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tipoCredito extends Model
 {
-    protected $table = 'tipo_credito';
+    protected $table = 'tipo_creditos';
     protected $primaryKey = 'id_tipo_credito';
     public $timestamps = false;
 }
