@@ -14,17 +14,13 @@
       </div>
       <h1>Reporte de cuenta</h1>
 
-      <div id="company" class="clearfix">
+      {{-- <div id="company" class="clearfix">
         <div><span>INST.</span>{{$asociado->institucion->codigo}}</div>
         <div><span>FECHA NACIMIENTO</span> {{$asociado->fecha_nacimiento}}</div>
         <div><span>FECHA INGRESO</span>{{$asociado->fecha_ingreso}}</div>
         <div><span>DIR.</span>{{$asociado->direccion}}</div>
         <div><span>PROF.</span>{{$asociado->profesion->nombre}}</div>
         <div><span>EMAIL</span> <a href="mailto:{{$asociado->correo}}">{{$asociado->correo}}</a></div>
-    {{-- <div><span>Cuenta</span>{{$ahorro->nombre}}</div>
-        <div>455 Foggy Heights,<br /> AZ 85004, US</div>
-        <div>(602) 519-0450</div>
-        <div><a href="mailto:company@example.com">company@example.com</a></div> --}}
       </div>
       <div id="project">
         <div><span>Codigo</span>{{$asociado->codigo}}</div>
@@ -32,14 +28,14 @@
         <div><span>CEDULA</span>{{$asociado->cedula}}</div>
         <div><span>ESTADO CIVIL</span>{{$asociado->estadoCivil->nombre}}</div>
         <div><span>NACIONALIDAD</span>{{$asociado->nacionalidad->pais}}</div>
-      </div>
+      </div> --}}
     </header>
     <main>
-      <h5 class="text-center">Cuentas de ahorro</h5>
+      <h5 class="text-center">{{$tipo_reporte ?? 'Reporte de cuenta'}}</h5>
       <table>
         <thead>
           <tr>
-            <th class="desc">NOMBRE</th>
+            <th class="desc">AHORRO</th>
             <th class="service">PLAZO</th>
             <th class="desc">MONEDA</th>
             <th>MONTO AHORRADO</th>
@@ -49,7 +45,9 @@
           </tr>
         </thead>
         <tbody>
-       @forelse ($asociado->ahorros as $ahorro)
+       @forelse ($ahorros as $ahorro)
+
+       @forelse ($ahorro->transacciones as $transaccion)
        <tr class="text-center">
         <td class="service">{{$ahorro->nombre}}</td>
         <td class="desc">{{$ahorro->duracion}} meses</td>
@@ -57,9 +55,12 @@
         <td class="total">{{$ahorro->monto_ahorrado}}</td>
         <td class="total">{{$ahorro->fecha_inicio}}</td>
         <td class="total">{{$ahorro->fecha_final}}</td>
-      </tr>
+      </tr>  
        @empty
-           <h5>No tiene Cuentas Activas o registradas</h5>
+       <h5>No tiene trasacciones registradas</h5>
+       @endforelse
+       @empty
+           <h5>No tiene Ahorros registrados</h5>
        @endforelse
          
         </tbody>

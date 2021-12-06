@@ -69,7 +69,7 @@
                           @forelse ($identificaciones as $item)
                           <option value="{{$item->id_identificacion}}">{{$item->tipo}}</option>
                           @empty
-                          <option value="No hay parentescos">...</option>    
+                          <option value="No hay tipo de Identificacion">...</option>    
                           @endforelse
                           </select>                    
                         </div>

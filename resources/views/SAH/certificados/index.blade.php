@@ -6,18 +6,18 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{{ asset('js/tipo_ahorro/mostrar.js') }}"></script>
-
+    <script src="{{ asset('js/certificado/mostrar.js') }}"></script>
 @endsection
+
 @section('contenido')
 
     <div class="container">
         <button class="btn btn-primary btn-md " data-toggle="modal" data-target="#exampleModal">
             <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
-            NUEVA TASA DE INTERES
+            NUEVO CERTIFICADO
         </button>
         <hr>
-        @include('SAH.tasa_interes.interes_create')
+        @include('SAH.certificados.certificado_create')
 
 
         <div class="row">
@@ -25,7 +25,7 @@
                 <div class="card-header">
 
                     <i class="fas fa-table me-1"></i>
-                    Tasa de intereses
+                    CERTIFICADOS
 
                 </div>
 
@@ -46,36 +46,47 @@
 
                     </style>
 
-                    <table class="table table-hover" id="tabla" style=" width:100%;">
+                    <table class="table table-hover display" id="tabla" style=" width:100%;">
                         <thead>
                             <tr>
-                               
-                                <th>Descripcion</th>
-                                <th>Valor</th>
+                                <th>Codigo</th>
+                                <th>Detalles</th>
+                                <th>Firma_Tesorero</th>
+                                <th>Firma_Presidente</th>
+                                <th>Nacimiento</th>
+                                <th>Inicio</th>
+                                <th>Aporte</th>
+                                <th>Certificado</th>
                                 <th>Acciones</th>
+
                             </tr>
                         </thead>
                         <tbody>
 
-                            @if (isset($tasa_interes))
-                                @foreach ($tasa_interes as $item)
+                            @if (isset($certificados))
+                                @foreach ($certificados as $item)
 
                                     <tr class="text-center">
 
-                                      
-                                        <td>{{ $item->descripcion }}</td>
-                                        <td>{{ $item->tasa }}%</td>
+                                        <td>{{ $item->codigo_certificado }}</td>
+                                        <td>{{ $item->detalle }}</td>
+                                        <td>{{ $item->firma_tesorero }}</td>
+                                        <td>{{ $item->firma_presidente }}</td>
+                                        <td>{{ $item->fecha_nacimiento }}</td>
+                                        <td>{{ $item->fecha_inicio }}</td>
+                                        <td>{{ $item->aportes->valor }}</td>
+                                        <td>{{ $item->certificados->nombre }}</td>
 
 
                                         <td>
-                                            <form action="{{ route('tasa_interes.destroy', $item->id_tasa_interes) }}"
+                                            <form action="{{ route('certificados.destroy', $item->id_certificado) }}"
                                                 method="POST" class="form-eliminar">
                                                 @csrf
 
                                                 <div class="btn-group dropup">
 
                                                     <button type="button" class="btn btn-sm" data-toggle="modal"
-                                                        data-target="#exampleModalEdit{{ $item->id_tasa_interes }}">
+                                                        data-target="#exampleModalEdit{{ $item->id_certificado }}">
                                                         <i class="fas fa-edit"
                                                             style="color:rgb(245, 178, 133); font-size:15px;"></i>
                                                     </button>
@@ -87,7 +98,7 @@
                                                         style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
                                             </form>
                                         </td>
-                                        @include('SAH.tasa_interes.interes_edit')
+                                        @include('SAH.certificados.certificado_edit')
 
                                     </tr>
 
@@ -149,36 +160,15 @@
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script>
 
-
-
     <script>
         var nombre;
-
-
-
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
 
         $(document).ready(function() {
             var table = $('#tabla').DataTable({
-                // dom: 'Bfrtip',
-                // buttons: [{
-                //     extend: 'pdf',
-                //     text: '<i class="fas fa-file-pdf text-danger"></i> PDF',
-                //     titleAttr: 'Exportar a excel',
-                //     className: 'btn btn-success',
-                //     customize: function(doc) {
-
-                //         doc.styles.title = {
-
-                //             color: '#41ADE7',
-                //             fontSize: '20',
-                //             alignment: 'center'
-                //         }
-                //     }
-
-                // }, ],
+               
 
 
                 responsive: true,

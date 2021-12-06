@@ -1,6 +1,6 @@
 <div class="container">
     <!-- Modal EDITAR-->
-    <div class="modal fade" id="exampleModalEdit{{ $item->id_tasa_interes }}" tabindex="-1" role="dialog"
+    <div class="modal fade" id="exampleModalEdit{{ $item->id_tipo_ahorro }}" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm " role="document">
             <div class="modal-content">
@@ -12,12 +12,19 @@
                 <div class="modal-body">
                     {{-- <form action="" enctype="multipart/form-data" class="form-group p-4 form-grid" method="POST"> --}}
                     {{-- @csrf --}}
-                    <form action="{{ route('tasa_interes.update', $item->id_tasa_interes) }}" enctype="multipart/form-data" class="form-group form-grid" method="POST">
+                    <form action="{{ route('tipos_ahorros.update', $item->id_tipo_ahorro) }}" enctype="multipart/form-data" class="form-group form-grid" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="row ">
 
                             <div class="col-12">
+
+
+                                <div class="mb-2">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" value="{{ $item->nombre }}" class="form-control mb-2"
+                                        name="nombre" required>
+                                </div>
 
                                 <div class="mb-2">
                                     <label class="form-label">Descripcion</label>
@@ -25,11 +32,7 @@
                                         name="descripcion" required>
                                 </div>
 
-                                <div class="mb-2">
-                                    <label class="form-label">Valor</label>
-                                    <input type="text" value="{{ $item->tasa }}" class="form-control mb-2"
-                                        name="tasa" required>
-                                </div>
+
 
 
                             </div>
