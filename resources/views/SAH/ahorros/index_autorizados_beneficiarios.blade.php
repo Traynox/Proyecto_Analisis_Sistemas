@@ -74,15 +74,15 @@
           
                                                             <button type="button" class="btn btn-sm" data-toggle="modal"
                                                                 data-target="#exampleModalEdit{{ $item->id_autorizado }}">
-                                                                <i class="fas fa-edit"
-                                                                    style="color:rgb(245, 178, 133); font-size:15px;"></i>
+                                                                <i class="fas fa-edit" style="color:rgb(245, 178, 133); font-size:15px;"></i>
                                                             </button>
                                                         </div>
           
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm">
                                                             <i class="fas fa-trash-alt"
-                                                                style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
+                                                                style=" color:rgb(237, 22, 22); font-size:15px;"></i>
+                                                        </button>
                                                     </form>
                                                 </td>
                                                 @include('SAH.ahorros.editar_autorizados')
@@ -182,7 +182,11 @@
         </div>
 
         <div class="card-footer text-center">
-          <button type="button" class="btn btn-lg btn-success">Terminar</button>
+          {{-- <button type="button" class="btn btn-lg btn-success">Terminar</button> --}}
+          <a class="btn btn-primary btn-md " href="{{route('ahorros.index')}}">
+            <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
+            TERMINAR
+        </a>
         </div>
         
       </div>
