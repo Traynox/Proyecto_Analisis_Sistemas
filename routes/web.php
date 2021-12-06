@@ -4,6 +4,7 @@ use App\Http\Controllers\TipoAhorroController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AhorrosController;
 use App\Http\Controllers\AutorizadosController;
+use App\Http\Controllers\BeneficiariosController;
 use App\Http\Controllers\ReportesController;
 
 /*
@@ -18,6 +19,7 @@ use App\Http\Controllers\ReportesController;
 */
 Route::resource('ahorros', AhorrosController::class); //Controlador de SAH
 Route::resource('ahorros/autorizados', AutorizadosController::class); //Controlador de SAH
+Route::resource('ahorros/beneficiarios', BeneficiariosController::class); //Controlador de SAH
 
 Route::get('/', function () {
     return view('plantilla');

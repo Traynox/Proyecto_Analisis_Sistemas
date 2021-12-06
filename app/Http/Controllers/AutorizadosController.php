@@ -49,9 +49,10 @@ class AutorizadosController extends Controller
         $autorizado->id_nacionalidad=$request->nacionalidad;
         $autorizado->id_identificacion=$request->identificacion;
         $autorizado->id_parentesco=$request->parentesco;
+        $autorizado->save();
 
-        
-        $ahorro->autorizados()->attach($arrayId);
+        $ahorro=Ahorro::find($request->id_ahorro);
+        $ahorro->autorizados()->attach($autorizado->id_autorizado);
         return  back();
     }
 
@@ -67,7 +68,7 @@ class AutorizadosController extends Controller
         $nacionalidades=Nacionalidad::all();
         $identificaciones=Identificacion::all();
         $parentescos=Parentesco::all();
-
+// return $ahorro->beneficiarios;
         return view('SAH.ahorros.index_autorizados_beneficiarios',compact('ahorro','nacionalidades','identificaciones','parentescos'));
     }
 

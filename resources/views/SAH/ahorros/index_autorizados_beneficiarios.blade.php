@@ -11,11 +11,7 @@
         <div class="card-header">
           <h5 class="card-title" >Agregar Autorizados y Beneficiarios</h5>
          
-        </div>
-        <form action="{{ route('ahorros.store') }}" enctype="multipart/form-data"
-            class="form-group form-grid" method="POST">
-            @csrf
-         
+        </div>   
         <div class="card-body">
                 <div class="row"> 
                     <div class="col-md-6 col-sm-12">
@@ -54,31 +50,30 @@
                                         <th>Cedula</th>
                                         <th>Nombre</th>
                                         <th>Telefono</th>
-                                        
-          
-          
+                                        <th>Acciones</th>                
                                     </tr>
                                 </thead>
                                 <tbody>
           
-                                    {{-- @if (isset($tipos_ahorros))
-                                        @foreach ($tipos_ahorros as $item)
+                                    @if (isset($ahorro))
+                                        @foreach ($ahorro->autorizados as $item)
           
                                             <tr class="text-center">
-          
+
+                                                <td>{{ $item->cedula }}</td>
                                                 <td>{{ $item->nombre }}</td>
-                                                <td>{{ $item->descripcion }}</td>
-          
+                                                <td>{{ $item->telefono }}</td>
+
           
                                                 <td>
-                                                    <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
+                                                    <form action="{{ route('autorizados.destroy', $item->id_autorizado) }}"
                                                         method="POST" class="form-eliminar">
                                                         @csrf
           
                                                         <div class="btn-group dropup">
           
                                                             <button type="button" class="btn btn-sm" data-toggle="modal"
-                                                                data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
+                                                                data-target="#exampleModalEdit{{ $item->id_autorizado }}">
                                                                 <i class="fas fa-edit"
                                                                     style="color:rgb(245, 178, 133); font-size:15px;"></i>
                                                             </button>
@@ -90,12 +85,12 @@
                                                                 style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
                                                     </form>
                                                 </td>
-                                                @include('SAH.tipos_ahorros.tipos_edit')
+                                                @include('SAH.ahorros.editar_autorizados')
           
                                             </tr>
           
                                         @endforeach
-                                    @endif --}}
+                                    @endif
           
                                 </tbody>
                             </table>
@@ -138,65 +133,58 @@
                                         <th>Cedula</th>
                                         <th>Nombre</th>
                                         <th>Telefono</th>
-                                        
-          
-          
+                                        <th>Accion</th>                                                         
+                                                        
                                     </tr>
                                 </thead>
                                 <tbody>
           
-                                    {{-- @if (isset($tipos_ahorros))
-                                        @foreach ($tipos_ahorros as $item)
+                                    @if (isset($ahorro))
+                                        @foreach ($ahorro->beneficiarios as $item)
           
                                             <tr class="text-center">
           
+                                                <td>{{ $item->cedula }}</td>
                                                 <td>{{ $item->nombre }}</td>
-                                                <td>{{ $item->descripcion }}</td>
-          
+                                                <td>{{ $item->telefono }}</td>
+
           
                                                 <td>
-                                                    <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
+                                                    <form action="{{ route('beneficiarios.destroy', $item->id_beneficiario) }}"
                                                         method="POST" class="form-eliminar">
-                                                        @csrf
-          
-                                                        <div class="btn-group dropup">
-          
+                                                        @csrf                                                       
+                                                        <div class="btn-group dropup">      
                                                             <button type="button" class="btn btn-sm" data-toggle="modal"
-                                                                data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
+                                                                data-target="#exampleModalEdit{{ $item->id_beneficiario}}">
                                                                 <i class="fas fa-edit"
                                                                     style="color:rgb(245, 178, 133); font-size:15px;"></i>
                                                             </button>
                                                         </div>
-          
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm">
-                                                            <i class="fas fa-trash-alt"
-                                                                style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
+                                                        <i class="fas fa-trash-alt"style=" color:rgb(237, 22, 22); font-size:15px;"></i>
+                                                        </button>
                                                     </form>
                                                 </td>
-                                                @include('SAH.tipos_ahorros.tipos_edit')
+                                                @include('SAH.ahorros.editar_beneficiario')
           
                                             </tr>
           
                                         @endforeach
-                                    @endif --}}
+                                    @endif
           
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    </div>
-            
+                    </div>          
         </div>
-        {{-- <button type="submit" class="btn btn-primary">Guardar</button> --}}
-   
-
         </div>
 
         <div class="card-footer text-center">
-          <button type="submit" class="btn btn-lg btn-success">Guardar</button>
+          <button type="button" class="btn btn-lg btn-success">Terminar</button>
         </div>
-        </form>
+        
       </div>
      
     {{-- </div> --}}
