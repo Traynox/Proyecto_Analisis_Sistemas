@@ -20,13 +20,14 @@
         <div class="card-body">
             <div class="col-4 mx-auto" id="reg-paises">
 
-                <form action="" method="post" class="pt-3 pb-1">
+                <form action="{{ route('actEstado', $estado->id_estado) }}" method="post" class="pt-3 pb-1">
+                    @method('PUT')
                     @csrf
                     <h3>Actualizar Estado</h3>
 
                     <div class="mb-3">
                         <label for="e-civil" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del Estado">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$estado->nombre}}" name="nEstado">
                     </div>
 
                     <div class="row justify-content-center mt-4">

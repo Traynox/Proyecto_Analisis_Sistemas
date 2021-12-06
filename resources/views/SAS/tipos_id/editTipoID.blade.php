@@ -21,13 +21,14 @@
         <div class="card-body">
             <div class="col-6 mx-auto" id="reg-paises">
 
-                <form action="" method="post" class="pt-3 pb-1">
+                <form action="{{ route('actID', $identificacion->id_identificacion ) }}" method="post" class="pt-3 pb-1">
+                    @method('PUT')
                     @csrf
                     <h3>Actualizar Tipo Indentificacion</h3>
 
                     <div class="mb-3">
                         <label for="tipo-id" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tipo de ID">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$identificacion->tipo}}" name="etipoId">
                     </div>
 
                     <div class="row justify-content-center mt-4">
