@@ -121,8 +121,7 @@ class BeneficiariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        
+    {   
         Beneficiario::destroy($id); 
         return back();
     }

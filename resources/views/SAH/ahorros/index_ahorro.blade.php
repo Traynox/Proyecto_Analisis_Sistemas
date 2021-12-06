@@ -6,7 +6,6 @@
 @endsection
 @section('contenido')
 <div class="container py-5 mb-5">
-    {{-- @include('clientes.new_cliente') --}}
     <div class="container">
       <a class="btn btn-primary btn-md " href="{{route('ahorros.create')}}">
           <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
@@ -51,7 +50,7 @@
                 <th>Estado</th>
                 <th>Tipo.Ahorro</th>
                 <th>Asociado</th>
-
+                <th>Acciones</th>
 
             </tr>
         </thead>
@@ -73,8 +72,48 @@
                         <td>{{ $item->asociado->nombre_completo }}</td>
 
 
-                        {{-- <td>
-                            <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
+                        <td>
+                            <div class="btn-group dropup">
+                                <a type="button" data-toggle="dropdown"
+                                    class="btn btn-sm  text-decorated-none " data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v" style="font-size:10px;"></i>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                     {{-- {{ $item->id_cita }} --}}
+                                     <li><a data-toggle="modal"
+                                        data-target="#exampleModal"
+                                        class="btn btn-sm bg-light  text-decorated-none dropdown-item">
+                                        <i class="fas fa-eye" style="font-size:17px; color: rgb(23, 145, 182)"></i>
+                                        Nueva Cuota</a> </li>
+                                    <li>
+                                           
+                                            <a  href=" {{ route('ahorros.edit', $item->id_ahorro)}}"
+                                                class="btn btn-sm bg-light text-decorated-none dropdown-item">
+                                                <i class="fas fa-edit" style="color:rgb(245, 178, 133); font-size:15px;"></i>
+                                                Editar</a>
+                                
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('ahorros.destroy', $item->id_ahorro) }}"
+                                            method="POST" class="form-eliminar">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="btn btn-sm bg-light text-decorated-none dropdown-item"><i
+                                                    class="fas fa-trash-alt"
+                                                    style="font-size:17px; color: rgb(206, 56, 1)"></i>
+                                                Eliminar</button>
+                                        </form>
+                                    </li>
+
+
+                                   
+
+                                </ul>
+
+                            </div>
+                            {{-- <form action="{{ route('ahorros.destroy', $item->id_ahorro) }}"
                                 method="POST" class="form-eliminar">
                                 @csrf
 
@@ -91,9 +130,8 @@
                                 <button type="submit" class="btn btn-sm">
                                     <i class="fas fa-trash-alt"
                                         style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
-                            </form>
+                            </form> --}}
                         </td>
-                        @include('SAH.tipos_ahorros.tipos_edit') --}}
 
                     </tr>
 
