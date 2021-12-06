@@ -39,6 +39,9 @@ use App\Http\Controllers\ParentescoController;
 /* --------------------------------SPR--------------------------------*/
 
 Auth::routes();
+Route::get('/', function () {
+    return view('auth.login');
+})->name('inicio');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

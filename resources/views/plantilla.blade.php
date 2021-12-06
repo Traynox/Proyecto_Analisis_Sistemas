@@ -121,9 +121,9 @@
                         <h6 class="collapse-header">Reportes:</h6>
                         <a class="collapse-item" href="{{route('reportes_prestamos')}}">De prestamos</a>
                         <a class="collapse-item" href="{{route('reportes.index')}}"> De ahorros</a>
-                        <a class="collapse-item" href="utilities-border.html">De prestamos</a>
+                        {{-- <a class="collapse-item" href="utilities-border.html">De prestamos</a> --}}
                         <a class="collapse-item" href="{{route('reportes-extra')}}">De Cajas</a>
-                        <a class="collapse-item" href="utilities-animation.html">De asociados</a>
+                        {{-- <a class="collapse-item" href="utilities-animation.html">De asociados</a> --}}
                     </div>
                 </div>
             </li>
