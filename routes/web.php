@@ -108,6 +108,14 @@ Route::get('/prestamosDoc', function () {
 Route::get('/crearGarantiasTasas', [GarantiaController::class, 'create'])->name('garantias');
 Route::get('/garantiasTasas', [GarantiaController::class, 'index'])->name('vistaGarantias');
 Route::post('/crearGarantiasTasas', [GarantiaController::class, 'store'])->name('crearGarantiasTasas');
+Route::get('/descargarDoc/{id_garantia}', [GarantiaController::class, 'descargarDoc'])->name('descargarDoc');
+Route::delete('/eliminarG/{id_garantia}', [GarantiaController::class, 'deleteG'])->name('eliminarG');
+Route::delete('/eliminarT/{id_tasa}', [GarantiaController::class, 'deleteT'])->name('eliminarT');
+Route::get('/editGarantia_{id_garantia}', [GarantiaController::class, 'edit_G'])->name('editGarantia');
+Route::get('/editTasa_{id_tasa}', [GarantiaController::class, 'edit_T'])->name('editTasa');
+Route::put('/updateGarantia/{id_garantia}', [GarantiaController::class, 'updateG'])->name('updateGarantia');
+Route::put('/updateTasa/{id_tasa}', [GarantiaController::class, 'updateT'])->name('updateTasa');
+
 
 
 Route::get('/SPR', [SolicitudController::class, 'indexPrestamos'])->name('prestamos');

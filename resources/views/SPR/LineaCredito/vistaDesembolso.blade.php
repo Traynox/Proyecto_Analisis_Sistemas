@@ -1,3 +1,6 @@
+@section('titulo')
+    Linea de credito - Desembolso
+@endsection
 @extends('plantilla')
 @section('css')
     <link rel="stylesheet" href="css/cssLineaCredito.css">

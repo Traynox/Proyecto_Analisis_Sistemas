@@ -1,3 +1,7 @@
+@section('titulo')
+    Cobro Judicial
+@endsection
+
 @extends('plantilla')
 @section('css')
     <link rel="stylesheet" href="css/cssLineaCredito.css">

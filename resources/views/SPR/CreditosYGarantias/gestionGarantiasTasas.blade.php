@@ -1,3 +1,6 @@
+@section('titulo')
+    Gestion Garantias y Tasas
+@endsection
     @extends('plantilla')
     @section('css')
         <link rel="stylesheet" href="css/cssLineaCredito.css">
@@ -27,7 +30,7 @@
 
 
                             <div class="col-md-12">
-                                <select class="form-select mt-3" required>
+                                <select class="form-select mt-3" name="tipo" required>
                                     <option selected disabled value="">Tipos de Credito</option>
                                     @foreach ($tipos as $item)
                                     <option value="{{$item->id_tipo_credito}}">{{$item->nombre}}</option>                                      

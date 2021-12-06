@@ -1,3 +1,6 @@
+@section('titulo')
+    Prestamos
+@endsection
 @extends('plantilla')
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">

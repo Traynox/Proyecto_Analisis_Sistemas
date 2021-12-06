@@ -18,6 +18,6 @@ class Solicitud extends Model
 
     public function tipo()
     {
-        return $this->belongsTo(tipoCredito::class, 'id_tipo_credito');////?
+        return $this->belongsTo(tipoCredito::class, 'id_tipo_credito');
     }
 }
