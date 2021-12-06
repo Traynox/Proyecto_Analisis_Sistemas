@@ -5,7 +5,7 @@
 
 @endsection
 @section('contenido')
-<div class="container py-5 mb-5">
+<div class="container py-2">
     <div class="container">
       <a class="btn btn-primary btn-md " href="{{route('ahorros.create')}}">
           <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
