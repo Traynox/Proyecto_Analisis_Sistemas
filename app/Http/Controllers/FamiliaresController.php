@@ -23,6 +23,6 @@ class FamiliaresController extends Controller
         $familiar->id_parentesco = $request->listaParentescos;
         $familiar->id_estado = $request->listaEstados;
         $familiar->save();
-        return redirect()->route('');
+        return redirect()->route('vFamiliares');
     }
 }
