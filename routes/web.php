@@ -4,6 +4,7 @@ use App\Http\Controllers\TipoAhorroController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AhorrosController;
 use App\Http\Controllers\AutorizadosController;
+use App\Http\Controllers\CertificadosController;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\TasaInteresController;
 
@@ -25,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::resource('tipos_ahorros',TipoAhorroController::class);
+Route::resource('certificados',CertificadosController::class);
 Route::resource('tasas_interes', TasaInteresController::class);
 
 
