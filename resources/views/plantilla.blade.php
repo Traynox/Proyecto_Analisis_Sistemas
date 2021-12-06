@@ -67,7 +67,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMovimientos"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-university" style="font-size: 20px;"></i>
                     <span class="text-white">Movimientos</span>
                 </a>
                 <div id="collapseMovimientos" class="collapse" aria-labelledby="headingUtilities"
@@ -82,8 +82,9 @@
                             <div id="collapseAhorros" class="collapse" aria-labelledby="headingUtilities"
                             data-parent="#collapseAhorros">
                             <a class="collapse-item" href="{{route('tipos_ahorros.index')}}">Tipos ahorros</a>
+                            <a class="collapse-item" href="{{ route('certificados.index') }}">Certificados</a>
                             <a class="collapse-item" href="{{route('ahorros.index')}}">Ahorros</a>
-                            <a class="collapse-item" href="{{route('tasas_interes.index')}}">Tasas de interes</a>
+                            <a class="collapse-item" href="{{route('tasa_interes.index')}}">Tasas de interes</a>
                         
                         </div>
                         </ul>
@@ -111,7 +112,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReportes"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-paste" style="font-size: 20px;"></i>
                     <span class="text-white">Reportes</span>
                 </a>
                 <div id="collapseReportes" class="collapse" aria-labelledby="headingUtilities"

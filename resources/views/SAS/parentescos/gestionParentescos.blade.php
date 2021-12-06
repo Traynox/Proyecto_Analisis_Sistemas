@@ -38,7 +38,7 @@
                             <td>{{$item->nombre}}</td>
                             
                             <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
+                                <a href="{{ route('editParentesco', $item) }}" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
                                   <form action="" class="d-inline" method="POST">
                                     @method('DELETE')
                                     @csrf

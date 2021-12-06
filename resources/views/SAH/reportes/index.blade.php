@@ -21,7 +21,6 @@
                 </div>
             </div>
            
-        
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -54,16 +53,16 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Asociados y beneficiarios</h5>
-                        <p class="card-text">Content</p>
+                        <h5 class="card-title"><a href="">Proyecciones por cuenta</a></h5>
+                        <p class="card-text">Reportes de proyecciones de cuenta</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bloqueos de por cuenta</h5>
-                        <p class="card-text">Content</p>
+                        <h5 class="card-title"><a href="">Rangos para cálculo de intereses</a></h5>
+                        <p class="card-text">reportes de intreses por rango</p>
                     </div>
                 </div>
             </div>
@@ -72,16 +71,16 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">certificados Cancelados</h5>
-                        <p class="card-text">Content</p>
+                        <h5 class="card-title"><a href="">Certificados Cancelados</a></h5>
+                        <p class="card-text">certificados cancelados por asociado</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Cuentas de asociado</h5>
-                        <p class="card-text">Content</p>
+                        <h5 class="card-title"><a href="">Vencimiento de certificados y cupones</a></h5>
+                        <p class="card-text">reportes de vencimiento</p>
                     </div>
                 </div>
             </div>

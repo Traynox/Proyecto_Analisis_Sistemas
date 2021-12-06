@@ -9,6 +9,8 @@ use App\Http\Controllers\TipoAhorroController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AhorrosController;
 use App\Http\Controllers\AutorizadosController;
+use App\Http\Controllers\BeneficiariosController;
+use App\Http\Controllers\CertificadosController;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\TasaInteresController;
 
@@ -42,6 +44,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('ahorros', AhorrosController::class); //Controlador de SAH
 Route::resource('ahorros/autorizados', AutorizadosController::class); //Controlador de SAH
+Route::resource('ahorros/beneficiarios', BeneficiariosController::class); //Controlador de SAH
 
 /* --------------------------------SAS--------------------------------*/
 
@@ -52,22 +55,21 @@ Route::get('/', function () {
 }); 
 */
 Route::resource('tipos_ahorros',TipoAhorroController::class);
-Route::resource('tasas_interes', TasaInteresController::class);
-
+Route::resource('tasa_interes', TasaInteresController::class);
+Route::resource('certificados',CertificadosController::class);
 
 // REPORTES
-Route::get('reportes', [ReportesController::class,'index'])->name('reportes.index');
+Route::get('reportes-ahorros', [ReportesController::class,'index'])->name('reportes.index');
 
-Route::post('reportes/reporte-9-1',[ReportesController::class,'reporte_9_1'])->name('pdf.reporte_9_1');
-Route::post('reportes/reporte-9-2',[ReportesController::class,'reporte_9_2'])->name('pdf.reporte_9_2');
-Route::post('reportes/reporte-9-4',[ReportesController::class,'reporte_9_4'])->name('pdf.reporte_9_4');
-Route::post('reportes/reporte-9-14',[ReportesController::class,'reporte_9_14'])->name('pdf.reporte_9_14');
+Route::post('reportes-ahorros/reporte-9-1',[ReportesController::class,'reporte_9_1'])->name('pdf.reporte_9_1');
+Route::post('reportes-ahorros/reporte-9-2',[ReportesController::class,'reporte_9_2'])->name('pdf.reporte_9_2');
+Route::post('reportes-ahorros/reporte-9-4',[ReportesController::class,'reporte_9_4'])->name('pdf.reporte_9_4');
+Route::post('reportes-ahorros/reporte-9-14',[ReportesController::class,'reporte_9_14'])->name('pdf.reporte_9_14');
 
-Route::get('reportes/reporte-9-1',[ReportesController::class,'vistaReporte_9_1'])->name('show.reporte_9_1');
-Route::get('reportes/reporte-9-2',[ReportesController::class,'vistaReporte_9_2'])->name('show.reporte_9_2');
-Route::get('reportes/reporte-9-4',[ReportesController::class,'vistaReporte_9_4'])->name('show.reporte_9_4');
-Route::get('reportes/reporte-9-14',[ReportesController::class,'vistaReporte_9_14'])->name('show.reporte_9_14');
-
+Route::get('reportes-ahorros/reporte-9-1',[ReportesController::class,'vistaReporte_9_1'])->name('show.reporte_9_1');
+Route::get('reportes-ahorros/reporte-9-2',[ReportesController::class,'vistaReporte_9_2'])->name('show.reporte_9_2');
+Route::get('reportes-ahorros/reporte-9-4',[ReportesController::class,'vistaReporte_9_4'])->name('show.reporte_9_4');
+Route::get('reportes-ahorros/reporte-9-14',[ReportesController::class,'vistaReporte_9_14'])->name('show.reporte_9_14');
 
 
 Route::get('/lineaCredito', [LineaCreditoController::class, 'index'])->name('Lineascreditos');
@@ -163,29 +165,45 @@ Route::get('/nacionalidades/editNac/{id}', [PaisesController::class, 'editar_pai
 Route::put('/nacionalidades/editNac/{id}', [PaisesController::class, 'actualizar_pais'])->name('actPais');
 
 
-
 Route::get('/identificaciones', [MenuController::class, 'vista_identificaciones'])->name('vIdentificaciones');
 Route::post('/identificaciones/registrar', [IdentificacionesController::class, 'registrar_tipo_id'])->name('rTipoId');
+Route::get('/identificaciones/editID/{id}', [IdentificacionesController::class, 'editar_identificacion'])->name('editID');
+Route::put('/identificaciones/editID/{id}', [IdentificacionesController::class, 'actualizar_identificacion'])->name('actID');
 
 
 Route::get('/profesiones', [MenuController::class, 'vista_profesiones'])->name('vProfesiones');
-Route::post('profesiones/registrar', [ProfesionesController::class, 'registrar_profesion'])->name('rProfesion');
+Route::post('/profesiones/registrar', [ProfesionesController::class, 'registrar_profesion'])->name('rProfesion');
+Route::get('/profesiones/editProfesion/{id}', [ProfesionesController::class, 'editar_profesion'])->name('editProfesion');
+Route::put('/profesiones/editProfesion/{id}', [ProfesionesController::class, 'actualizar_profesion'])->name('actProfesion');
+
 
 
 Route::get('/estados', [MenuController::class, 'vista_estados'])->name('vEstados');
 Route::post('/estados/registrar', [EstadosController::class, 'registrar_estado'])->name('rEstado');
+Route::get('/estados/editEstado/{id}', [EstadosController::class, 'editar_estado'])->name('editEstado');
+Route::put('/estados/editEstado/{id}', [EstadosController::class, 'actualizar_estado'])->name('actEstado');
 
 
 Route::get('/estadoCivil', [MenuController::class, 'vista_estado_Civiles'])->name('vECiviles');
 Route::post('estadoCivil/registrar', [EstadoCivilController::class, 'registrar_estado_civil'])->name('rECivil');
+Route::get('estadoCivil/editECivil/{id}', [EstadoCivilController::class, 'editar_estado_civil'])->name('editECivil');
+Route::put('estadoCivil/editECivil/{id}', [EstadoCivilController::class, 'actualizar_estado_civil'])->name('actECivil');
 
 
 Route::get('/parentescos', [MenuController::class, 'vista_parentescos'])->name('vParentescos');
 Route::post('/parentescos/registrar', [ParentescoController::class, 'registrar_parentesco'])->name('rParentesco');
+Route::get('/parentescos/editParentesco/{id}', [ParentescoController::class, 'editar_parentesco'])->name('editParentesco');
+Route::put('/parentescos/editParentesco/{id}', [ParentescoController::class, 'actualizar_parentesco'])->name('actParentesco');
+
 
 
 Route::get('/familiares', [MenuController::class, 'vista_familiares'])->name('vFamiliares');
+Route::get('/familiares/consultar', [FamiliaresController::class, 'consultar_familiar'])->name('cFamiliar');
 Route::post('/familiares/registrar', [FamiliaresController::class, 'registrar_familiar'])->name('rFamiliar');
+Route::get('/familiares/editFamiliar/{id}', [FamiliaresController::class, 'editar_familiar'])->name('editFamiliar');
+Route::put('/familiares/editFamiliar/{id}', [FamiliaresController::class, 'actualizar_familiar'])->name('actFamiliar');
+
+
 
 Route::get('/beneficiarios', [MenuController::class, 'vista_beneficiarios'])->name('vBeneficiarios');
 
@@ -260,3 +278,4 @@ Route::get('/actualizarBnfrs', function () {
 });
 
 
+Route::post('ahorros/monto',[AhorrosController::class,'monto_ahorro'])->name('monto.actu');

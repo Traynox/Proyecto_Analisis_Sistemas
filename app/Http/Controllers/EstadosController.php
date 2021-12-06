@@ -16,4 +16,18 @@ class EstadosController extends Controller
 
     }
 
+    public function editar_estado($id){
+
+        $estado = Estado::findOrFail($id);
+        return view('SAS.estados.editEstados', compact('estado'));
+    }
+
+    public function actualizar_estado(Request $request, $id){
+
+        $estado = Estado::find($id);
+        $estado->nombre = $request->nEstado;
+        $estado->save();
+        return redirect()->route('vEstados');
+    }
+
 }

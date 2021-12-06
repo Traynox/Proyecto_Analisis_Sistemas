@@ -38,7 +38,7 @@
                             <td>{{$item->tipo}}</td>
                             
                             <td>
-                                <a href="" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
+                                <a href="{{ route('editID', $item) }}" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
                                   <form action="" class="d-inline" method="POST">
                                     @method('DELETE')
                                     @csrf

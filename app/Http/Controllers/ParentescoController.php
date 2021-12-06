@@ -15,4 +15,18 @@ class ParentescoController extends Controller
         return redirect()->route('vParentescos');
     }
 
+    public function editar_parentesco($id){
+
+        $parentesco = Parentesco::findOrFail($id);
+        return view('SAS.parentescos.editParentesco', compact('parentesco'));
+    }
+
+    public function actualizar_parentesco(Request $request, $id){
+
+        $parentesco = Parentesco::find($id);
+        $parentesco->nombre = $request->parentescoName;
+        $parentesco->save();
+        return redirect()->route('vParentescos');
+    }
+
 }

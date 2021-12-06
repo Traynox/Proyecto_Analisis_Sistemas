@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tasa_interes;
+use App\Models\Certificado;
 use Illuminate\Http\Request;
 
-class TasaInteresController extends Controller
+class CertificadosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TasaInteresController extends Controller
      */
     public function index()
     {
-        $tasa_interes=Tasa_interes::all();//revisar
-        return view('SAH.tasa_interes.index', compact('tasa_interes'));
+        $certificados=Certificado::all();
+        return view('SAH.certificados.index', compact('certificados'));
     }
 
     /**
@@ -36,12 +36,11 @@ class TasaInteresController extends Controller
      */
     public function store(Request $request)
     {
-        $tasa_interes= new Tasa_interes();
-     
-        $tasa_interes->tasa=$request->tasa;
-        $tasa_interes->descripcion=$request->descripcion;
-       
-        $tasa_interes->save();
+        $certificado= new Certificado();
+        
+        
+
+        $certificado->save();
         return back();
     }
 
@@ -76,13 +75,7 @@ class TasaInteresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tasa_interes=Tasa_interes::find($id);
-  
-        $tasa_interes->descripcion=$request->descripcion;
-        $tasa_interes->tasa=$request->tasa;
-       
-        $tasa_interes->save();
-        return back();
+        //
     }
 
     /**
@@ -93,8 +86,6 @@ class TasaInteresController extends Controller
      */
     public function destroy($id)
     {
-        Tasa_interes::destroy($id);
-        $mensaje = "Se elimino con exito";
-        return back()->with('mensaje',$mensaje);
+        //
     }
 }

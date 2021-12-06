@@ -14,4 +14,18 @@ class IdentificacionesController extends Controller
         $identificacion->save();
         return redirect()->route('vIdentificaciones');
     }
+
+    public function editar_identificacion($id){
+
+        $identificacion = Identificacion::findOrFail($id);
+        return view('SAS.tipos_id.editTipoID', compact('identificacion'));
+    }
+
+    public function actualizar_identificacion(Request $request, $id){
+
+        $identificacion = Identificacion::find($id);
+        $identificacion->tipo = $request->etipoId;
+        $identificacion->save();
+        return redirect()->route('vIdentificaciones');
+    }
 }

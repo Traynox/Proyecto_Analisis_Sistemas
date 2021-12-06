@@ -15,4 +15,18 @@ class EstadoCivilController extends Controller
         return redirect()->route('vECiviles');
     }
 
+    public function editar_estado_civil($id){
+
+        $estado_civil = EstadoCivil::findOrFail($id);
+        return view('SAS.estado_civil.editECivil', compact('estado_civil'));
+    }
+
+    public function actualizar_estado_civil(Request $request, $id){
+
+        $estado_civil = EstadoCivil::find($id);
+        $estado_civil->nombre = $request->modEstadoCivil;
+        $estado_civil->save();
+        return redirect()->route('vECiviles');
+    }
+
 }

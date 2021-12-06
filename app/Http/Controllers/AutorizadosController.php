@@ -49,9 +49,10 @@ class AutorizadosController extends Controller
         $autorizado->id_nacionalidad=$request->nacionalidad;
         $autorizado->id_identificacion=$request->identificacion;
         $autorizado->id_parentesco=$request->parentesco;
+        $autorizado->save();
 
-        
-        $ahorro->autorizados()->attach($arrayId);
+        $ahorro=Ahorro::find($request->id_ahorro);
+        $ahorro->autorizados()->attach($autorizado->id_autorizado);
         return  back();
     }
 
@@ -67,7 +68,7 @@ class AutorizadosController extends Controller
         $nacionalidades=Nacionalidad::all();
         $identificaciones=Identificacion::all();
         $parentescos=Parentesco::all();
-
+// return $ahorro->beneficiarios;
         return view('SAH.ahorros.index_autorizados_beneficiarios',compact('ahorro','nacionalidades','identificaciones','parentescos'));
     }
 
@@ -94,16 +95,16 @@ class AutorizadosController extends Controller
     public function update(Request $request, $id)
     {
         $autorizado=Autorizado::find($id);
-        $autorizado->nombre=$request->cedula;
-        $autorizado->primer_apellido=$request->nombre;
-        $autorizado->segundo_apellido=$request->fecha;
+        $autorizado->nombre=$request->nombre;
+        $autorizado->primer_apellido=$request->primer_apellido;
+        $autorizado->segundo_apellido=$request->segundo_apellido;
         $autorizado->cedula=$request->cedula;
-        $autorizado->telefono=$request->nombre;
-        $autorizado->id_nacionalidad=$request->fecha;
-        $autorizado->id_identificacion=$request->fecha;
-        $autorizado->id_parentesco=$request->fecha;
+        $autorizado->telefono=$request->telefono;
+        $autorizado->id_nacionalidad=$request->nacionalidad;
+        $autorizado->id_identificacion=$request->identificacion;
+        $autorizado->id_parentesco=$request->parentesco;
         $autorizado->save();
-        return  redirect()->route('autorizados.index');
+        return  back();
     }
 
     /**

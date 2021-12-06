@@ -20,27 +20,27 @@
 
         <div class="col-12 mx-auto">
 
-                <div class="row mx-auto my-4">
+                <div class="row  my-4">
                   <div class="col-10 mx-auto">
-                    <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vNacionalidades') }}">Nacionalidades</a>
-                    <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vIdentificaciones') }}">Identificaciones</a>
-                    <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vProfesiones') }}">Profesiones</a>    
+                    <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px" href="{{ route('vNacionalidades') }}">Nacionalidades</a>
+                    <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px" href="{{ route('vIdentificaciones') }}">Identificaciones</a>
+                    <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px" href="{{ route('vProfesiones') }}">Profesiones</a>    
                   </div>                  
                 </div>
 
-                <div class="row mx-auto my-4">
+                <div class="row my-4">
                     <div class="col-10 mx-auto">
-                        <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vEstados') }}">Estados</a>
-                        <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vECiviles') }}">Estado Civil</a>
-                        <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vParentescos') }}">Parentescos</a>
+                        <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px" href="{{ route('vEstados') }}">Estados</a>
+                        <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px" href="{{ route('vECiviles') }}">Estado Civil</a>
+                        <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px" href="{{ route('vParentescos') }}">Parentescos</a>
                     </div>                  
                 </div>
 
-                <div class="row mx-auto my-4">
+                <div class="row my-4">
                     <div class="col-10 mx-auto">
-                        <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vFamiliares') }}">Familiares</a>
-                        <a class="btn btn-outline-dark p-5 mx-3" href="{{ route('vBeneficiarios') }}">Beneficiarios</a>
-                        <a class="btn btn-outline-dark p-5 mx-3" href="">Aportes</a>
+                        <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px" href="{{ route('vFamiliares') }}">Familiares</a>
+                        <a class="btn btn-outline-dark p-5 mx-3"  style="width: 200px" href="{{ route('vBeneficiarios') }}">Beneficiarios</a>
+                        <a class="btn btn-outline-dark p-5 mx-3" style="width: 200px"  href="">Aportes</a>
                     </div>                  
                 </div>
               
