@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Estado extends Model
+class Tasa_interes extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'id_estado';
-    protected $table='estados';
+    protected $primaryKey='id_tasa_interes';
+    protected $table='tasa_intereses';
     public $timestamps=false;
-    protected $fillable = [
-        'nombre'
-    ];
 
-   
-    
 }

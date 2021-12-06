@@ -17,6 +17,8 @@
                     <div class="col-md-6 col-sm-12">
 
                       <div class="mb-3">
+                        <input type="hidden" value="{{$ahorro->id_ahorro}}" class="form-control mb-2" name="id_ahorro">
+
                         <label class="form-label">Cedula</label>
                         <input type="text" value="" class="form-control mb-2" name="cedula" required>
                     </div>
@@ -67,7 +69,7 @@
                           @forelse ($identificaciones as $item)
                           <option value="{{$item->id_identificacion}}">{{$item->tipo}}</option>
                           @empty
-                          <option value="No hay parentescos">...</option>    
+                          <option value="No hay tipo de Identificacion">...</option>    
                           @endforelse
                           </select>                    
                         </div>

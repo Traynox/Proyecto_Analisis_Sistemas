@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Autorizados;
 use App\Models\Beneficiario;
+use App\Models\Ahorro;
+
 use Illuminate\Http\Request;
 
 class BeneficiariosController extends Controller
@@ -38,22 +39,23 @@ class BeneficiariosController extends Controller
     public function store(Request $request)
     {
         $beneficiario=new Beneficiario();
-        $beneficiario->nombre=$request->cedula;
-        $beneficiario->primer_apellido=$request->nombre;
-        $beneficiario->segundo_apellido=$request->fecha;
+        $beneficiario->nombre=$request->nombre;
+        $beneficiario->primer_apellido=$request->primer_apellido;
+        $beneficiario->segundo_apellido=$request->segundo_apellido;
         $beneficiario->cedula=$request->cedula;
-        $beneficiario->telefono=$request->nombre;
-        $beneficiario->direccion=$request->nombre;
-        $beneficiario->correo=$request->nombre;
-        $beneficiario->id_nacionalidad=$request->fecha;
-        $beneficiario->id_identificacion=$request->fecha;
-        $beneficiario->id_parentesco=$request->fecha;
-        $beneficiario->id_asociado=$request->fecha;
-        $beneficiario->id_estado=$request->nombre;
-
+        $beneficiario->telefono=$request->telefono;
+        $beneficiario->direccion=$request->direccion;
+        $beneficiario->correo=$request->correo;
+        $beneficiario->id_nacionalidad=$request->nacionalidad;
+        $beneficiario->id_identificacion=$request->identificacion;
+        $beneficiario->id_parentesco=$request->parentesco; 
+         $beneficiario->save();
+         $ahorro=Ahorro::find($request->id_ahorro);
+         $arrayId=[];
+        $arrayId[0]=['id_beneficiario'=>$beneficiario->id_beneficiario, 'porcentaje' => $request->porcentaje];
         
-        $beneficiario->save();
-        return  redirect()->route('autorizados.index');
+         $ahorro->beneficiarios()->attach($arrayId);
+         return  back();
     }
 
     /**
@@ -75,9 +77,8 @@ class BeneficiariosController extends Controller
      */
     public function edit($id)
     {
-        $beneficiarios=Beneficiario::all();
-        $beneficiario=Beneficiario::find($id);
-        return view('autorizados_editar',compact('autorizados','autorizado'));
+        // $beneficiario=Beneficiario::find($id);
+        // return view('SAH.ahorros.editar_beneficiario',compact('beneficiario'));
     }
 
     /**
@@ -90,16 +91,27 @@ class BeneficiariosController extends Controller
     public function update(Request $request, $id)
     {
         $beneficiario=Beneficiario::find($id);
-        $beneficiario->nombre=$request->cedula;
-        $beneficiario->primer_apellido=$request->nombre;
-        $beneficiario->segundo_apellido=$request->fecha;
+        $beneficiario->nombre=$request->nombre;
+        $beneficiario->primer_apellido=$request->primer_apellido;
+        $beneficiario->segundo_apellido=$request->segundo_apellido;
         $beneficiario->cedula=$request->cedula;
-        $beneficiario->telefono=$request->nombre;
-        $beneficiario->id_nacionalidad=$request->fecha;
-        $beneficiario->id_identificacion=$request->fecha;
-        $beneficiario->id_parentesco=$request->fecha;
+        $beneficiario->telefono=$request->telefono;
+        $beneficiario->direccion=$request->direccion;
+        $beneficiario->correo=$request->correo;
+        $beneficiario->id_nacionalidad=$request->nacionalidad;
+        $beneficiario->id_identificacion=$request->identificacion;
+        $beneficiario->id_parentesco=$request->parentesco; 
         $beneficiario->save();
-        return  redirect()->route('autorizados.index');
+
+        $ahorro=Ahorro::find($request->id_ahorro);
+        $ahorro->beneficiarios()->detach($beneficiario->id_beneficiario);
+
+         $array=[];
+         $array[0]=['id_beneficiario'=>$beneficiario->id_beneficiario, 'porcentaje' => $request->porcentaje];
+        
+         $ahorro->beneficiarios()->attach($array);
+
+        return  back();
     }
 
     /**
@@ -109,7 +121,7 @@ class BeneficiariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {   
         Beneficiario::destroy($id); 
         return back();
     }

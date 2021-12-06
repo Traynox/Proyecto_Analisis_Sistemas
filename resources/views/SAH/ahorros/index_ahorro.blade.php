@@ -5,8 +5,7 @@
 
 @endsection
 @section('contenido')
-<div class="container py-5 mb-5">
-    {{-- @include('clientes.new_cliente') --}}
+<div class="container py-2">
     <div class="container">
       <a class="btn btn-primary btn-md " href="{{route('ahorros.create')}}">
           <i class="fas fa-plus" style="font-size:17px; color: rgb(185, 199, 242)"></i>
@@ -51,7 +50,7 @@
                 <th>Estado</th>
                 <th>Tipo.Ahorro</th>
                 <th>Asociado</th>
-
+                <th>Acciones</th>
 
             </tr>
         </thead>
@@ -67,33 +66,60 @@
                         <td>{{ $item->moneda }}</td>
                         <td>{{ $item->monto_cuota }}</td>
                         <td>{{ $item->monto_ahorrado }}</td>
-                        <td>{{ $item->estado }}</td>
+                        @if ($item->estado==1)
+                        <td>Activo</td>
+                        @else
+                        <td>Inactivo</td>
+  
+                        @endif
                         <td>{{ $item->tipo_ahorro->nombre }}</td>
 
                         <td>{{ $item->asociado->nombre_completo }}</td>
 
 
-                        {{-- <td>
-                            <form action="{{ route('tipos_ahorros.destroy', $item->id_tipo_ahorro) }}"
-                                method="POST" class="form-eliminar">
-                                @csrf
+                        <td>
+                            <div class="btn-group dropup">
+                                <a type="button" data-toggle="dropdown"
+                                    class="btn btn-sm  text-decorated-none " data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v" style="font-size:10px;"></i>
+                                </a>
 
-                                <div class="btn-group dropup">
+                                <ul class="dropdown-menu">
+                                     {{-- {{ $item->id_cita }} --}}
+                                     <li>
+                                         <a data-toggle="modal" data-target="#exampleModal{{$item->id_ahorro}}" class="btn btn-sm bg-light text-decorated-none dropdown-item">
+                                        <i class="fas fa-eye" style="font-size:17px; color: rgb(23, 145, 182)"></i>
+                                        Nueva Cuota</a> </li>
+                                    <li>
+                                           
+                                            <a  href=" {{ route('ahorros.edit', $item->id_ahorro)}}"
+                                                class="btn btn-sm bg-light text-decorated-none dropdown-item">
+                                                <i class="fas fa-edit" style="color:rgb(245, 178, 133); font-size:15px;"></i>
+                                                Editar</a>
+                                
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('ahorros.destroy', $item->id_ahorro) }}"
+                                            method="POST" class="form-eliminar">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="btn btn-sm bg-light text-decorated-none dropdown-item"><i
+                                                    class="fas fa-trash-alt"
+                                                    style="font-size:17px; color: rgb(206, 56, 1)"></i>
+                                                Eliminar</button>
+                                        </form>
+                                    </li>
 
-                                    <button type="button" class="btn btn-sm" data-toggle="modal"
-                                        data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
-                                        <i class="fas fa-edit"
-                                            style="color:rgb(245, 178, 133); font-size:15px;"></i>
-                                    </button>
-                                </div>
 
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm">
-                                    <i class="fas fa-trash-alt"
-                                        style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
-                            </form>
+                                   
+
+                                </ul>
+
+                            </div>
+                         
                         </td>
-                        @include('SAH.tipos_ahorros.tipos_edit') --}}
+                        @include('SAH.ahorros.agregar_cuota')
 
                     </tr>
 

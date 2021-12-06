@@ -77,7 +77,10 @@ class AhorrosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $asociados=Asociado::all();
+        $tipos_ahorros=Tipo_ahorro::all();
+        $ahorro=Ahorro::find($id);
+    return view('SAH.ahorros.editar_ahorro',compact('ahorro','asociados','tipos_ahorros')); 
     }
 
     /**
@@ -89,7 +92,18 @@ class AhorrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ahorro=Ahorro::find($id);
+        $ahorro->fecha_inicio=$request->fech_inicio;
+        $ahorro->fecha_final=$request->fech_final;
+        $ahorro->moneda=$request->moneda;
+        $ahorro->monto_cuota=$request->monto_cuota;
+        $ahorro->monto_ahorrado=0;
+        $ahorro->estado=1;
+        $ahorro->id_tipo_ahorro=$request->tipo_ahorro;
+        $ahorro->id_asociado=$request->asociado;
+        $ahorro->save();
+        $id=$ahorro->id_ahorro;
+        return redirect()->route('autorizados.show',$id);
     }
 
     /**
@@ -100,7 +114,17 @@ class AhorrosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Ahorro::destroy($id); 
+        return back();
+    }
+    public function monto_ahorro(Request $request){
+        $suma=0;
+        $ahorro=Ahorro::find($request->id_ahorro);
+        $suma=$ahorro->monto_ahorrado+$request->cuota;
+        $ahorro->monto_ahorrado=$suma;
+        $ahorro->save();
+        return back();
+
     }
     
 }
