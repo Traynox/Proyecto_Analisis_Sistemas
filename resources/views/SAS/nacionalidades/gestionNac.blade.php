@@ -65,7 +65,7 @@
                             
                             <td>
                                 <a href="{{ route('editPais', $nac) }}" class="btn btn-outline-info" role="button"><i class="far fa-edit"></i></a>
-                                  <form action="" class="d-inline" method="POST">
+                                  <form action="{{ route('bPais', $nac) }}" class="d-inline" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-outline-danger" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">

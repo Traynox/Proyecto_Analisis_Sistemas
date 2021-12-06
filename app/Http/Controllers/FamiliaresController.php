@@ -29,8 +29,8 @@ class FamiliaresController extends Controller
         $familiar->id_parentesco = $request->listaParentescos;
         $familiar->id_estado = $request->listaEstados;
         $familiar->save();
-        return redirect()->route('cFamiliar');
-        //return view('SAS.familiares.consultarFamiliares');
+        //return redirect()->route('cFamiliar');
+        return view('SAS.familiares.consultarFamiliares');
     }
 
     public function editar_familiar($id){

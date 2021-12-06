@@ -147,6 +147,7 @@ Route::get('/nacionalidades', [MenuController::class, 'vista_nacionalidades'])->
 Route::post('/nacionalidades/registrar', [PaisesController::class, 'registrar_pais'])->name('rPais');
 Route::get('/nacionalidades/editNac/{id}', [PaisesController::class, 'editar_pais'])->name('editPais');
 Route::put('/nacionalidades/editNac/{id}', [PaisesController::class, 'actualizar_pais'])->name('actPais');
+Route::delete('/nacionalidades/borrarNac/{id}', [PaisesController::class, 'borrar_nacionalidad'])->name('bPais');
 
 
 Route::get('/identificaciones', [MenuController::class, 'vista_identificaciones'])->name('vIdentificaciones');

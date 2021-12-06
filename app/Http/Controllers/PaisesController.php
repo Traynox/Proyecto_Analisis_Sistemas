@@ -32,6 +32,11 @@ class PaisesController extends Controller
         return redirect()->route('vNacionalidades');
     }
 
-    
+    public function borrar_nacionalidad($id){
+
+        $nacionalidad = Nacionalidad::findOrFail($id);
+        $nacionalidad->delete();
+        return back();
+    }
 
 }
