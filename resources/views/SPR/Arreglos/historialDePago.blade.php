@@ -40,7 +40,7 @@
                     {{-- @foreach ($empleados as $item) --}}
                         <tr>
                             <td>1</td>
-                            <td>Yansineth</td>
+                            <td>Maria</td>
                             <td>40000</td>
                             <td>100000</td>
                             <td>10/12/2021</td>
