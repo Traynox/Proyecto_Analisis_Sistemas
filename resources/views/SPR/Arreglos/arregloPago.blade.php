@@ -1,3 +1,7 @@
+@section('titulo')
+    Arreglo de pago
+@endsection
+
 @extends('plantilla')
 @section('css')
     <link rel="stylesheet" href="css/cssLineaCredito.css">

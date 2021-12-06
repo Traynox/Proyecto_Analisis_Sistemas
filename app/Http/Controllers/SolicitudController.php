@@ -143,4 +143,5 @@ class SolicitudController extends Controller
         return response()->download($file);
 
     }
+
 }

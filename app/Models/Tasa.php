@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Solicitud extends Model
+class Tasa extends Model
 {
-    protected $table = 'solicitudes';
-    protected $primaryKey = 'id_solicitud';
+    protected $table = 'tasas_preferenciales';
+    protected $primaryKey = 'id_tasa';
     public $timestamps = false;
 
     public function asociado()
@@ -16,8 +16,4 @@ class Solicitud extends Model
         return $this->belongsTo(Asociado::class, 'id_asociado');
     }
 
-    public function tipo()
-    {
-        return $this->belongsTo(tipoCredito::class, 'id_tipo_credito');
-    }
 }

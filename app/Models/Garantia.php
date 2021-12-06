@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Solicitud extends Model
+class Garantia extends Model
 {
-    protected $table = 'solicitudes';
-    protected $primaryKey = 'id_solicitud';
+    protected $table = 'garantias_de_pagos';
+    protected $primaryKey = 'id_garantia';
     public $timestamps = false;
 
     public function asociado()
