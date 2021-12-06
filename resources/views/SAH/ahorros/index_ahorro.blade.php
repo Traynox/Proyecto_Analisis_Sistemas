@@ -66,7 +66,12 @@
                         <td>{{ $item->moneda }}</td>
                         <td>{{ $item->monto_cuota }}</td>
                         <td>{{ $item->monto_ahorrado }}</td>
-                        <td>{{ $item->estado }}</td>
+                        @if ($item->estado==1)
+                        <td>Activo</td>
+                        @else
+                        <td>Inactivo</td>
+  
+                        @endif
                         <td>{{ $item->tipo_ahorro->nombre }}</td>
 
                         <td>{{ $item->asociado->nombre_completo }}</td>
@@ -81,9 +86,8 @@
 
                                 <ul class="dropdown-menu">
                                      {{-- {{ $item->id_cita }} --}}
-                                     <li><a data-toggle="modal"
-                                        data-target="#exampleModal"
-                                        class="btn btn-sm bg-light  text-decorated-none dropdown-item">
+                                     <li>
+                                         <a data-toggle="modal" data-target="#exampleModal{{$item->id_ahorro}}" class="btn btn-sm bg-light text-decorated-none dropdown-item">
                                         <i class="fas fa-eye" style="font-size:17px; color: rgb(23, 145, 182)"></i>
                                         Nueva Cuota</a> </li>
                                     <li>
@@ -113,25 +117,9 @@
                                 </ul>
 
                             </div>
-                            {{-- <form action="{{ route('ahorros.destroy', $item->id_ahorro) }}"
-                                method="POST" class="form-eliminar">
-                                @csrf
-
-                                <div class="btn-group dropup">
-
-                                    <button type="button" class="btn btn-sm" data-toggle="modal"
-                                        data-target="#exampleModalEdit{{ $item->id_tipo_ahorro }}">
-                                        <i class="fas fa-edit"
-                                            style="color:rgb(245, 178, 133); font-size:15px;"></i>
-                                    </button>
-                                </div>
-
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm">
-                                    <i class="fas fa-trash-alt"
-                                        style=" color:rgb(237, 22, 22); font-size:15px;"></i></button>
-                            </form> --}}
+                         
                         </td>
+                        @include('SAH.ahorros.agregar_cuota')
 
                     </tr>
 

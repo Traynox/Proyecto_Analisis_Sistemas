@@ -44,3 +44,5 @@ Route::get('reportes-ahorros/reporte-9-2',[ReportesController::class,'vistaRepor
 Route::get('reportes-ahorros/reporte-9-4',[ReportesController::class,'vistaReporte_9_4'])->name('show.reporte_9_4');
 Route::get('reportes-ahorros/reporte-9-14',[ReportesController::class,'vistaReporte_9_14'])->name('show.reporte_9_14');
 
+
+Route::post('ahorros/monto',[AhorrosController::class,'monto_ahorro'])->name('monto.actu');

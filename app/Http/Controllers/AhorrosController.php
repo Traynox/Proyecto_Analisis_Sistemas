@@ -117,5 +117,14 @@ class AhorrosController extends Controller
         Ahorro::destroy($id); 
         return back();
     }
+    public function monto_ahorro(Request $request){
+        $suma=0;
+        $ahorro=Ahorro::find($request->id_ahorro);
+        $suma=$ahorro->monto_ahorrado+$request->cuota;
+        $ahorro->monto_ahorrado=$suma;
+        $ahorro->save();
+        return back();
+
+    }
     
 }
