@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 
 class FamiliaresController extends Controller
 {
+
+    public function consultar_familiares(){
+        $familiares = Familiar::all();
+        $nacionalidades = Nacionalidad::all();
+        $identificaciones = Identificacion::all();
+        $profesiones = Profesion::all();
+        $parentescos = Parentesco::all();
+        $estados = Estado::all();
+        return view('SAS.familiares.consultarFamiliares', compact('familiares', 'nacionalidades', 'identificaciones', 'profesiones', 'parentescos', 'estados'));
+
+    }
+
     public function registrar_familiar(Request $request){
 
         $familiar = new Familiar;
@@ -36,7 +48,12 @@ class FamiliaresController extends Controller
     public function editar_familiar($id){
 
         $familiar = Familiar::findOrFail($id);
-        return view('SAS.familiares.editFamiliar', compact('familiar'));
+        $nacionalidades = Nacionalidad::all();
+        $identificaciones = Identificacion::all();
+        $profesiones = Profesion::all();
+        $parentescos = Parentesco::all();
+        $estados = Estado::all();
+        return view('SAS.familiares.editFamiliar', compact('familiar', 'nacionalidades', 'identificaciones', 'profesiones', 'parentescos', 'estados'));
     }
 
     public function actualizar_familiar(Request $request, $id){
@@ -52,18 +69,7 @@ class FamiliaresController extends Controller
         $familiar->id_parentesco = $request->listaParentescos;
         $familiar->id_estado = $request->listaEstados;
         $familiar->save();
-        return view('SAS.familiares.consultarFamiliares');
-    }
-
-    public function consultar_familiar(){
-        $familiares = Familiar::all();
-        $nacionalidades = Nacionalidad::all();
-        $identificaciones = Identificacion::all();
-        $profesiones = Profesion::all();
-        $parentescos = Parentesco::all();
-        $estados = Estado::all();
-        return view('SAS.familiares.consultar_familiar', compact('familiares', 'nacionalidades', 'identificaciones', 'profesiones', 'parentescos', 'estados'));
-
+        return redirect()->route('cFamiliar');
     }
 
 

@@ -182,8 +182,8 @@ Route::put('/parentescos/editParentesco/{id}', [ParentescoController::class, 'ac
 
 
 
-Route::get('/familiares', [MenuController::class, 'vista_familiares'])->name('vFamiliares');
-Route::get('/familiares/consultar', [FamiliaresController::class, 'consultar_familiar'])->name('cFamiliar');
+//Route::get('/familiares', [MenuController::class, 'vista_familiares'])->name('vFamiliares');
+Route::get('/familiares/consultar', [FamiliaresController::class, 'consultar_familiares'])->name('cFamiliar');
 Route::post('/familiares/registrar', [FamiliaresController::class, 'registrar_familiar'])->name('rFamiliar');
 Route::get('/familiares/editFamiliar/{id}', [FamiliaresController::class, 'editar_familiar'])->name('editFamiliar');
 Route::put('/familiares/editFamiliar/{id}', [FamiliaresController::class, 'actualizar_familiar'])->name('actFamiliar');
@@ -226,17 +226,6 @@ Route::get('/actualizarECivil', function () {
     return view('SAS.estado_civil.editECivil');
 });
 
-Route::get('/actualizarEstado', function () {
-    return view('SAS.estados.editEstados');
-});
-
-Route::get('/actualizarProfesion', function () {
-    return view('SAS.profesiones.editProfesion');
-});
-
-Route::get('/actualizarParentesco', function () {
-    return view('SAS.parentescos.editParentesco');
-});
 
 Route::get('/consultarFamiliares', function () {
     return view('SAS.familiares.consultarFamiliares');

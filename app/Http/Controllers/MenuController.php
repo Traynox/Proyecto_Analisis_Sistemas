@@ -47,6 +47,7 @@ class MenuController extends Controller
         return view('SAS.parentescos.gestionParentescos', compact('parentescos'));
     }
 
+    /*
     public function vista_familiares(){
         $familiares = Familiar::all();
         $nacionalidades = Nacionalidad::all();
@@ -56,7 +57,7 @@ class MenuController extends Controller
         $estados = Estado::all();
         return view('SAS.familiares.registrarFamiliar', compact('familiares', 'nacionalidades', 'identificaciones', 'profesiones', 'parentescos', 'estados'));
     }
-
+    */
     
     
 
